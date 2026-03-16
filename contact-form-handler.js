@@ -234,7 +234,7 @@ function showWhatsAppOption(message) {
         <p style="margin: 0; color: #2e7d32;">
             <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.5rem; margin-right: 8px;"></i>
             <strong>Chat instantly on WhatsApp!</strong><br>
-            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${message}" 
+            <a href="https://wa.me/${919027038209}?text=${message}" 
                target="_blank" 
                style="display: inline-block; margin-top: 10px; padding: 8px 20px; background: #25D366; color: white; text-decoration: none; border-radius: 50px; font-weight: 600;">
                 <i class="fab fa-whatsapp"></i> Open WhatsApp
