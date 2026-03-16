@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://codebite.co.in/</loc>
+    <loc>https://codebite.co.in/</loc>  <!-- ✅ NEW DOMAIN -->
     <lastmod>2025-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://codebite.co.in/price.html</loc>
+    <loc>https://codebite.co.in/price.html</loc>  <!-- ✅ NEW DOMAIN -->
     <lastmod>2025-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codebite.co.in/Demo.html</loc>
+    <loc>https://codebite.co.in/Demo.html</loc>  <!-- ✅ NEW DOMAIN -->
     <lastmod>2025-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codebite.co.in/contact.html</loc>
+    <loc>https://codebite.co.in/contact.html</loc>  <!-- ✅ NEW DOMAIN -->
     <lastmod>2025-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codebite.co.in/privacy.html</loc>  <!-- ✅ NEW DOMAIN -->
+    <lastmod>2025-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://codebite.co.in/terms.html</loc>  <!-- ✅ NEW DOMAIN -->
+    <lastmod>2025-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://codebite.co.in/cookie-policy.html</loc>  <!-- ✅ NEW DOMAIN -->
+    <lastmod>2025-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
