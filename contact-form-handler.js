@@ -2,7 +2,7 @@
 // Place this file in your website root directory
 
 // Google reCAPTCHA v3 Site Key - REPLACE WITH YOUR ACTUAL KEY
-const RECAPTCHA_SITE_KEY = 'YOUR_RECAPTCHA_SITE_KEY'; // Get from: https://www.google.com/recaptcha/admin
+const RECAPTCHA_SITE_KEY = '6Legm4wsAAAAAF78rqcSrnH7uvVamzEqiNMcacLZ'; // Get from: https://www.google.com/recaptcha/admin
 const WHATSAPP_NUMBER = '919027038209'; // Your WhatsApp number with country code
 
 // Initialize when DOM is loaded
