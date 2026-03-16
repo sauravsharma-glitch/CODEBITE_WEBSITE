@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="saurav logo.png">
+    <title>CodeBite | Terms of Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        /* navigation - exactly as other pages */
+        .navbar {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,20,50,0.05);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f4f9;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #0b2f4e, #203a5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo i {
+            background: #2563eb;
+            -webkit-text-fill-color: white;
+            padding: 8px;
+            border-radius: 18px;
+            font-size: 1.4rem;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: 0.2s;
+            font-size: 1.1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+        .nav-links a i {
+            color: currentColor;
+            font-size: 1rem;
+            width: 1.2rem;
+            text-align: center;
+        }
+        .wa-quick {
+            background: #25D366;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+        }
+        .wa-quick:hover {
+            background: #20b359;
+        }
+        /* container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 3rem;
+        }
+        /* terms page specific */
+        .terms-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .terms-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0b2f4e;
+        }
+        .terms-header p {
+            font-size: 1.1rem;
+            color: #4b6589;
+            background: #e9f0f9;
+            display: inline-block;
+            padding: 0.4rem 2rem;
+            border-radius: 60px;
+            margin-top: 0.8rem;
+        }
+        .terms-card {
+            background: white;
+            border-radius: 40px;
+            padding: 3rem 3rem;
+            box-shadow: 0 25px 40px -25px #1e3a5f;
+            border: 1px solid #e2eaf2;
+        }
+        .terms-section {
+            margin-bottom: 2.5rem;
+        }
+        .terms-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0b2f4e;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .terms-section h2 i {
+            color: #2563eb;
+            background: #e5edff;
+            padding: 8px;
+            border-radius: 20px;
+            font-size: 1.4rem;
+        }
+        .terms-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1f4973;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .terms-section p, .terms-section li {
+            color: #334155;
+            margin-bottom: 0.8rem;
+        }
+        .terms-section ul, .terms-section ol {
+            padding-left: 2rem;
+            margin: 0.5rem 0 1.2rem;
+        }
+        .terms-section li {
+            margin-bottom: 0.4rem;
+        }
+        .highlight-box {
+            background: #f0f7ff;
+            border-left: 5px solid #2563eb;
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin: 1.5rem 0;
+        }
+        .footer-note {
+            margin-top: 4rem;
+            background: #0f263b;
+            color: #cddfeb;
+            border-radius: 40px 40px 0 0;
+            padding: 2.5rem 2rem 1.8rem;
+        }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        hr {
+            border: 1px solid #2d4b68;
+            margin: 1.5rem 0;
+        }
+        .last-updated {
+            text-align: right;
+            font-style: italic;
+            color: #5f748b;
+            margin-top: 2rem;
+            border-top: 1px dashed #bdd3e8;
+            padding-top: 1.5rem;
+        }
+        @media (max-width:700px) {
+            .navbar { flex-direction: column; gap: 12px; }
+            .nav-links { gap: 1rem; }
+            .terms-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (same as home, price, etc) -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="price.html"><i class="fas fa-tag"></i> Price</a>
+            <a href="Demo.html"><i class="fas fa-eye"></i> Demo</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
+    </nav>
+
+    <main class="container">
+        <!-- TERMS HEADER -->
+        <div class="terms-header">
+            <h1>Terms of Service</h1>
+            <p><i class="fas fa-file-contract" style="color:#2563eb;"></i> Please read carefully before using our services</p>
+        </div>
+
+        <!-- MAIN TERMS CARD -->
+        <div class="terms-card">
+            <!-- introduction -->
+            <div class="terms-section">
+                <h2><i class="fas fa-handshake"></i> Agreement to terms</h2>
+                <p>Welcome to <strong>CodeBite Studio</strong> ("we," "our," or "us"). By accessing our website, contacting us, or purchasing any of our services (website development packages), you agree to be bound by these Terms of Service. If you do not agree to all terms, please do not use our services.</p>
+                <p>These terms apply to all visitors, clients, and users of our website and services.</p>
+            </div>
+
+            <!-- services section -->
+            <div class="terms-section">
+                <h2><i class="fas fa-laptop-code"></i> Our services</h2>
+                <p>CodeBite Studio provides website design, development, SEO, and maintenance services as described on our pricing page. Each project is unique, and final deliverables will be confirmed in writing (via WhatsApp, email, or contract) before work begins.</p>
+                <div class="highlight-box">
+                    <i class="fas fa-circle-info" style="color:#2563eb;"></i> <strong>Package specifics:</strong> Features listed in packages (e.g., "5 Page Website," "Admin Panel") are standard inclusions. Any additional custom requests may incur extra charges, which will be communicated and agreed upon in advance.
+                </div>
+            </div>
+
+            <!-- payments and pricing -->
+            <div class="terms-section">
+                <h2><i class="fas fa-indian-rupee-sign"></i> Payments & pricing</h2>
+                <ul>
+                    <li><strong>Pricing:</strong> All prices are in Indian Rupees (₹) and are subject to change without notice. However, once you place an order, the price at the time of order is locked.</li>
+                    <li><strong>Deposit:</strong> A 50% advance payment is required to start any project, unless otherwise agreed.</li>
+                    <li><strong>Final payment:</strong> The remaining 50% is due upon project completion and before final files/deliverables are handed over.</li>
+                    <li><strong>Refunds:</strong> Due to the custom nature of our work, we do not offer refunds once design and development have commenced. If you cancel before work starts, any deposit may be refunded at our discretion.</li>
+                </ul>
+            </div>
+
+            <!-- project timeline -->
+            <div class="terms-section">
+                <h2><i class="fas fa-calendar-alt"></i> Project timeline & delivery</h2>
+                <p>Estimated delivery times are provided as guidelines. We strive to meet deadlines but cannot be held responsible for delays caused by:</p>
+                <ul>
+                    <li>Late client feedback or content delivery.</li>
+                    <li>Third-party services (hosting, payment gateways, etc.).</li>
+                    <li>Unforeseen technical issues or force majeure.</li>
+                </ul>
+                <p>We will communicate any delays promptly via WhatsApp or email.</p>
+            </div>
+
+            <!-- client responsibilities -->
+            <div class="terms-section">
+                <h2><i class="fas fa-users"></i> Client responsibilities</h2>
+                <p>To ensure a smooth project, you agree to:</p>
+                <ul>
+                    <li>Provide all necessary content (text, images, logos, etc.) in a timely manner.</li>
+                    <li>Review and provide feedback on milestones within 3-5 business days.</li>
+                    <li>Ensure you have the rights to any materials you provide (images, fonts, etc.).</li>
+                    <li>Secure your own hosting and domain if required (we can assist, but costs are separate).</li>
+                </ul>
+            </div>
+
+            <!-- intellectual property -->
+            <div class="terms-section">
+                <h2><i class="fas fa-copyright"></i> Intellectual property</h2>
+                <p><strong>During development:</strong> CodeBite Studio retains all rights to work in progress until final payment is received.</p>
+                <p><strong>After full payment:</strong> You own the final website files and design (excluding third-party assets like stock photos, fonts, or plugins which are licensed separately). We grant you full ownership of the custom code and design.</p>
+                <p>We reserve the right to display your website in our portfolio (unless a non-disclosure agreement is signed).</p>
+            </div>
+
+            <!-- third-party services -->
+            <div class="terms-section">
+                <h2><i class="fas fa-plug"></i> Third-party services</h2>
+                <p>Our work may involve third-party tools (e.g., hosting, payment gateways, Google Analytics, WhatsApp API). We do not guarantee the uptime, security, or functionality of these external services. You agree to comply with their respective terms.</p>
+            </div>
+
+            <!-- Limitation of liability -->
+            <div class="terms-section">
+                <h2><i class="fas fa-shield"></i> Limitation of liability</h2>
+                <p>To the maximum extent permitted by law, CodeBite Studio shall not be liable for any indirect, incidental, or consequential damages arising from your use of our services or website. Our total liability is limited to the amount you paid for the specific project in question.</p>
+            </div>
+
+            <!-- website use -->
+            <div class="terms-section">
+                <h2><i class="fas fa-globe"></i> Website use & acceptable conduct</h2>
+                <p>When visiting our website, you agree not to:</p>
+                <ul>
+                    <li>Use any automated means to access or scrape the site.</li>
+                    <li>Upload malicious code or attempt to breach security.</li>
+                    <li>Impersonate any person or entity.</li>
+                </ul>
+            </div>
+
+            <!-- modifications -->
+            <div class="terms-section">
+                <h2><i class="fas fa-pen"></i> Changes to terms</h2>
+                <p>We may update these Terms of Service from time to time. The latest version will always be posted on this page with the "Last updated" date below. Continued use of our services after changes constitutes acceptance.</p>
+            </div>
+
+            <!-- governing law -->
+            <div class="terms-section">
+                <h2><i class="fas fa-gavel"></i> Governing law</h2>
+                <p>These terms shall be governed by and construed in accordance with the laws of India. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts in [Your City, State].</p>
+            </div>
+
+            <!-- contact us -->
+            <div class="terms-section">
+                <h2><i class="fas fa-envelope"></i> Contact us</h2>
+                <p>If you have any questions about these Terms, please reach out:</p>
+                <ul style="list-style:none; padding-left:0;">
+                    <li><i class="fab fa-whatsapp" style="color:#25D366; width:24px;"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/919027038209" target="_blank" style="color:#2563eb;">+91 90270 38209</a> (demo – replace with your number)</li>
+                    <li><i class="far fa-envelope" style="color:#2563eb;"></i> <strong>Email:</strong> saurav343sharma@gmail.com</li>
+                </ul>
+            </div>
+
+            <!-- last updated -->
+            <div class="last-updated">
+                <i class="far fa-calendar-alt"></i> Last updated: March 18, 2026
+            </div>
+        </div>
+
+        <!-- back to home link -->
+        <div style="text-align:center; margin-top:2rem;">
+            <a href="index.html" style="color:#2563eb; text-decoration:none; font-weight:500;"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </main>
+
+    <!-- FOOTER (identical to other pages) -->
+    <footer class="footer-note">
+        <div style="max-width:1300px; margin:0 auto;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+                <div><i class="far fa-copyright"></i> 2025 CodeBite Studio · Saurav Sharma</div>
+                <div class="footer-links">
+                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+                    <a href="terms.html" style="color:#FF9F1C;"><i class="fas fa-file-contract"></i> Terms</a>
+                    <a href="Cookie policy.html"><i class="fas fa-cookie-bite"></i> Cookie policy</a>
+                </div>
+            </div>
+            <hr>
+            <div style="text-align:center; font-size:0.9rem;">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 (replace) · saurav343sharma@gmail.com
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

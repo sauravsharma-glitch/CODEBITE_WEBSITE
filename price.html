@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBite · Pricing packages</title>
+      <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+    <!-- Font Awesome 6 (only one solid version) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="saurav logo.png"> <!-- placeholder -->
+    <style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8fafd;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+        /* navigation - same as home */
+        .navbar {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,20,50,0.05);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f4f9;
+        }
+        .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #0b2f4e, #203a5e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* FIXED ICON STYLES */
+.logo i {
+    background: #2563eb;
+    color: white !important;           /* Force white color */
+    padding: 8px;
+    border-radius: 18px;
+    font-size: 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;                       /* Fixed width */
+    height: 45px;                      /* Fixed height */
+    /* Override any inherited text effects */
+    -webkit-text-fill-color: white;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+}
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: 0.2s;
+            font-size: 1.1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+        .nav-links a i {
+            margin-right: 6px;
+            font-size: 0.95rem;
+        }
+        .wa-quick {
+            background: #25D366;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+        }
+        .wa-quick:hover {
+            background: #20b359;
+        }
+
+        /* main container for pricing */
+        .pricing-wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 2rem 1rem;
+        }
+        /* pricing section (your original design preserved) */
+        .pricing-section {
+            text-align: center;
+            padding: 20px 0 40px;
+        }
+        .pricing-section h2 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: #0B2A4A;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+        .pricing-section > p {
+            font-size: 1.2rem;
+            color: #2c5779;
+            background: rgba(255, 159, 28, 0.12);
+            display: inline-block;
+            padding: 8px 28px;
+            border-radius: 60px;
+            font-weight: 500;
+            backdrop-filter: blur(2px);
+            margin-bottom: 50px;
+            border: 1px dashed #f3a13b;
+        }
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+        }
+        .pricing-card {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 38px 28px 32px;
+            width: 350px;
+            max-width: 100%;
+            box-shadow: 0 20px 35px -8px rgba(0, 32, 64, 0.12), 0 8px 18px -6px rgba(0, 40, 70, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 32px 45px -12px rgba(0, 52, 102, 0.25);
+        }
+        .popular {
+            border: 2px solid #FF9F1C;
+            background: linear-gradient(white, #fffcf6);
+            box-shadow: 0 25px 40px -15px rgba(255, 146, 0, 0.3), 0 0 0 1px rgba(255,159,28,0.3);
+            transform: scale(1.02);
+        }
+        .popular:hover {
+            transform: scale(1.02) translateY(-8px);
+        }
+        .popular::before {
+            content: "✨ MOST POPULAR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FF9F1C;
+            color: #0B2A4A;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 6px 22px;
+            border-radius: 40px;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 14px -6px #d98b1a;
+            white-space: nowrap;
+            border: 2px solid white;
+        }
+        .pricing-card h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0d3a5c;
+            margin-bottom: 12px;
+        }
+        .old-price {
+            font-size: 1.3rem;
+            color: #6d8ba5;
+            text-decoration: line-through 2px solid #c53b3b;
+            font-weight: 400;
+            margin-bottom: 6px;
+            letter-spacing: 0.2px;
+        }
+        .pricing-card h1 {
+            font-size: 3.1rem;
+            font-weight: 700;
+            color: #073042;
+            line-height: 1.1;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .discount {
+            background: #db3d2b;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 5px 16px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 28px;
+            box-shadow: 0 6px 14px rgba(200, 50, 30, 0.25);
+            border: 1px solid #ffb296;
+            letter-spacing: 0.4px;
+        }
+        .popular .discount {
+            background: #c5281c;
+            box-shadow: 0 4px 10px #c5281c70;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 30px;
+            flex-grow: 1;
+            text-align: left;
+        }
+        .pricing-card li {
+            padding: 10px 0 6px 10px;
+            font-size: 1rem;
+            color: #1d4765;
+            border-bottom: 1px solid rgba(100, 150, 200, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 400;
+        }
+        .pricing-card li::before {
+            content: "✓";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #FF9F1C;
+            background: #fff0dd;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px #ffd7a5;
+        }
+        .popular li::before {
+            background: #FF9F1C;
+            color: white;
+            box-shadow: none;
+        }
+        .buy-btn {
+            background: #0d3a5c;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.25rem;
+            padding: 16px 20px;
+            border-radius: 60px;
+            display: inline-block;
+            transition: all 0.2s;
+            border: 2px solid #0d3a5c;
+            box-shadow: 0 12px 20px -14px #0b2a4a;
+            letter-spacing: 0.5px;
+            margin-top: 8px;
+        }
+        .buy-btn:hover {
+            background: #FF9F1C;
+            border-color: #FF9F1C;
+            color: #0B2A4A;
+            box-shadow: 0 18px 25px -12px #b26400;
+            transform: scale(1.02);
+        }
+        .popular .buy-btn {
+            background: #FF9F1C;
+            border-color: #FF9F1C;
+            color: #0B2A4A;
+            font-weight: 700;
+        }
+        .popular .buy-btn:hover {
+            background: #e58600;
+            border-color: #cc7600;
+            color: #fff;
+        }
+        .footnote {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #5a6f82;
+            background: #eaf0f6;
+            padding: 12px 20px;
+            border-radius: 60px;
+            display: inline-block;
+        }
+        .footnote i {
+            color: #25D366;
+        }
+        /* footer (same as home/contact) */
+        .site-footer {
+            margin-top: 4rem;
+            background: #0f263b;
+            color: #cddfeb;
+            border-radius: 40px 40px 0 0;
+            padding: 2.5rem 2rem 1.8rem;
+        }
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #f0f6fc;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1rem;
+            transition: 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+        .footer-links a:hover {
+            color: #FF9F1C;
+            border-bottom-color: #FF9F1C;
+        }
+        hr {
+            border: 1px solid #2d4b68;
+            margin: 1.5rem 0;
+        }
+        .wa-footnote {
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        @media (max-width:700px) {
+            .navbar { flex-direction: column; gap: 12px; }
+            .nav-links { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR (home, price, demo, contact) with price active -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="price.html" class="active"><i class="fas fa-tag"></i> Price</a>
+            <a href="Demo.html"><i class="fas fa-eye"></i> Demo</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
+    </nav>
+
+    <!-- PRICING SECTION (your original content, now inside wrapper) -->
+    <div class="pricing-wrapper">
+        <section class="pricing-section">
+            <h2>Website Development Packages</h2>
+            <p><i class="fas fa-tag" style="margin-right: 8px;"></i> Limited Time Offer – Special Discount Available</p>
+
+            <div class="pricing-container">
+                <!-- Normal Plan -->
+                <div class="pricing-card">
+                    <h3>Normal</h3>
+                    <p class="old-price"><span style="font-weight: 300;">₹</span>15,000</p>
+                    <h1>₹12,000</h1>
+                    <span class="discount">20% OFF</span>
+                    <ul>
+                        <li>5 Page Website</li>
+                        <li>Responsive Design</li>
+                        <!-- <li>Basic SEO Setup</li> -->
+                        <li>Contact Form</li>
+                        <li>Fast Loading Website</li>
+                        <li>Mobile Friendly</li>
+                        <li>Basic Security</li>
+                    </ul>
+                    <a href="https://wa.me/919027038209?text=I%27m%20interested%20in%20Normal%20website%20package" class="buy-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order Now</a>
+                </div>
+
+                <!-- Premium Plan (popular) -->
+                <div class="pricing-card popular">
+                    <h3>Premium</h3>
+                    <p class="old-price"><span style="font-weight: 300;">₹</span>32,000</p>
+                    <h1>₹25,000</h1>
+                    <span class="discount">22% OFF</span>
+                    <ul>
+                        <li>10 Page Website</li>
+                        <li>Custom UI Design</li>
+                        <li>Advanced SEO</li>
+                        <li>Admin Panel</li>
+                        <li>Blog System</li>
+                        <li>Google Analytics</li>
+                        <li>WhatsApp Chat Integration</li>
+                        <li>Speed Optimization</li>
+                    </ul>
+                    <a href="https://wa.me/919027038209?text=I%20want%20Premium%20website%20package" class="buy-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order Now</a>
+                </div>
+
+                <!-- Gold Plan -->
+                <div class="pricing-card">
+                    <h3>Gold</h3>
+                    <p class="old-price"><span style="font-weight: 300;">₹</span>50,000</p>
+                    <h1>₹40,000</h1>
+                    <span class="discount">20% OFF</span>
+                    <ul>
+                        <li>Unlimited Pages</li>
+                        <li>Premium UI/UX Design</li>
+                        <li>Full SEO Optimization</li>
+                        <li>Admin Dashboard</li>
+                        <li>E-commerce Ready</li>
+                        <li>Payment Gateway Integration</li>
+                        <li>Advanced Security</li>
+                        <li>Website Maintenance</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="https://wa.me/919027038209?text=Tell%20me%20more%20about%20Gold%20website%20plan" class="buy-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order Now</a>
+                </div>
+            </div>
+
+            <!-- reminder to update number (replaced with demo number) -->
+            <div class="footnote">
+                <i class="fab fa-whatsapp"></i> Clicking "Order Now" opens WhatsApp — replace <strong>919027038209</strong> with your actual WhatsApp number.
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER with privacy, cookie, terms -->
+    <footer class="site-footer">
+        <div style="max-width:1300px; margin:0 auto;">
+            <div class="footer-content">
+                <div><i class="far fa-copyright"></i> 2025 CodeBite Studio · Saurav Sharma</div>
+                <div class="footer-links">
+                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+                    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+                    <a href="Cookie policy.html"><i class="fas fa-cookie-bite"></i> Cookie policy</a>
+                </div>
+            </div>
+            <hr>
+            <div class="wa-footnote">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 (replace) · saurav343sharma@gmail.com
+            </div>
+        </div>
+    </footer>
+
+    <!-- simple script to highlight active nav (optional) -->
+    <script>
+        (function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const current = window.location.pathname.split("/").pop() || "price.html";
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === current) link.classList.add('active');
+                else link.classList.remove('active');
+            });
+        })();
+    </script>
+</body>
+</html>

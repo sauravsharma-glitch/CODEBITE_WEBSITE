@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - CodeBite</title>
+    <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Copy the exact same styles from privacy.html */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f8fafd; color: #1e293b; line-height: 1.6; }
+        .navbar { background: white; padding: 0.8rem 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; border-bottom: 2px solid #f1f4f9; position: sticky; top: 0; z-index: 100; box-shadow: 0 8px 20px rgba(0,20,50,0.05); }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.8rem; background: linear-gradient(135deg, #0b2f4e, #203a5e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .logo i { background: #2563eb; color: white; padding: 8px; border-radius: 18px; font-size: 1.4rem; width: 45px; height: 45px; display: inline-flex; align-items: center; justify-content: center; }
+        .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .nav-links a { text-decoration: none; color: #1e293b; font-weight: 500; font-size: 1.1rem; padding: 6px 0; border-bottom: 2px solid transparent; transition: 0.2s; }
+        .nav-links a:hover { color: #2563eb; border-bottom-color: #2563eb; }
+        .nav-links a i { margin-right: 6px; }
+        .wa-quick { background: #25D366; color: white; padding: 8px 18px; border-radius: 40px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; box-shadow: 0 6px 14px rgba(37,211,102,0.3); white-space: nowrap; }
+        .wa-quick:hover { background: #20b359; }
+        .policy-container { max-width: 900px; margin: 3rem auto; padding: 2.5rem; background: white; border-radius: 30px; box-shadow: 0 20px 40px -15px rgba(0,32,64,0.12); border: 1px solid #e9edf4; }
+        .policy-container h1 { color: #0b2f4e; margin-bottom: 0.5rem; font-size: 2.5rem; }
+        .policy-container .last-updated { color: #6b7b8f; font-size: 0.95rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e9edf4; }
+        .policy-container h2 { color: #2563eb; margin: 2rem 0 1rem; font-size: 1.5rem; }
+        .policy-container h3 { color: #0b2f4e; margin: 1.5rem 0 0.5rem; font-size: 1.2rem; }
+        .policy-container p { color: #4a627a; margin-bottom: 1rem; line-height: 1.8; }
+        .policy-container ul, .policy-container ol { color: #4a627a; margin: 1rem 0 1rem 2rem; line-height: 1.8; }
+        .policy-container li { margin-bottom: 0.5rem; }
+        .policy-container a { color: #2563eb; text-decoration: none; }
+        .policy-container a:hover { text-decoration: underline; }
+        .cookie-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .cookie-table th { background: #2563eb; color: white; padding: 12px; text-align: left; }
+        .cookie-table td { padding: 12px; border-bottom: 1px solid #e9edf4; }
+        .cookie-table tr:hover { background: #f8fafd; }
+        .contact-box { background: #f0f7ff; padding: 1.5rem; border-radius: 16px; margin-top: 2rem; border-left: 4px solid #2563eb; }
+        .site-footer { margin-top: 4rem; background: #0f263b; color: #cddfeb; padding: 2.5rem 2rem 1.8rem; border-radius: 40px 40px 0 0; }
+        .footer-content { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+        .footer-links { display: flex; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: #f0f6fc; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; transition: 0.2s; }
+        .footer-links a:hover { color: #FF9F1C; }
+        hr { border: 1px solid #2d4b68; margin: 1.5rem 0; }
+        .wa-footnote { text-align: center; font-size: 0.9rem; opacity: 0.8; }
+        @media (max-width:768px) { 
+            .navbar { flex-direction: column; padding: 1rem; } 
+            .nav-links { gap: 1rem; justify-content: center; }
+            .policy-container { margin: 2rem 1rem; padding: 1.5rem; }
+            .policy-container h1 { font-size: 2rem; }
+            .cookie-table { font-size: 0.9rem; }
+            .cookie-table th, .cookie-table td { padding: 8px; }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="price.html"><i class="fas fa-tag"></i> Price</a>
+            <a href="Demo.html"><i class="fas fa-eye"></i> Demo</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
+    </nav>
+
+    <!-- Cookie Policy Content -->
+    <div class="policy-container">
+        <h1>Cookie Policy</h1>
+        <p class="last-updated">Last Updated: March 16, 2025</p>
+        
+        <p>This Cookie Policy explains how CodeBite uses cookies and similar technologies to recognize you when you visit our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.</p>
+        
+        <h2>1. What Are Cookies?</h2>
+        <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to the website owners.</p>
+        
+        <h2>2. Why We Use Cookies</h2>
+        <p>We use cookies for several reasons:</p>
+        <ul>
+            <li><strong>Essential Operations:</strong> Some cookies are required for the website to function properly.</li>
+            <li><strong>Performance and Analytics:</strong> We use cookies to understand how visitors interact with our site, which helps us improve the user experience.</li>
+            <li><strong>Preferences:</strong> Cookies remember your settings and preferences to enhance your experience.</li>
+        </ul>
+        
+        <h2>3. Types of Cookies We Use</h2>
+        
+        <table class="cookie-table">
+            <thead>
+                <tr>
+                    <th>Cookie Type</th>
+                    <th>Purpose</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Essential Cookies</strong></td>
+                    <td>Required for basic site functionality, including form submissions and navigation.</td>
+                    <td>Session / Persistent</td>
+                </tr>
+                <tr>
+                    <td><strong>Analytics Cookies (Google Analytics)</strong></td>
+                    <td>Help us understand how visitors use our site, which pages are popular, and how users navigate the site.</td>
+                    <td>Up to 2 years</td>
+                </tr>
+                <tr>
+                    <td><strong>Preference Cookies</strong></td>
+                    <td>Remember your preferences, such as language or region.</td>
+                    <td>1 year</td>
+                </tr>
+                <tr>
+                    <td><strong>reCAPTCHA Cookies</strong></td>
+                    <td>Google reCAPTCHA uses cookies to distinguish humans from bots for security purposes.</td>
+                    <td>Session</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>4. Third-Party Cookies</h2>
+        <p>In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the service and deliver advertisements on and through the service. These include:</p>
+        <ul>
+            <li><strong>Google Analytics:</strong> We use Google Analytics to collect information about how visitors use our site. Google Analytics collects information anonymously and generates reports of website trends. <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
+            <li><strong>Google reCAPTCHA:</strong> We use reCAPTCHA to protect our forms from spam and abuse. reCAPTCHA analyzes traffic to distinguish humans from bots. <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
+        </ul>
+        
+        <h2>5. How to Control Cookies</h2>
+        <p>You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences by:</p>
+        
+        <h3>5.1 Browser Settings</h3>
+        <p>Most web browsers allow you to control cookies through their settings. You can:</p>
+        <ul>
+            <li>View cookies stored on your device and delete them individually</li>
+            <li>Block third-party cookies</li>
+            <li>Block all cookies</li>
+            <li>Delete all cookies when you close your browser</li>
+        </ul>
+        <p>To learn how to manage cookies in popular browsers, visit:</p>
+        <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank">Mozilla Firefox</a></li>
+            <li><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank">Apple Safari</a></li>
+            <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank">Microsoft Edge</a></li>
+        </ul>
+        
+        <h3>5.2 Cookie Consent Tool</h3>
+        <p>When you first visit our site, we display a cookie consent banner that allows you to accept or decline non-essential cookies. Your choice is stored for future visits.</p>
+        
+        <h2>6. Consequences of Disabling Cookies</h2>
+        <p>If you disable or refuse cookies, some parts of our website may become inaccessible or not function properly. For example:</p>
+        <ul>
+            <li>Essential cookies are required for form submission - if blocked, you cannot use our contact form</li>
+            <li>Analytics cookies help us improve the site - disabling them doesn't affect functionality but limits our ability to improve</li>
+        </ul>
+        
+        <h2>7. Updates to This Cookie Policy</h2>
+        <p>We may update this Cookie Policy from time to time to reflect changes in technology, regulation, or our business practices. Any changes will be posted on this page with an updated revision date.</p>
+        
+        <h2>8. Contact Us</h2>
+        <div class="contact-box">
+            <p>If you have any questions about our use of cookies or this Cookie Policy, please contact us:</p>
+            <p style="margin-top: 1rem;">
+                <strong><i class="fas fa-envelope" style="color: #2563eb;"></i> Email:</strong> saurav343sharma@gmail.com<br>
+                <strong><i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp:</strong> +91 9027038209
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div style="max-width:1300px; margin:0 auto;">
+            <div class="footer-content">
+                <div><i class="far fa-copyright"></i> 2025 CodeBite Studio · Saurav Sharma</div>
+                <div class="footer-links">
+                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+                    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+                    <a href="cookie-policy.html"><i class="fas fa-cookie-bite"></i> Cookie Policy</a>
+                </div>
+            </div>
+            <hr>
+            <div class="wa-footnote">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 · saurav343sharma@gmail.com
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

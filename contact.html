@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+    <title>CodeBite | Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8fafd;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,20,50,0.05);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f4f9;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #0b2f4e, #203a5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo i {
+            background: #2563eb;
+            color: white;
+            padding: 8px;
+            border-radius: 18px;
+            font-size: 1.4rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: 0.2s;
+            font-size: 1.1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        .nav-links a i {
+            margin-right: 6px;
+            font-size: 0.95rem;
+        }
+
+        .wa-quick {
+            background: #25D366;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+            white-space: nowrap;
+        }
+
+        .wa-quick:hover {
+            background: #20b359;
+        }
+
+        /* Main Content */
+        .contact-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0b2f4e;
+            margin-bottom: 1rem;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #4a627a;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px -15px rgba(0,32,64,0.12);
+            border: 1px solid #e9edf4;
+            height: fit-content;
+        }
+
+        .contact-card h2 {
+            font-size: 1.8rem;
+            color: #0b2f4e;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-card h2 i {
+            color: #2563eb;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.8rem;
+        }
+
+        .info-icon {
+            background: #eef5ff;
+            width: 55px;
+            height: 55px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #2563eb;
+        }
+
+        .info-text h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0b2f4e;
+        }
+
+        .info-text p {
+            color: #4a627a;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            background: #f1f5f9;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d3a5c;
+            font-size: 1.5rem;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #0b2f4e;
+            font-weight: 500;
+        }
+
+        .form-group label i {
+            color: #2563eb;
+            margin-right: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9edf4;
+            border-radius: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+        }
+
+        .error-message {
+            color: #d9534f;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        #formStatus {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 12px;
+            display: none;
+        }
+
+        #submitBtn {
+            width: 100%;
+            padding: 1rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #submitBtn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px #2563eb;
+        }
+
+        #submitBtn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        .site-footer {
+            margin-top: 4rem;
+            background: #0f263b;
+            color: #cddfeb;
+            border-radius: 40px 40px 0 0;
+            padding: 2.5rem 2rem 1.8rem;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #f0f6fc;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #FF9F1C;
+        }
+
+        hr {
+            border: 1px solid #2d4b68;
+            margin: 1.5rem 0;
+        }
+
+        .wa-footnote {
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-card {
+                padding: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="price.html"><i class="fas fa-tag"></i> Price</a>
+            <a href="Demo.html"><i class="fas fa-eye"></i> Demo</a>
+            <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-header">
+            <h1>Get in Touch</h1>
+            <p>Have a project in mind? We'd love to hear about it. Send us a message and we'll respond within 24 hours.</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-card">
+                <h2><i class="fas fa-map-marker-alt"></i> Contact Info</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="info-text">
+                        <h3>WhatsApp</h3>
+                        <p>+91 90270 38209</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="far fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h3>Email</h3>
+                        <p>saurav343sharma@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="far fa-clock"></i></div>
+                    <div class="info-text">
+                        <h3>Response Time</h3>
+                        <p>Within 24 hours (usually faster on WhatsApp)</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://wa.me/919027038209" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-card">
+                <h2><i class="fas fa-paper-plane"></i> Send Message</h2>
+                
+                <form id="secureContactForm" onsubmit="return submitContactForm(event)">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Full Name *</label>
+                        <input type="text" id="name" name="name" required 
+                               placeholder="John Doe">
+                        <div class="error-message" id="nameError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email *</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="john@example.com">
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required 
+                               placeholder="9876543210" pattern="[0-9]{10}">
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> Message *</label>
+                        <textarea id="message" name="message" rows="5" required 
+                                  placeholder="Tell us about your project..."></textarea>
+                        <div class="error-message" id="messageError"></div>
+                    </div>
+
+                    <input type="hidden" id="recaptchaToken" name="recaptcha_token">
+                    
+                    <div id="formStatus"></div>
+
+                    <button type="submit" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div style="max-width:1300px; margin:0 auto;">
+            <div class="footer-content">
+                <div><i class="far fa-copyright"></i> 2025 CodeBite Studio · Saurav Sharma</div>
+                <div class="footer-links">
+                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+                    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+                    <a href="cookie-policy.html"><i class="fas fa-cookie-bite"></i> Cookie Policy</a>
+                </div>
+            </div>
+            <hr>
+            <div class="wa-footnote">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 · saurav343sharma@gmail.com
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Form Handler -->
+    <script src="contact-form-handler.js"></script>
+</body>
+</html>

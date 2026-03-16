@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="saurav logo.png">
+    <title>CodeBite | Project Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8fafd;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+        /* navigation - fully responsive */
+        .navbar {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,20,50,0.05);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f4f9;
+            gap: 1rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #0b2f4e, #203a5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo i {
+            background: #2563eb;
+            -webkit-text-fill-color: white;
+            padding: 8px;
+            border-radius: 18px;
+            font-size: 1.4rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: 0.2s;
+            font-size: 1.1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+        .nav-links a i {
+            margin-right: 6px;
+            font-size: 0.95rem;
+        }
+        .wa-quick {
+            background: #25D366;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+            white-space: nowrap;
+        }
+        .wa-quick:hover {
+            background: #20b359;
+        }
+        /* container */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 2rem 1rem;
+        }
+
+        /* intro section */
+        .section-intro {
+            margin: 2rem 0 1.5rem;
+        }
+        .section-intro h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 600;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .section-intro h2 i {
+            color: #2563eb;
+            background: #e2e8f0;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+        }
+        .section-intro p {
+            color: #475569;
+            max-width: 700px;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        }
+
+        /* project grid - fully responsive */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem 1.8rem;
+            margin: 2.5rem 0 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.7rem 1.5rem 1.8rem;
+            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.1);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 45px -18px rgba(37, 99, 235, 0.25);
+            border-color: #b1c9ff;
+        }
+
+        .project-icon {
+            background: #eef2ff;
+            width: 55px;
+            height: 55px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+            color: #1e3a8a;
+        }
+
+        .project-card h3 {
+            font-size: clamp(1.4rem, 4vw, 1.7rem);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+        }
+
+        .project-type {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            margin: 0.5rem 0 1rem;
+            width: fit-content;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .project-desc {
+            color: #334155;
+            margin-bottom: 1.5rem;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .demo-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: auto;
+            border-top: 1px dashed #d1d5db;
+            padding-top: 1.2rem;
+        }
+
+        .demo-btn {
+            background: #0f172a;
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: 0.15s;
+            border: 1px solid #0f172a;
+        }
+
+        .demo-btn i {
+            font-size: 0.9rem;
+        }
+
+        .demo-btn:hover {
+            background: #1e293b;
+            border-color: #2563eb;
+        }
+
+        .demo-btn.outline {
+            background: transparent;
+            color: #0f172a;
+            border: 1px solid #94a3b8;
+        }
+
+        .demo-btn.outline:hover {
+            background: #f1f5f9;
+            border-color: #2563eb;
+        }
+
+        /* contact panel */
+        .contact-panel {
+            background: white;
+            border-radius: 40px;
+            padding: 2rem 2.5rem;
+            margin-top: 3rem;
+            box-shadow: 0 15px 40px -20px #1e293b;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .contact-text h3 {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-weight: 650;
+            color: #0b1d31;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .contact-text p {
+            color: #334155;
+            max-width: 500px;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-big {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 12px 18px -8px rgba(37, 211, 102, 0.4);
+            transition: all 0.15s;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .whatsapp-big i {
+            font-size: 1.8rem;
+        }
+        .whatsapp-big:hover {
+            background: #20b359;
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -10px #1e7e4a;
+        }
+
+        /* footer */
+        .site-footer {
+            margin-top: 4rem;
+            background: #0f263b;
+            color: #cddfeb;
+            border-radius: 40px 40px 0 0;
+            padding: 2.5rem 2rem 1.8rem;
+        }
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #f0f6fc;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1rem;
+            transition: 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+        .footer-links a:hover {
+            color: #FF9F1C;
+            border-bottom-color: #FF9F1C;
+        }
+        hr {
+            border: 1px solid #2d4b68;
+            margin: 1.5rem 0;
+        }
+        .wa-footnote {
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* mobile fine-tuning */
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            .contact-panel {
+                padding: 1.8rem;
+            }
+            .whatsapp-big {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            .demo-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .demo-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR with 'demo' active -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="price.html"><i class="fas fa-tag"></i> Price</a>
+            <a href="Demo.html" class="active"><i class="fas fa-eye"></i> Demo</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> DM now</a>
+    </nav>
+
+    <div class="container">
+        <!-- intro -->
+        <div class="section-intro">
+            <h2><i class="fas fa-eye"></i> live project demos</h2>
+            <p>Every client can browse real website previews — click any demo to see it live (opens in new tab). Or send a direct message.</p>
+        </div>
+
+        <!-- PROJECT GRID : each card opens demo in new tab (target="_blank") -->
+        <div class="project-grid">
+            <!-- 1. Restaurant / Bakery -->
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-cake-candles"></i></div>
+                <h3>🍰 Restaurant</h3>
+                <span class="project-type">bakery / local</span>
+                <div class="project-desc">Artisan bakery website with online menu, fresh UI & order preview. Fully responsive demo.</div>
+                <div class="demo-links">
+                    <a href="https://bmac-by-kasey.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
+                    <a href="https://bmac-by-kasey.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
+                </div>
+            </div>
+            <!-- 2. BURGER STORE -->
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-burger"></i></div>
+                <h3>🍔 BURGER STORE</h3>
+                <span class="project-type">fast food</span>
+                <div class="project-desc">Modern burger shop with menu display, combos and location. Clean, responsive layout.</div>
+                <div class="demo-links">
+                    <a href="https://burger-buddy-website.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
+                    <a href="https://burger-buddy-website.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
+                </div>
+            </div>
+            <!-- 3. GYM Fitness -->
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-dumbbell"></i></div>
+                <h3>GYM (Fitness)</h3>
+                <span class="project-type">gym / wellness</span>
+                <div class="project-desc">Landing page for a fitness club. Class schedules, trainer profiles & membership CTA.</div>
+                <div class="demo-links">
+                    <a href="https://gym-fitness-site-rho.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
+                    <a href="https://gym-fitness-site-rho.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
+                </div>
+            </div>
+            <!-- 4. Salon -->
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-cut"></i></div>
+                <h3>Salon & Spa</h3>
+                <span class="project-type">beauty / booking</span>
+                <div class="project-desc">Elegant salon website with service menu, online booking and price list.</div>
+                <div class="demo-links">
+                    <a href="https://salonwebsite-nu.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
+                    <a href="https://salonwebsite-nu.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
+                </div>
+            </div>
+            <!-- 5. Jewellery -->
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-gem"></i></div>
+                <h3>Jewellery</h3>
+                <span class="project-type">gold / luxury</span>
+                <div class="project-desc">Elegant jewellery showcase with product grid, collection highlights and brand story.</div>
+                <div class="demo-links">
+                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
+                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
+                </div>
+            </div>
+            <!-- 6. Additional: Real Estate (to fill grid nicely) -->
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-building"></i></div>
+                <h3>Real Estate</h3>
+                <span class="project-type">property</span>
+                <div class="project-desc">Property listings with advanced filters, virtual tour & agent profiles.</div>
+                <div class="demo-links">
+                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
+                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- note: demos open in new tab -->
+        <p style="text-align: right; margin-top: -1rem; font-style: italic; color: #6f7c93;">
+            <i class="fas fa-external-link-alt" style="color: #2563eb;"></i> each link opens in a new tab
+        </p>
+
+        <!-- WhatsApp / DM section -->
+        <div class="contact-panel" id="dm-whatsapp">
+            <div class="contact-text">
+                <h3><i class="fab fa-whatsapp" style="color: #25D366;"></i> tell us your idea</h3>
+                <p><i class="fas fa-comment-dots" style="color: #2563eb;"></i> send a DM or WhatsApp message — we reply within hours</p>
+                <p style="font-size: 0.95rem; margin-top: 10px; color: #3b4a5e;">
+                    <i class="fas fa-check-circle" style="color: #22c55e;"></i> you'll chat directly with <strong>CodeBite</strong>
+                </p>
+            </div>
+            <a href="https://wa.me/919027038209?text=Hi%20CodeBite%20Studio!%20I%20just%20saw%20your%20project%20demos%20and%20I%20want%20to%20discuss%20a%20website.%20" 
+               class="whatsapp-big" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> DM on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div style="max-width:1300px; margin:0 auto;">
+            <div class="footer-content">
+                <div><i class="far fa-copyright"></i> 2025 CodeBite | Saurav Sharma</div>
+                <div class="footer-links">
+                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+                    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+                    <a href="cookie.html"><i class="fas fa-cookie-bite"></i> Cookie policy</a>
+                </div>
+            </div>
+            <hr>
+            <div class="wa-footnote">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 · saurav343sharma@gmail.com
+            </div>
+        </div>
+    </footer>
+
+    <!-- optional nav active script -->
+    <script>
+        (function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const current = window.location.pathname.split("/").pop() || "Demo.html";
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === current) link.classList.add('active');
+                else if (current === '' && href === 'index.html') link.classList.add('active');
+            });
+        })();
+    </script>
+</body>
+</html>

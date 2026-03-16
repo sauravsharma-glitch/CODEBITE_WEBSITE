@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+    <title>CodeBite | Professional website studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+        /* navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,20,50,0.05);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f4f9;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #0b2f4e, #203a5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo i {
+            background: #2563eb;
+            -webkit-text-fill-color: white;
+            padding: 8px;
+            border-radius: 18px;
+            font-size: 1.4rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: 0.2s;
+            font-size: 1.1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+        .nav-links a i {
+            margin-right: 6px;
+            font-size: 0.95rem;
+        }
+        .wa-quick {
+            background: #25D366;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+            white-space: nowrap;
+        }
+        .wa-quick:hover {
+            background: #20b359;
+        }
+
+        /* HERO SLIDER (fully responsive) */
+        .hero-slider {
+            width: 100%;
+            background-color: #0b1e2f;
+            position: relative;
+            overflow: hidden;
+        }
+        .slides-container {
+            position: relative;
+            width: 100%;
+            height: min(600px, 80vh); /* responsive height */
+            min-height: 400px;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 5%;
+        }
+        .slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(10,30,50,0.8) 0%, rgba(10,30,50,0.4) 80%);
+            z-index: 1;
+        }
+        .slide-content {
+            position: relative;
+            z-index: 3;
+            max-width: 700px;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            animation: fadeUp 1s ease;
+        }
+        .slide-content h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .slide-content p {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            margin-bottom: 1.8rem;
+            opacity: 0.9;
+        }
+        .slide-btn {
+            background: #FF9F1C;
+            color: #0b2f4e;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .slide-btn:hover {
+            background: #ffffff;
+            color: #0d3a5c;
+        }
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: 0.2s;
+            border: 2px solid transparent;
+        }
+        .dot.active {
+            background: #FF9F1C;
+            transform: scale(1.3);
+            border-color: white;
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* container */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 2rem 1rem;
+        }
+
+        /* original hero section (now secondary) */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 2rem 0 4rem;
+        }
+        .hero-text h1 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(145deg, #0b2f4e, #2b4b75);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-text p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            text-align: center;
+            color: #334155;
+            max-width: 600px;
+            margin: 1.5rem 0 2rem;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #0d3a5c;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .btn-primary:hover {
+            background: #FF9F1C;
+            color: #0B2A4A;
+        }
+        .btn-outline {
+            border: 2px solid #0d3a5c;
+            color: #0d3a5c;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ===== NEW SECTION WITH IMAGES: "Our Work in Action" ===== */
+        .image-showcase {
+            margin: 5rem 0;
+        }
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .showcase-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(0,32,64,0.12);
+            transition: 0.3s ease;
+            border: 1px solid #edf2f7;
+        }
+        .showcase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 40px -12px #2563eb70;
+        }
+        .card-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 4px solid #FF9F1C;
+        }
+        .card-content {
+            padding: 1.8rem 1.5rem 2rem;
+        }
+        .card-content h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #0b2f4e;
+            margin-bottom: 0.5rem;
+        }
+        .card-content p {
+            color: #3f556b;
+            margin-bottom: 1.2rem;
+        }
+        .card-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #eef5ff;
+            color: #2563eb;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* existing sections (keep consistent) */
+        .services-section, .why-us-section, .testimonials-section {
+            margin: 5rem 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 2.4rem);
+            font-weight: 700;
+            color: #0b2f4e;
+        }
+        .section-header p {
+            color: #4a627a;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            max-width: 700px;
+            margin: 0.5rem auto 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: white;
+            padding: 2.5rem 1.8rem;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 15px 30px -12px rgba(0,32,64,0.08);
+            transition: 0.25s;
+            border: 1px solid #ffffff50;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 40px -16px #2563eb60;
+        }
+        .service-icon {
+            background: #eef5ff;
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            color: #2563eb;
+            margin: 0 auto 1.5rem;
+        }
+        .service-card h3 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #0d3a5c;
+        }
+        .service-card p {
+            color: #3f556b;
+            margin-top: 0.8rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem;
+        }
+        .feature-item {
+            background: white;
+            padding: 2rem 1.8rem;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 12px 25px -12px #1e293b20;
+        }
+        .feature-icon {
+            background: #FF9F1C10;
+            color: #FF9F1C;
+            font-size: 2.2rem;
+            width: 70px;
+            height: 70px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+        .feature-item h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0b2f4e;
+        }
+        .feature-item p {
+            color: #475569;
+            margin-top: 0.5rem;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 40px;
+            padding: 2rem 2rem;
+            box-shadow: 0 20px 30px -12px #1e293b20;
+            border: 1px solid #f0f4fa;
+        }
+        .testimonial-card p {
+            font-size: 1rem;
+            font-style: italic;
+            color: #1e3b5a;
+            margin-bottom: 1.5rem;
+        }
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .client-avatar {
+            background: #2563eb20;
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #2563eb;
+        }
+        .client-name h5 {
+            font-weight: 600;
+            color: #0f2c44;
+        }
+        .client-name span {
+            font-size: 0.85rem;
+            color: #5f748b;
+        }
+        .featured-projects {
+            margin: 4rem 0;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .project-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 1.8rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: 0 15px 25px -10px rgba(0,0,0,0.05);
+        }
+        .project-card h3 {
+            font-size: 1.5rem;
+        }
+        .project-type {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .contact-teaser {
+            background: white;
+            border-radius: 50px;
+            padding: 2rem;
+            margin: 3rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            box-shadow: 0 12px 28px -18px #06213a;
+        }
+        .footer-note {
+            margin-top: 4rem;
+            background: #0f263b;
+            color: #cddfeb;
+            border-radius: 40px 40px 0 0;
+            padding: 2.5rem 2rem 1.8rem;
+        }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        hr {
+            border: 1px solid #2d4b68;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .slides-container {
+                height: 450px;
+            }
+            .slide-content {
+                max-width: 100%;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            .hero {
+                margin: 1rem 0 2rem;
+            }
+            .btn-primary, .btn-outline {
+                padding: 0.8rem 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (unchanged) -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
+        <div class="nav-links">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="price.html"><i class="fas fa-tag"></i> Price</a>
+            <a href="Demo.html"><i class="fas fa-eye"></i> Demo</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
+    </nav>
+
+    <!-- HERO SLIDER (fully responsive, 2sec change) -->
+    <div class="hero-slider">
+        <div class="slides-container" id="heroSlides">
+            <!-- slide 1 -->
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f6?q=80&w=2070&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h2>Modern websites that work</h2>
+                    <p>Pixel perfect, fast & conversion focused</p>
+                    <a href="Demo.html" class="slide-btn"><i class="fas fa-eye"></i> View demos</a>
+                </div>
+            </div>
+            <!-- slide 2 -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h2>E‑commerce & stores</h2>
+                    <p>Sell online with powerful tools</p>
+                    <a href="price.html" class="slide-btn"><i class="fas fa-cart-shopping"></i> Packages</a>
+                </div>
+            </div>
+            <!-- slide 3 -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h2>Startup & brand identity</h2>
+                    <p>We build your digital presence</p>
+                    <a href="contact.html" class="slide-btn"><i class="fas fa-headset"></i> Let's talk</a>
+                </div>
+            </div>
+        </div>
+        <!-- navigation dots -->
+        <div class="slider-dots" id="sliderDots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- original hero section (now below slider) -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Websites with personality & performance</h1>
+                <p>We build modern, fast, and conversion-focused websites for startups, restaurants, salons, and businesses. Check our live demos or grab a limited-price package.</p>
+                <div class="cta-buttons">
+                    <a href="price.html" class="btn-primary"><i class="fas fa-crown"></i> View packages</a>
+                    <a href="Demo.html" class="btn-outline"><i class="fas fa-rocket"></i> Live demos</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== NEW SECTION WITH IMAGES: "Our Work in Action" ===== -->
+        <section class="image-showcase">
+            <div class="section-header">
+                <h2>Our Work in Action</h2>
+                <p>Real projects, real results — see the quality yourself</p>
+            </div>
+            <div class="showcase-grid">
+                <!-- card 1 with image -->
+                <div class="showcase-card">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Restaurant website design">
+                    <div class="card-content">
+                        <h3>Spice Kitchen</h3>
+                        <p>Restaurant site with online ordering & table reservation.</p>
+                        <div class="card-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">WhatsApp API</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="showcase-card">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=2070&auto=format&fit=crop" alt="Ecommerce store">
+                    <div class="card-content">
+                        <h3>Urban Beats</h3>
+                        <p>Headphone & audio gear store with secure checkout.</p>
+                        <div class="card-tags">
+                            <span class="tag">Shopify</span>
+                            <span class="tag">Liquid</span>
+                            <span class="tag">SEO</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="showcase-card">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Gym website">
+                    <div class="card-content">
+                        <h3>Peak Fitness</h3>
+                        <p>Gym club with class schedule & trainer profiles.</p>
+                        <div class="card-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 4 (extra image) -->
+                <div class="showcase-card">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" alt="Salon website">
+                    <div class="card-content">
+                        <h3>Glow Studio</h3>
+                        <p>Salon & spa with online booking and service menu.</p>
+                        <div class="card-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">Calendly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- existing services, why us, etc. (all fully responsive) -->
+        <section class="services-section">
+            <div class="section-header">
+                <h2>What we build for you</h2>
+                <p>Complete digital solutions tailored to your brand & audience</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-store"></i></div>
+                    <h3>Business websites</h3>
+                    <p>Corporate, startup & brand sites that tell your story and convert visitors.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cart-shopping"></i></div>
+                    <h3>E‑commerce</h3>
+                    <p>Full online stores with product management, cart & payment gateway.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Restaurant & cafe</h3>
+                    <p>Menu display, table reservations, and online ordering systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Gym & wellness</h3>
+                    <p>Class schedules, trainer profiles, and membership integration.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us-section">
+            <div class="section-header">
+                <h2>Why choose CodeBite</h2>
+                <p>We don't just build websites — we build growth engines</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-gauge-high"></i></div>
+                    <h4>Lightning fast</h4>
+                    <p>Optimised code & performance, top scores in Core Web Vitals.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-code"></i></i></div>
+                    <h4>100% responsive</h4>
+                    <p>Flawless experience on mobiles, tablets and desktops.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <h4>SEO friendly</h4>
+                    <p>Clean structure and meta setup to help you rank on Google.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h4>Dedicated support</h4>
+                    <p>Quick WhatsApp replies and maintenance after launch.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- featured projects (original) -->
+        <div class="featured-projects">
+            <h2 class="section-title"><i class="fas fa-bolt" style="color:#2563eb;"></i> Recent work</h2>
+            <div class="project-mini-grid">
+                <div class="project-card">
+                    <span class="project-type">Restaurant</span>
+                    <h3>🍰 Bakery site</h3>
+                    <p>Online menu & ordering</p>
+                </div>
+                <div class="project-card">
+                    <span class="project-type">GYM</span>
+                    <h3>💪 Fitness club</h3>
+                    <p>Class schedule & branding</p>
+                </div>
+                <div class="project-card">
+                    <span class="project-type">E-commerce</span>
+                    <h3>🛒store</h3>
+                    <p>Product catalog</p>
+                </div>
+                <div class="project-card">
+                    <span class="project-type">E-commerce</span>
+                    <h3>✂️ Salon</h3>
+                    <p>Product catalog</p>
+                </div>
+                <div class="project-card">
+                    <span class="project-type">E-commerce</span>
+                    <h3>💍 Jewellery</h3>
+                    <p>Product catalog</p>
+                </div>
+            </div>
+            <p style="margin-top:2rem;"><a href="Demo.html" style="color:#2563eb; font-weight:600;">See all demos <i class="fas fa-arrow-right"></i></a></p>
+        </div>
+
+        <!-- testimonials -->
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2>What our clients say</h2>
+                <p>Trusted by startups and local businesses</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>“CodeBite built our restaurant website. The online menu and WhatsApp ordering increased our takeaway orders by 40%.”</p>
+                    <div class="client-info">
+                        <div class="client-avatar"><i class="fas fa-user"></i></div>
+                        <div class="client-name">
+                            <h5>Rohit Mehta</h5>
+                            <span>Owner, Spice Kitchen</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“Very professional and fast. They guided us from domain to final launch. The gym site looks stunning and loads instantly.”</p>
+                    <div class="client-info">
+                        <div class="client-avatar"><i class="fas fa-user"></i></div>
+                        <div class="client-name">
+                            <h5>Neha Sharma</h5>
+                            <span>Fitness trainer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“I got the Premium package – admin panel and SEO. My sales doubled in 2 months. Highly recommended!”</p>
+                    <div class="client-info">
+                        <div class="client-avatar"><i class="fas fa-user"></i></div>
+                        <div class="client-name">
+                            <h5>Arjun Singh</h5>
+                            <span>Jewellery store owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact teaser -->
+        <div class="contact-teaser">
+            <span><i class="fab fa-whatsapp" style="color:#25D366; font-size:2rem;"></i> <strong>DM on WhatsApp</strong> – reply within hours</span>
+            <a href="contact.html" style="background:#0d3a5c; color:white; padding:0.8rem 2rem; border-radius:40px; text-decoration:none; font-weight:600;">Contact page</a>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer-note">
+        <div style="max-width:1300px; margin:0 auto;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap: 20px;">
+                <div><i class="far fa-copyright"></i> 2025 CodeBite  | Saurav Sharma</div>
+                <div class="footer-links">
+                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+                    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+                    <a href="Cookie policy.html"><i class="fas fa-cookie-bite"></i> Cookie policy</a>
+                </div>
+            </div>
+            <hr>
+            <div style="text-align:center; font-size:0.9rem;">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 | saurav343sharma@gmail.com
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slider JavaScript (2 sec, fully functional) -->
+    <script>
+        (function() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            let currentIndex = 0;
+            const intervalTime = 2000;
+            let slideInterval;
+
+            function showSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            function startSlider() {
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startSlider();
+            }
+
+            dots.forEach((dot, idx) => {
+                dot.addEventListener('click', () => {
+                    if (currentIndex !== idx) {
+                        showSlide(idx);
+                        resetInterval();
+                    }
+                });
+            });
+
+            startSlider();
+
+            const sliderContainer = document.querySelector('.hero-slider');
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            sliderContainer.addEventListener('mouseleave', () => {
+                startSlider();
+            });
+
+            showSlide(0);
+        })();
+    </script>
+</body>
+</html>
