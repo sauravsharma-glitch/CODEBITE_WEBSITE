@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags for SEO -->
-    <title>CodeBite | Professional Website Development </title>
+    <title>CodeBite | Professional Website Development</title>
     <meta name="title" content="CodeBite | Professional Website Development Studio">
     <meta name="description" content="CodeBite builds modern, fast, and conversion-focused websites for startups, restaurants, salons, and businesses. Check our live demos or grab a limited-price package.">
     <meta name="keywords" content="website development, web design, ecommerce websites, restaurant websites, gym websites, business websites">
@@ -33,10 +32,10 @@
     <!-- Font Awesome and Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- <link rel="icon" type="image/png" sizes="96x96" href="Images/logo.png">
-<link rel="apple-touch-icon" href="Images/logo.png">
-    <title>CodeBite | Professional website </title>
-          <!-- Structured data for Google Logo -->
+    <link rel="icon" type="image/png" sizes="96x96" href="Images/logo.png">
+    <link rel="apple-touch-icon" href="Images/logo.png">
+    
+    <!-- Structured data for Google Logo -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -151,7 +150,7 @@
         .slides-container {
             position: relative;
             width: 100%;
-            height: min(600px, 80vh); /* responsive height */
+            height: min(600px, 80vh);
             min-height: 400px;
         }
         .slide {
@@ -370,7 +369,7 @@
             font-weight: 500;
         }
 
-        /* existing sections (keep consistent) */
+        /* existing sections */
         .services-section, .why-us-section, .testimonials-section {
             margin: 5rem 0;
         }
@@ -599,299 +598,407 @@
                 padding: 0.8rem 1.8rem;
             }
         }
-/* Chatbot Styles - For Live Website */
-.chatbot-button {
-    position: fixed !important;
-    bottom: 30px !important;
-    right: 30px !important;
-    width: 70px !important;
-    height: 70px !important;
-    border-radius: 50% !important;
-    background: #2563eb !important;
-    color: white !important;
-    border: none !important;
-    cursor: pointer !important;
-    box-shadow: 0 10px 30px rgba(37,99,235,0.4) !important;
-    z-index: 999999 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transition: all 0.3s ease !important;
-    animation: pulse 2s infinite !important;
-    pointer-events: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
 
-.chatbot-button:hover {
-    transform: scale(1.1) !important;
-    background: #1d4ed8 !important;
-    box-shadow: 0 15px 40px rgba(37,99,235,0.6) !important;
-}
+        /* Chatbot Button Styles - BLUE (BOTTOM) */
+        .chatbot-button {
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            width: 70px !important;
+            height: 70px !important;
+            border-radius: 50% !important;
+            background: #2563eb !important;
+            color: white !important;
+            border: none !important;
+            cursor: pointer !important;
+            box-shadow: 0 10px 30px rgba(37,99,235,0.4) !important;
+            z-index: 999999 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+            animation: pulse 2s infinite !important;
+            pointer-events: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
 
-.chatbot-button i {
-    font-size: 30px !important;
-    pointer-events: none !important;
-}
+        .chatbot-button:hover {
+            transform: scale(1.1) !important;
+            background: #1d4ed8 !important;
+            box-shadow: 0 15px 40px rgba(37,99,235,0.6) !important;
+        }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(37,99,235,0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
-}
+        .chatbot-button i {
+            font-size: 30px !important;
+            pointer-events: none !important;
+        }
 
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37,99,235,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+        }
+
+        /* WhatsApp Button Styles - GREEN (TOP) */
+        .whatsapp-button {
+            position: fixed !important;
+            bottom: 120px !important;
+            right: 30px !important;
+            width: 70px !important;
+            height: 70px !important;
+            border-radius: 50% !important;
+            background: #25D366 !important;
+            color: white !important;
+            border: none !important;
+            cursor: pointer !important;
+            box-shadow: 0 10px 30px rgba(37,211,102,0.4) !important;
+            z-index: 999998 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+            animation: wa-pulse 2s infinite !important;
+            pointer-events: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-decoration: none !important;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1) !important;
+            background: #20b359 !important;
+            box-shadow: 0 15px 40px rgba(37,211,102,0.6) !important;
+        }
+
+        .whatsapp-button i {
+            font-size: 35px !important;
+            pointer-events: none !important;
+        }
+
+        @keyframes wa-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+
+        /* Tooltip for buttons - ABOVE everything */
+        .button-tooltip {
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+            right: 80px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1000000 !important;
+        }
+
+        .chatbot-button:hover .button-tooltip,
+        .whatsapp-button:hover .button-tooltip {
+            opacity: 1;
+        }
+
+      /* CHATBOT WINDOW - DYNAMIC DESKTOP POSITIONING */
 .chatbot-window {
     position: fixed !important;
     bottom: 120px !important;
     right: 30px !important;
     width: 380px !important;
-    height: 550px !important;
+    min-width: 380px !important;
+    max-width: 380px !important;
+    height: min(550px, 70vh) !important;  /* Dynamic height */
+    min-height: 400px !important;
+    max-height: 550px !important;
     background: white !important;
     border-radius: 25px !important;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
     display: none !important;
     flex-direction: column !important;
-    z-index: 999998 !important;
+    z-index: 999997 !important;
     overflow: hidden !important;
     animation: slideUp 0.3s ease !important;
     border: 1px solid #e2e8f0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Force it to show when display:flex is applied */
+.chatbot-window[style*="display: flex"] {
+    display: flex !important;
+    width: 380px !important;
+    height: min(550px, 70vh) !important;
+    min-height: 400px !important;
+    max-height: 550px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-.chatbot-header {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        /* Ensure the inner content also has dimensions */
+        .chatbot-messages {
+            flex: 1 1 auto !important;
+            min-height: 0 !important;
+            height: auto !important;
+            overflow-y: auto !important;
+        }
 
-.chatbot-header h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.chatbot-header h3 i {
-    font-size: 20px;
-}
+        .chatbot-header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.chatbot-header button {
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-}
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-.chatbot-header button:hover {
-    background: rgba(255,255,255,0.3);
-}
+        .chatbot-header h3 i {
+            font-size: 20px;
+        }
 
-.chatbot-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background: #f8fafc;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .chatbot-header button {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
 
-.message {
-    max-width: 80%;
-    padding: 12px 16px;
-    border-radius: 18px;
-    font-size: 14px;
-    line-height: 1.5;
-    word-wrap: break-word;
-    animation: messageSlide 0.3s ease;
-}
+        .chatbot-header button:hover {
+            background: rgba(255,255,255,0.3);
+        }
 
-@keyframes messageSlide {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-.bot-message {
-    background: #e2e8f0;
-    color: #1e293b;
-    align-self: flex-start;
-    border-bottom-left-radius: 5px;
-}
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.5;
+            word-wrap: break-word;
+            animation: messageSlide 0.3s ease;
+        }
 
-.user-message {
-    background: #2563eb;
-    color: white;
-    align-self: flex-end;
-    border-bottom-right-radius: 5px;
-}
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.quick-replies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 15px;
-    background: white;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
-}
+        .bot-message {
+            background: #e2e8f0;
+            color: #1e293b;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
 
-.quick-reply-btn {
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    color: #1e293b;
-    padding: 8px 15px;
-    border-radius: 25px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-    font-family: 'Poppins', sans-serif;
-}
+        .user-message {
+            background: #2563eb;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
 
-.quick-reply-btn:hover {
-    background: #2563eb;
-    color: white;
-    border-color: #2563eb;
-    transform: scale(1.05);
-}
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
 
-.chatbot-input-area {
-    display: flex;
-    padding: 15px;
-    background: white;
-    gap: 10px;
-}
+        .quick-reply-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #1e293b;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.chatbot-input-area input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 2px solid #e2e8f0;
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    outline: none;
-    transition: all 0.2s;
-}
+        .quick-reply-btn:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+            transform: scale(1.05);
+        }
 
-.chatbot-input-area input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-}
+        .chatbot-input-area {
+            display: flex;
+            padding: 15px;
+            background: white;
+            gap: 10px;
+        }
 
-.chatbot-input-area button {
-    background: #2563eb;
-    color: white;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .chatbot-input-area input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s;
+        }
 
-.chatbot-input-area button:hover {
-    background: #1d4ed8;
-    transform: scale(1.05);
-}
+        .chatbot-input-area input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
 
-.chatbot-input-area button i {
-    font-size: 18px;
-}
+        .chatbot-input-area button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.typing-indicator {
-    display: flex;
-    gap: 5px;
-    padding: 12px 16px;
-    background: #e2e8f0;
-    border-radius: 18px;
-    width: fit-content;
-    border-bottom-left-radius: 5px;
-    margin-bottom: 10px;
-}
+        .chatbot-input-area button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
 
-.typing-indicator span {
-    width: 8px;
-    height: 8px;
-    background: #64748b;
-    border-radius: 50%;
-    animation: typing 1.4s infinite;
-}
+        .chatbot-input-area button i {
+            font-size: 18px;
+        }
 
-.typing-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
-}
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+            padding: 12px 16px;
+            background: #e2e8f0;
+            border-radius: 18px;
+            width: fit-content;
+            border-bottom-left-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-.typing-indicator span:nth-child(3) {
-    animation-delay: 0.4s;
-}
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #64748b;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
 
-@keyframes typing {
-    0%, 60%, 100% { transform: translateY(0); }
-    30% { transform: translateY(-10px); }
-}
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .chatbot-window {
-        width: 320px !important;
-        height: 500px !important;
-        bottom: 100px !important;
-        right: 15px !important;
-    }
-    
-    .chatbot-button {
-        bottom: 20px !important;
-        right: 20px !important;
-        width: 60px !important;
-        height: 60px !important;
-    }
-    
-    .chatbot-button i {
-        font-size: 24px !important;
-    }
-    
-    .quick-reply-btn {
-        padding: 6px 12px !important;
-        font-size: 12px !important;
-    }
-}
-       
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+
+        /* Mobile Responsive - DYNAMIC POSITIONING */
+        @media (max-width: 768px) {
+            .chatbot-window,
+            .chatbot-window[style*="display: flex"] {
+                width: 320px !important;
+                min-width: 320px !important;
+                max-width: 320px !important;
+                height: min(500px, 70vh) !important;  /* Responsive height */
+                min-height: 400px !important;
+                max-height: 500px !important;
+                bottom: max(90px, 8vh) !important;  /* Responsive position */
+                right: 15px !important;
+                z-index: 999997 !important;
+            }
+            
+            .chatbot-button {
+                bottom: 20px !important;
+                right: 20px !important;
+                width: 60px !important;
+                height: 60px !important;
+                z-index: 999999 !important;
+            }
+            
+            .whatsapp-button {
+                bottom: 90px !important;  /* Adjusted for new window position */
+                right: 20px !important;
+                width: 60px !important;
+                height: 60px !important;
+                z-index: 999998 !important;
+            }
+            
+            .chatbot-button i {
+                font-size: 24px !important;
+            }
+            
+            .whatsapp-button i {
+                font-size: 28px !important;
+            }
+            
+            .quick-reply-btn {
+                padding: 6px 12px !important;
+                font-size: 12px !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION (unchanged) -->
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
         <div class="nav-links">
@@ -903,7 +1010,7 @@
         <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
     </nav>
 
-    <!-- HERO SLIDER (fully responsive, 2sec change) -->
+    <!-- HERO SLIDER -->
     <div class="hero-slider">
         <div class="slides-container" id="heroSlides">
             <!-- slide 1 -->
@@ -940,7 +1047,7 @@
     </div>
 
     <main class="container">
-        <!-- original hero section (now below slider) -->
+        <!-- original hero section -->
         <div class="hero">
             <div class="hero-text">
                 <h1>Websites with personality & performance</h1>
@@ -952,14 +1059,14 @@
             </div>
         </div>
 
-        <!-- ===== NEW SECTION WITH IMAGES: "Our Work in Action" ===== -->
+        <!-- Our Work in Action section -->
         <section class="image-showcase">
             <div class="section-header">
                 <h2>Our Work in Action</h2>
                 <p>Real projects, real results — see the quality yourself</p>
             </div>
             <div class="showcase-grid">
-                <!-- card 1 with image -->
+                <!-- card 1 -->
                 <div class="showcase-card">
                     <img class="card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Restaurant website design">
                     <div class="card-content">
@@ -998,7 +1105,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- card 4 (extra image) -->
+                <!-- card 4 -->
                 <div class="showcase-card">
                     <img class="card-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" alt="Salon website">
                     <div class="card-content">
@@ -1014,7 +1121,7 @@
             </div>
         </section>
 
-        <!-- existing services, why us, etc. (all fully responsive) -->
+        <!-- services section -->
         <section class="services-section">
             <div class="section-header">
                 <h2>What we build for you</h2>
@@ -1044,6 +1151,7 @@
             </div>
         </section>
 
+        <!-- why choose us section -->
         <section class="why-us-section">
             <div class="section-header">
                 <h2>Why choose CodeBite</h2>
@@ -1056,7 +1164,7 @@
                     <p>Optimised code & performance, top scores in Core Web Vitals.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-code"></i></i></div>
+                    <div class="feature-icon"><i class="fas fa-code"></i></div>
                     <h4>100% responsive</h4>
                     <p>Flawless experience on mobiles, tablets and desktops.</p>
                 </div>
@@ -1073,7 +1181,7 @@
             </div>
         </section>
 
-        <!-- featured projects (original) -->
+        <!-- featured projects -->
         <div class="featured-projects">
             <h2 class="section-title"><i class="fas fa-bolt" style="color:#2563eb;"></i> Recent work</h2>
             <div class="project-mini-grid">
@@ -1152,75 +1260,90 @@
             <a href="contact.html" style="background:#0d3a5c; color:white; padding:0.8rem 2rem; border-radius:40px; text-decoration:none; font-weight:600;">Contact page</a>
         </div>
     </main>
-<!-- ===== CHATBOT HTML ===== -->
-<!-- Chatbot Button -->
-<div class="chatbot-button" onclick="toggleChatbot()">
-    <i class="fas fa-comment-dots"></i>
-</div>
 
-<!-- Chatbot Window -->
-<div class="chatbot-window" id="chatbotWindow">
-    <div class="chatbot-header">
-        <h3>
-            <i class="fas fa-robot"></i>
-            CodeBite Assistant
-        </h3>
-        <button onclick="toggleChatbot()">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
+    <!-- ===== CHATBOT AND WHATSAPP BUTTONS ===== -->
     
-    <div class="chatbot-messages" id="chatbotMessages">
-        <div class="message bot-message">
-            👋 Hi! Welcome to CodeBite. How can I help you with your website project today?
+    <!-- WhatsApp Button - Direct link to chat (GREEN - TOP) -->
+    <a href="https://wa.me/919027038209?text=Hi%20CodeBite!%20I'm%20interested%20in%20your%20website%20development%20services.%20Can%20we%20chat%3F" 
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="button-tooltip">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Chatbot Button (BLUE - BOTTOM) -->
+    <div class="chatbot-button" onclick="toggleChatbot()">
+        <i class="fas fa-comment-dots"></i>
+        <span class="button-tooltip">Ask Assistant</span>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>
+                <i class="fas fa-robot"></i>
+                CodeBite Assistant
+            </h3>
+            <button onclick="toggleChatbot()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                👋 Hi! Welcome to CodeBite. How can I help you with your website project today?
+            </div>
+        </div>
+        
+        <div class="quick-replies" id="quickReplies">
+            <button class="quick-reply-btn" onclick="sendQuickReply('pricing')">
+                <i class="fas fa-tag"></i> Pricing
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('services')">
+                <i class="fas fa-code"></i> Services
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('demo')">
+                <i class="fas fa-eye"></i> Demos
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('contact')">
+                <i class="fas fa-envelope"></i> Contact
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('whatsapp')">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </button>
+        </div>
+        
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </div>
     </div>
-    
-    <div class="quick-replies" id="quickReplies">
-        <button class="quick-reply-btn" onclick="sendQuickReply('pricing')">
-            <i class="fas fa-tag"></i> Pricing
-        </button>
-        <button class="quick-reply-btn" onclick="sendQuickReply('services')">
-            <i class="fas fa-code"></i> Services
-        </button>
-        <button class="quick-reply-btn" onclick="sendQuickReply('demo')">
-            <i class="fas fa-eye"></i> Demos
-        </button>
-        <button class="quick-reply-btn" onclick="sendQuickReply('contact')">
-            <i class="fas fa-envelope"></i> Contact
-        </button>
-        <button class="quick-reply-btn" onclick="sendQuickReply('whatsapp')">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </button>
-    </div>
-    
-    <div class="chatbot-input-area">
-        <input type="text" id="chatbotInput" placeholder="Type your message...">
-        <button onclick="sendMessage()">
-            <i class="fas fa-paper-plane"></i>
-        </button>
-    </div>
-</div>
-   
+
     <!-- footer -->
-    <footer class="footer-note">
-        <div style="max-width:1300px; margin:0 auto;">
-            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap: 20px;">
-                <div><i class="far fa-copyright"></i> 2025 CodeBite  | Saurav Sharma</div>
-                <div class="footer-links">
-                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
-                    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
-                    <a href="Cookie policy.html"><i class="fas fa-cookie-bite"></i> Cookie policy</a>
-                </div>
-            </div>
-            <hr>
-            <div style="text-align:center; font-size:0.9rem;">
-                <i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 | saurav343sharma@gmail.com
+ <!-- footer -->
+<footer class="footer-note">
+    <div style="max-width:1300px; margin:0 auto;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap: 20px;">
+            <div><i class="far fa-copyright"></i> 2025 CodeBite  | Saurav Sharma</div>
+            <div class="footer-links">
+                <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+                <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+                <a href="Cookie policy.html"><i class="fas fa-cookie-bite"></i> Cookie policy</a>
             </div>
         </div>
-    </footer>
+        <hr>
+        <div style="text-align:center; font-size:0.9rem;">
+            <i class="fab fa-whatsapp" style="color:#25D366;"></i> 
+            <a href="https://wa.me/919027038209" target="_blank" style="color:#cddfeb; text-decoration:none;">+91 9027038209</a> | 
+            <a href="mailto:saurav343sharma@gmail.com" style="color:#cddfeb; text-decoration:none;">saurav343sharma@gmail.com</a>
+        </div>
+    </div>
+</footer>
 
-    <!-- Slider JavaScript (2 sec, fully functional) -->
+    <!-- Slider JavaScript -->
     <script>
         (function() {
             const slides = document.querySelectorAll('.slide');
@@ -1276,234 +1399,221 @@
             showSlide(0);
         })();
 
-         // ===== CHATBOT JAVASCRIPT =====
-    
-    // Get elements
-    const chatbotButton = document.querySelector('.chatbot-button');
-    const chatbotWindow = document.getElementById('chatbotWindow');
-    const chatbotMessages = document.getElementById('chatbotMessages');
-    const chatbotInput = document.getElementById('chatbotInput');
-    
-    // State
-    let isOpen = false;
+// ===== CHATBOT JAVASCRIPT WITH DEBUGGING =====
+console.log('🚀 Chatbot script loading...');
 
-    // Toggle Chatbot
-    function toggleChatbot() {
-        isOpen = !isOpen;
-        chatbotWindow.style.display = isOpen ? 'flex' : 'none';
+// Get elements
+const chatbotWindow = document.getElementById('chatbotWindow');
+const chatbotMessages = document.getElementById('chatbotMessages');
+const chatbotInput = document.getElementById('chatbotInput');
+
+console.log('📦 Elements found:', {
+    window: chatbotWindow ? '✅' : '❌',
+    messages: chatbotMessages ? '✅' : '❌',
+    input: chatbotInput ? '✅' : '❌'
+});
+
+// State
+let isOpen = false;
+
+// Make toggle function globally available
+window.toggleChatbot = function() {
+    console.log('🔵 toggleChatbot() called - opening chatbot');
+    if (!chatbotWindow) {
+        console.error('❌ chatbotWindow not found!');
+        return;
     }
+    isOpen = !isOpen;
+    chatbotWindow.style.display = isOpen ? 'flex' : 'none';
+    console.log('Chatbot window display set to:', chatbotWindow.style.display);
+};
 
-    // Add click event listener
-    if (chatbotButton) {
-        chatbotButton.addEventListener('click', function(e) {
+// Close button handler
+const closeBtn = document.querySelector('.chatbot-header button');
+if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('❌ Close button clicked');
+        isOpen = false;
+        chatbotWindow.style.display = 'none';
+    });
+} else {
+    console.warn('⚠️ Close button not found');
+}
+
+// Enter key handler
+if (chatbotInput) {
+    chatbotInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
             e.preventDefault();
-            toggleChatbot();
-        });
-    }
+            console.log('⏎ Enter pressed');
+            sendMessage();
+        }
+    });
+}
 
-    // Close button handler
-    const closeBtn = document.querySelector('.chatbot-header button');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            isOpen = false;
-            chatbotWindow.style.display = 'none';
-        });
-    }
+// Quick Reply Handler
+window.sendQuickReply = function(topic) {
+    console.log('⚡ Quick reply clicked:', topic);
+    const userMessage = getUserFriendlyTopic(topic);
+    addMessage(userMessage, 'user');
+    showTypingIndicator();
+    
+    setTimeout(() => {
+        removeTypingIndicator();
+        let botResponse = botResponses[topic] || botResponses['default'];
+        addMessage(botResponse, 'bot');
+    }, 1500);
+};
 
-    // Enter key handler
-    if (chatbotInput) {
-        chatbotInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
-    }
+// Send Message Handler
+window.sendMessage = function() {
+    const message = chatbotInput.value.trim();
+    if (!message) return;
+    
+    console.log('📤 Sending message:', message);
+    addMessage(message, 'user');
+    chatbotInput.value = '';
+    
+    showTypingIndicator();
+    
+    setTimeout(() => {
+        removeTypingIndicator();
+        const response = getBotResponse(message.toLowerCase());
+        addMessage(response, 'bot');
+    }, 1500);
+};
 
-    // Quick Reply Handler
-    window.sendQuickReply = function(topic) {
-        const userMessage = getUserFriendlyTopic(topic);
-        addMessage(userMessage, 'user');
-        showTypingIndicator();
-        
-        setTimeout(() => {
-            removeTypingIndicator();
-            let botResponse = botResponses[topic] || botResponses['default'];
-            addMessage(botResponse, 'bot');
-        }, 1500);
+// Helper Functions
+function getUserFriendlyTopic(topic) {
+    const topics = {
+        'pricing': 'Tell me about your pricing packages',
+        'services': 'What services do you offer?',
+        'demo': 'Show me your demo projects',
+        'contact': 'How can I contact you?',
+        'whatsapp': 'I want to chat on WhatsApp'
     };
+    return topics[topic] || topic;
+}
 
-    // Send Message Handler
-    window.sendMessage = function() {
-        const message = chatbotInput.value.trim();
-        if (!message) return;
-        
-        addMessage(message, 'user');
-        chatbotInput.value = '';
-        
-        showTypingIndicator();
-        
-        setTimeout(() => {
-            removeTypingIndicator();
-            const response = getBotResponse(message.toLowerCase());
-            addMessage(response, 'bot');
-        }, 1500);
-    };
-
-    // Helper Functions
-    function getUserFriendlyTopic(topic) {
-        const topics = {
-            'pricing': 'Tell me about your pricing packages',
-            'services': 'What services do you offer?',
-            'demo': 'Show me your demo projects',
-            'contact': 'How can I contact you?',
-            'whatsapp': 'I want to chat on WhatsApp'
-        };
-        return topics[topic] || topic;
+function addMessage(text, sender) {
+    if (!chatbotMessages) {
+        console.error('❌ chatbotMessages not found');
+        return;
     }
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}-message`;
+    messageDiv.innerHTML = text.replace(/\n/g, '<br>');
+    chatbotMessages.appendChild(messageDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
 
-    function addMessage(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}-message`;
-        messageDiv.innerHTML = text.replace(/\n/g, '<br>');
-        chatbotMessages.appendChild(messageDiv);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
+function showTypingIndicator() {
+    if (!chatbotMessages) return;
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'typing-indicator';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = '<span></span><span></span><span></span>';
+    chatbotMessages.appendChild(typingDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
 
-    function showTypingIndicator() {
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'typing-indicator';
-        typingDiv.id = 'typingIndicator';
-        typingDiv.innerHTML = '<span></span><span></span><span></span>';
-        chatbotMessages.appendChild(typingDiv);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
+function removeTypingIndicator() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) typingIndicator.remove();
+}
 
-    function removeTypingIndicator() {
-        const typingIndicator = document.getElementById('typingIndicator');
-        if (typingIndicator) typingIndicator.remove();
-    }
+// Bot Responses Database - WITH CLICKABLE LINKS
+const botResponses = {
+    'hello': '👋 Hello! Welcome to CodeBite. I\'m here to help you with website development questions. What would you like to know?',
+    'hi': 'Hi there! 👋 How can I assist you with your website project today?',
+    'hey': 'Hey! 👋 Ready to discuss your website needs? Feel free to ask me anything!',
+    
+    // Pricing with clickable link
+    'pricing': '💰 **Our Website Packages:**\n\n• **Normal:** ₹12,000\n  - 5 Page Website\n  - Responsive Design\n  - Contact Form\n  - Basic Security\n\n• **Premium:** ₹25,000 (Most Popular)\n  - 10 Page Website\n  - Custom UI Design\n  - Advanced SEO\n  - Admin Panel\n  - WhatsApp Integration\n\n• **Gold:** ₹40,000\n  - Unlimited Pages\n  - Premium UI/UX\n  - Full SEO Optimization\n  - E-commerce Ready\n  - Payment Gateway\n  - Priority Support\n\nCheck full details: <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/price.html</a>',
+    
+    'price': 'Our packages start at just ₹12,000! Check out all options at <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/price.html</a>\n\nQuick overview:\n✨ Normal: ₹12,000\n🔥 Premium: ₹25,000\n👑 Gold: ₹40,000',
+    
+    'cost': '💵 **Pricing Summary:**\n• Basic websites start at ₹12,000\n• Premium features from ₹25,000\n• Custom e-commerce from ₹40,000\n\nVisit <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/price.html</a> for complete details!',
+    
+    // Services with clickable link
+    'services': '🛠️ **What We Build:**\n\n✅ **Business Websites** - Corporate & brand sites\n✅ **E-commerce Stores** - Online shopping with payments\n✅ **Restaurant Sites** - Menu display, online ordering\n✅ **Gym & Wellness** - Class schedules, memberships\n✅ **Salon Websites** - Service menu, online booking\n✅ **Custom Web Apps** - Tailored to your needs\n\nSee live examples: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>',
+    
+    'service': 'We specialize in creating modern, fast websites for businesses. What type of business do you have? I can show you relevant examples!',
+    
+    // Demos with clickable link
+    'demo': '👀 **Our Live Demo Projects:**\n\n🍰 **Spice Kitchen** - Restaurant with online ordering\n🎧 **Urban Beats** - E-commerce headphone store\n💪 **Peak Fitness** - Gym with class schedules\n✂️ **Glow Studio** - Salon with online booking\n💍 **Jewellery Store** - Product showcase\n\nView all: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>',
+    
+    'portfolio': '🎨 Check out our work: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>\n\nWe have examples for restaurants, e-commerce, gyms, salons, and more!',
+    
+    'examples': '📸 Here are our demo projects: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>\n\nLet me know which one you like and we can create something similar for your business!',
+    
+    // Contact with clickable WhatsApp and email
+    'contact': '📬 **Get in Touch:**\n\n📧 Email: <a href="mailto:saurav343sharma@gmail.com" style="color: #2563eb; text-decoration: underline;">saurav343sharma@gmail.com</a>\n📱 WhatsApp: <a href="https://wa.me/919027038209" target="_blank" style="color: #2563eb; text-decoration: underline;">+91 9027038209</a>\n📝 Contact Form: <a href="https://codebite.co.in/contact.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/contact.html</a>\n\n⏰ Response Time: Within 24 hours (usually faster on WhatsApp!)',
+    
+    // Phone with clickable WhatsApp link
+    'phone': '📞 You can reach us on WhatsApp: +91 9027038209\n\nClick to chat: <a href="https://wa.me/919027038209" target="_blank" style="color: #2563eb; text-decoration: underline;">https://wa.me/919027038209</a>',
+    
+    // Email with clickable email link
+    'email': '✉️ Email us at: <a href="mailto:saurav343sharma@gmail.com" style="color: #2563eb; text-decoration: underline;">saurav343sharma@gmail.com</a>\n\nWe typically respond within 24 hours!',
+    
+    // WhatsApp with clickable link - MAIN FIX
+    'whatsapp': '📱 **Chat with us on WhatsApp!**\n\nClick this link to start a conversation:\n<a href="https://wa.me/919027038209" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline; font-weight: bold;">https://wa.me/919027038209</a>\n\nWe reply quickly, usually within a few hours!',
+    
+    // Location
+    'mathura': '📍 We are based in **Mathura** and proudly serve clients across:\n• Mathura City\n• Vrindavan\n• Agra\n• All of Uttar Pradesh\n\nBeing local means we understand the local market and can meet in person if needed!',
+    
+    'location': '📍 CodeBite is a Mathura-based website development studio. We serve clients throughout Uttar Pradesh!',
+    
+    // Business Hours
+    'hours': '⏰ **Our Availability:**\n\n• WhatsApp & Email: 9 AM - 7 PM (Mon-Sat)\n• Response Time: Within 24 hours\n• Urgent queries: WhatsApp is fastest!\n\nWe try to reply even faster - often within a few hours!',
+    
+    'time': '⏱️ We typically respond within a few hours during business days. WhatsApp gets the fastest replies!',
+    
+    // About
+    'about': '🏢 **About CodeBite:**\n\nWe are a professional website development studio based in Mathura. Our mission is to create modern, fast, and conversion-focused websites that help businesses grow online.\n\n✅ 100% Responsive Design\n✅ SEO Friendly\n✅ Fast Loading\n✅ Dedicated Support\n✅ Affordable Packages\n\nFounded by Saurav Sharma, we take pride in delivering quality work to our clients across Uttar Pradesh.',
+    
+    // Features
+    'features': '✨ **Why Choose CodeBite?**\n\n⚡ Lightning Fast - Optimized for speed\n📱 100% Responsive - Works on all devices\n🔍 SEO Friendly - Rank better on Google\n💬 Dedicated Support - Quick WhatsApp replies\n🛡️ Secure - SSL certificates included\n🎨 Custom Design - Tailored to your brand',
+    
+    // Support
+    'support': '🛟 We\'re Here to Help!\n\nAfter your website is live, we provide:\n• 1 month free maintenance\n• Quick WhatsApp support\n• Training on how to update content\n• Technical assistance\n\nJust reach out anytime!',
+    
+    // Payment
+    'payment': '💳 **Payment Options:**\n\n• 50% advance to start\n• 50% before final delivery\n• Bank transfer accepted\n• UPI payments available\n• All prices in INR (₹)\n\nContact us for custom payment plans!',
+    
+    // Thank You
+    'thank you': '😊 You\'re very welcome! Feel free to reach out anytime if you have more questions. Have a great day!',
+    'thanks': '🙏 Happy to help! Let me know if you need anything else about our website services.',
+    'thank': '🎉 Glad I could assist! Don\'t hesitate to contact us when you\'re ready to start your project.',
+    
+    // Bye
+    'bye': '👋 Goodbye! Thanks for visiting CodeBite. If you have more questions later, just come back and chat with me. Have a wonderful day!',
+    'goodbye': '👋 Take care! Feel free to reach out anytime through WhatsApp or our contact form.',
+    
+    // Default
+    'default': '🤔 I can help you with:\n\n💰 Pricing & Packages\n🛠️ Services We Offer\n👀 Live Demos & Portfolio\n📞 Contact Information\n📱 WhatsApp Chat\n📍 Our Location\n⏰ Business Hours\n\nWhat would you like to know more about?',
+};
 
-    // Bot Responses Database
-    const botResponses = {
-        // Greetings
-        'hello': '👋 Hello! Welcome to CodeBite. I\'m here to help you with website development questions. What would you like to know?',
-        'hi': 'Hi there! 👋 How can I assist you with your website project today?',
-        'hey': 'Hey! 👋 Ready to discuss your website needs? Feel free to ask me anything!',
-        
-        // Pricing
-        'pricing': '💰 **Our Website Packages:**\n\n• **Normal:** ₹12,000\n  - 5 Page Website\n  - Responsive Design\n  - Contact Form\n  - Basic Security\n\n• **Premium:** ₹25,000 (Most Popular)\n  - 10 Page Website\n  - Custom UI Design\n  - Advanced SEO\n  - Admin Panel\n  - WhatsApp Integration\n\n• **Gold:** ₹40,000\n  - Unlimited Pages\n  - Premium UI/UX\n  - Full SEO Optimization\n  - E-commerce Ready\n  - Payment Gateway\n  - Priority Support\n\nCheck full details: https://codebite.co.in/price.html',
-        
-        'price': 'Our packages start at just ₹12,000! Check out all options at https://codebite.co.in/price.html\n\nQuick overview:\n✨ Normal: ₹12,000\n🔥 Premium: ₹25,000\n👑 Gold: ₹40,000',
-        
-        'cost': '💵 **Pricing Summary:**\n• Basic websites start at ₹12,000\n• Premium features from ₹25,000\n• Custom e-commerce from ₹40,000\n\nVisit https://codebite.co.in/price.html for complete details!',
-        
-        // Services
-        'services': '🛠️ **What We Build:**\n\n✅ **Business Websites** - Corporate & brand sites\n✅ **E-commerce Stores** - Online shopping with payments\n✅ **Restaurant Sites** - Menu display, online ordering\n✅ **Gym & Wellness** - Class schedules, memberships\n✅ **Salon Websites** - Service menu, online booking\n✅ **Custom Web Apps** - Tailored to your needs\n\nSee live examples: https://codebite.co.in/Demo.html',
-        
-        'service': 'We specialize in creating modern, fast websites for businesses. What type of business do you have? I can show you relevant examples!',
-        
-        // Demos/Portfolio
-        'demo': '👀 **Our Live Demo Projects:**\n\n🍰 **Spice Kitchen** - Restaurant with online ordering\n🎧 **Urban Beats** - E-commerce headphone store\n💪 **Peak Fitness** - Gym with class schedules\n✂️ **Glow Studio** - Salon with online booking\n💍 **Jewellery Store** - Product showcase\n\nView all: https://codebite.co.in/Demo.html',
-        
-        'portfolio': '🎨 Check out our work: https://codebite.co.in/Demo.html\n\nWe have examples for restaurants, e-commerce, gyms, salons, and more!',
-        
-        'examples': '📸 Here are our demo projects: https://codebite.co.in/Demo.html\n\nLet me know which one you like and we can create something similar for your business!',
-        
-        // Contact
-        'contact': '📬 **Get in Touch:**\n\n📧 Email: saurav343sharma@gmail.com\n📱 WhatsApp: +91 9027038209\n📝 Contact Form: https://codebite.co.in/contact.html\n\n⏰ Response Time: Within 24 hours (usually faster on WhatsApp!)',
-        
-        'phone': '📞 You can reach us on WhatsApp: +91 9027038209\n\nClick to chat: https://wa.me/919027038209',
-        
-        'email': '✉️ Email us at: saurav343sharma@gmail.com\n\nWe typically respond within 24 hours!',
-        
-        // WhatsApp
-        'whatsapp': '📱 **Chat with us on WhatsApp!**\n\nClick this link to start a conversation:\nhttps://wa.me/919027038209\n\nWe reply quickly, usually within a few hours!',
-        
-        // Location
-        'mathura': '📍 We are based in **Mathura** and proudly serve clients across:\n• Mathura City\n• Vrindavan\n• Agra\n• All of Uttar Pradesh\n\nBeing local means we understand the local market and can meet in person if needed!',
-        
-        'location': '📍 CodeBite is a Mathura-based website development studio. We serve clients throughout Uttar Pradesh!',
-        
-        // Business Hours
-        'hours': '⏰ **Our Availability:**\n\n• WhatsApp & Email: 9 AM - 7 PM (Mon-Sat)\n• Response Time: Within 24 hours\n• Urgent queries: WhatsApp is fastest!\n\nWe try to reply even faster - often within a few hours!',
-        
-        'time': '⏱️ We typically respond within a few hours during business days. WhatsApp gets the fastest replies!',
-        
-        // About
-        'about': '🏢 **About CodeBite:**\n\nWe are a professional website development studio based in Mathura. Our mission is to create modern, fast, and conversion-focused websites that help businesses grow online.\n\n✅ 100% Responsive Design\n✅ SEO Friendly\n✅ Fast Loading\n✅ Dedicated Support\n✅ Affordable Packages\n\nFounded by Saurav Sharma, we take pride in delivering quality work to our clients across Uttar Pradesh.',
-        
-        // Features
-        'features': '✨ **Why Choose CodeBite?**\n\n⚡ Lightning Fast - Optimized for speed\n📱 100% Responsive - Works on all devices\n🔍 SEO Friendly - Rank better on Google\n💬 Dedicated Support - Quick WhatsApp replies\n🛡️ Secure - SSL certificates included\n🎨 Custom Design - Tailored to your brand',
-        
-        // Support
-        'support': '🛟 We\'re Here to Help!\n\nAfter your website is live, we provide:\n• 1 month free maintenance\n• Quick WhatsApp support\n• Training on how to update content\n• Technical assistance\n\nJust reach out anytime!',
-        
-        // Payment
-        'payment': '💳 **Payment Options:**\n\n• 50% advance to start\n• 50% before final delivery\n• Bank transfer accepted\n• UPI payments available\n• All prices in INR (₹)\n\nContact us for custom payment plans!',
-        
-        // Thank You
-        'thank you': '😊 You\'re very welcome! Feel free to reach out anytime if you have more questions. Have a great day!',
-        'thanks': '🙏 Happy to help! Let me know if you need anything else about our website services.',
-        'thank': '🎉 Glad I could assist! Don\'t hesitate to contact us when you\'re ready to start your project.',
-        
-        // Bye
-        'bye': '👋 Goodbye! Thanks for visiting CodeBite. If you have more questions later, just come back and chat with me. Have a wonderful day!',
-        'goodbye': '👋 Take care! Feel free to reach out anytime through WhatsApp or our contact form.',
-        
-        // Default
-        'default': '🤔 I can help you with:\n\n💰 Pricing & Packages\n🛠️ Services We Offer\n👀 Live Demos & Portfolio\n📞 Contact Information\n📱 WhatsApp Chat\n📍 Our Location\n⏰ Business Hours\n\nWhat would you like to know more about?',
-    };
+function getBotResponse(userInput) {
+    if (userInput.includes('hello') || userInput.includes('hi') || userInput.includes('hey')) return botResponses['hello'];
+    else if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('pricing') || userInput.includes('package') || userInput.includes('rate')) return botResponses['pricing'];
+    else if (userInput.includes('service') || userInput.includes('do you') || userInput.includes('offer') || userInput.includes('build')) return botResponses['services'];
+    else if (userInput.includes('demo') || userInput.includes('portfolio') || userInput.includes('example') || userInput.includes('work') || userInput.includes('show')) return botResponses['demo'];
+    else if (userInput.includes('contact') || userInput.includes('reach') || userInput.includes('get in touch') || userInput.includes('call')) return botResponses['contact'];
+    else if (userInput.includes('whatsapp') || userInput.includes('wa') || userInput.includes('chat')) return botResponses['whatsapp'];
+    else if (userInput.includes('mathura') || userInput.includes('location') || userInput.includes('where') || userInput.includes('based')) return botResponses['mathura'];
+    else if (userInput.includes('hour') || userInput.includes('time') || userInput.includes('response') || userInput.includes('available')) return botResponses['hours'];
+    else if (userInput.includes('about') || userInput.includes('who') || userInput.includes('company')) return botResponses['about'];
+    else if (userInput.includes('feature') || userInput.includes('why') || userInput.includes('benefit')) return botResponses['features'];
+    else if (userInput.includes('support') || userInput.includes('help') || userInput.includes('maintenance')) return botResponses['support'];
+    else if (userInput.includes('payment') || userInput.includes('pay') || userInput.includes('advance')) return botResponses['payment'];
+    else if (userInput.includes('thank') || userInput.includes('thanks')) return botResponses['thanks'];
+    else if (userInput.includes('bye') || userInput.includes('goodbye') || userInput.includes('see you')) return botResponses['bye'];
+    else return botResponses['default'];
+}
 
-    // Get Bot Response based on user input
-    function getBotResponse(userInput) {
-        if (userInput.includes('hello') || userInput.includes('hi') || userInput.includes('hey')) {
-            return botResponses['hello'];
-        }
-        else if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('pricing') || userInput.includes('package') || userInput.includes('rate')) {
-            return botResponses['pricing'];
-        }
-        else if (userInput.includes('service') || userInput.includes('do you') || userInput.includes('offer') || userInput.includes('build')) {
-            return botResponses['services'];
-        }
-        else if (userInput.includes('demo') || userInput.includes('portfolio') || userInput.includes('example') || userInput.includes('work') || userInput.includes('show')) {
-            return botResponses['demo'];
-        }
-        else if (userInput.includes('contact') || userInput.includes('reach') || userInput.includes('get in touch') || userInput.includes('call')) {
-            return botResponses['contact'];
-        }
-        else if (userInput.includes('whatsapp') || userInput.includes('wa') || userInput.includes('chat')) {
-            return botResponses['whatsapp'];
-        }
-        else if (userInput.includes('mathura') || userInput.includes('location') || userInput.includes('where') || userInput.includes('based')) {
-            return botResponses['mathura'];
-        }
-        else if (userInput.includes('hour') || userInput.includes('time') || userInput.includes('response') || userInput.includes('available')) {
-            return botResponses['hours'];
-        }
-        else if (userInput.includes('about') || userInput.includes('who') || userInput.includes('company')) {
-            return botResponses['about'];
-        }
-        else if (userInput.includes('feature') || userInput.includes('why') || userInput.includes('benefit')) {
-            return botResponses['features'];
-        }
-        else if (userInput.includes('support') || userInput.includes('help') || userInput.includes('maintenance')) {
-            return botResponses['support'];
-        }
-        else if (userInput.includes('payment') || userInput.includes('pay') || userInput.includes('advance')) {
-            return botResponses['payment'];
-        }
-        else if (userInput.includes('thank') || userInput.includes('thanks')) {
-            return botResponses['thanks'];
-        }
-        else if (userInput.includes('bye') || userInput.includes('goodbye') || userInput.includes('see you')) {
-            return botResponses['bye'];
-        }
-        else {
-            return botResponses['default'];
-        }
-    }
+console.log('✅ Chatbot script loaded successfully');
     </script>
 </body>
 </html>
