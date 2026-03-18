@@ -994,15 +994,18 @@
     align-items: center;
     padding: 10px;
     gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .chatbot-input-area input {
-    flex: 1;              /* take remaining space */
+    flex: 1;
     height: 45px;
-    padding: 10px;
+    padding: 0 15px;
     border-radius: 25px;
     border: 1px solid #ccc;
     outline: none;
+    min-width: 0;   /* 🔥 IMPORTANT (fix overflow) */
 }
 
 .chatbot-input-area button {
@@ -1012,7 +1015,10 @@
     border: none;
     background: #2d6cdf;
     color: white;
-    flex-shrink: 0;       /* prevent shrinking */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;   /* 🔥 prevent hiding */
 }
     .chatbot-input-area button i {
         font-size: 16px !important;
