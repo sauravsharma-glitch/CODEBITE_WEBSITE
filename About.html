@@ -1443,6 +1443,29 @@
     }
 
     console.log('✅ Chatbot script loaded successfully');
+
+    const links = document.querySelectorAll(".nav-links a");
+
+// current page (ignore case + path)
+let currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+// fix homepage
+if (currentPage === "") {
+    currentPage = "index.html";
+}
+
+links.forEach(link => {
+    let linkPage = link.getAttribute("href").toLowerCase();
+
+    // remove old active
+    link.classList.remove("active");
+
+    // match correctly
+    if (currentPage === linkPage) {
+        link.classList.add("active");
+    }
+});
+
   </script>
 </body>
 </html>
