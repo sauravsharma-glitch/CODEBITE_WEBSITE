@@ -782,40 +782,42 @@
             border-color: #2563eb;
         }
 
-        .chatbot-input-area {
-            display: flex;
-            padding: 12px;
-            background: white;
-            gap: 8px;
-        }
+       .chatbot-input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    gap: 8px;
+}
 
-        .chatbot-input-area input {
-            flex: 1;
-            padding: 10px 14px;
-            border: 2px solid #e2e8f0;
-            border-radius: 30px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 13px;
-            outline: none;
-        }
+.chatbot-input-area input {
+    flex: 1;
+    min-width: 0; /* IMPORTANT FIX */
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    outline: none;
+}
 
+.chatbot-input-area button {
+    flex-shrink: 0; /* IMPORTANT */
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
         .chatbot-input-area input:focus {
             border-color: #2563eb;
         }
-
-        .chatbot-input-area button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         .chatbot-input-area button i {
             font-size: 16px;
         }
@@ -1009,7 +1011,7 @@
             
             .chatbot-window {
                 width: 280px !important;
-                right: 10px !important;
+                right: 40px !important;
                 bottom: 150px !important;
             }
             
@@ -1028,6 +1030,8 @@
                 bottom: 80px !important;
             }
         }
+
+       
     </style>
 </head>
 <body>
@@ -1254,10 +1258,11 @@
             </button>
         </div>
         
-        <div class="chatbot-input-area">
-            <input type="text" id="chatbotInput" placeholder="Type your message...">
-            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-        </div>
+       <div class="chatbot-input-area">
+    <input type="text" id="chatbotInput" placeholder="Type your message...">
+    <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+</div>
+
     </div>
 
     <!-- FOOTER -->
