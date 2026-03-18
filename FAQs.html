@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently asked questions about CodeBite website development services, pricing, timelines, and support.">
+    <link rel="canonical" href="https://codebite.co.in/FAQs.html">
+    
+      <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+    <title>CodeBite | FAQs </title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+        /* navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,20,50,0.05);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f4f9;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #0b2f4e, #203a5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo i {
+            background: #2563eb;
+            -webkit-text-fill-color: white;
+            padding: 8px;
+            border-radius: 18px;
+            font-size: 1.4rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: 0.2s;
+            font-size: 1.1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+        .nav-links a i {
+            margin-right: 6px;
+            font-size: 0.95rem;
+        }
+        .wa-quick {
+            background: #25D366;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+            white-space: nowrap;
+        }
+        .wa-quick:hover {
+            background: #20b359;
+        }
+        
+        /* FAQ section */
+        .faq-section {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 1.5rem 2rem 3rem;
+        }
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .faq-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, #1e293b, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        .faq-header p {
+            font-size: 1.2rem;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.06);
+            border: 1px solid #e9eef3;
+            transition: 0.2s;
+        }
+        .faq-item:hover {
+            border-color: #b9d1fb;
+            box-shadow: 0 20px 30px -12px rgba(37,99,235,0.12);
+        }
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #0f263b;
+            background: transparent;
+            user-select: none;
+        }
+        .faq-question i {
+            color: #2563eb;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item[open] .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 2rem 1.8rem 2rem;
+            color: #334155;
+            font-size: 1.05rem;
+            border-top: 1px dashed #dde3ea;
+            margin-top: -0.2rem;
+        }
+        .faq-answer p {
+            margin-bottom: 0.75rem;
+        }
+        .faq-answer ul {
+            padding-left: 1.8rem;
+            margin: 0.75rem 0;
+        }
+        .faq-answer li {
+            margin-bottom: 0.4rem;
+        }
+        .faq-answer strong {
+            color: #1e3b5c;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .category-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            background: #e3edff;
+            color: #2563eb;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-right: 1rem;
+            text-transform: uppercase;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+            margin: 2rem 0 1.5rem;
+        }
+        .extra-links {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .extra-links a {
+            color: #2563eb;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dotted #a5c4ff;
+        }
+        .footer-note {
+            margin-top: 4rem;
+            background: #0f263b;
+            color: #cddfeb;
+            border-radius: 40px 40px 0 0;
+            padding: 2.5rem 2rem 1.8rem;
+        }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            .faq-question {
+                font-size: 1.05rem;
+                padding: 1.2rem 1.2rem;
+            }
+            .faq-answer {
+                padding: 0 1.2rem 1.5rem 1.2rem;
+            }
+        }
+
+         /* Chatbot Button Styles - BLUE (ABOVE WHATSAPP) */
+.chatbot-button {
+    position: fixed !important;
+    bottom: 120px !important;  /* Changed from 30px to 120px */
+    right: 30px !important;
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50% !important;
+    background: #2563eb !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 30px rgba(37,99,235,0.4) !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    animation: pulse 2s infinite !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+        .chatbot-button:hover {
+            transform: scale(1.1) !important;
+            background: #1d4ed8 !important;
+            box-shadow: 0 15px 40px rgba(37,99,235,0.6) !important;
+        }
+
+        .chatbot-button i {
+            font-size: 30px !important;
+            pointer-events: none !important;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37,99,235,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+        }
+
+        /* WhatsApp Button Styles - GREEN (TOP) */
+        
+.whatsapp-button {
+    position: fixed !important;
+    bottom: 30px !important;  /* This stays at the bottom */
+    right: 30px !important;
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50% !important;
+    background: #25D366 !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 30px rgba(37,211,102,0.4) !important;
+    z-index: 999998 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    animation: wa-pulse 2s infinite !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-decoration: none !important;
+}
+
+        .whatsapp-button:hover {
+            transform: scale(1.1) !important;
+            background: #20b359 !important;
+            box-shadow: 0 15px 40px rgba(37,211,102,0.6) !important;
+        }
+
+        .whatsapp-button i {
+            font-size: 35px !important;
+            pointer-events: none !important;
+        }
+
+        @keyframes wa-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+
+        /* Tooltip for buttons - ABOVE everything */
+        .button-tooltip {
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+            right: 80px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1000000 !important;
+        }
+
+        .chatbot-button:hover .button-tooltip,
+        .whatsapp-button:hover .button-tooltip {
+            opacity: 1;
+        }
+
+      /* CHATBOT WINDOW - DYNAMIC DESKTOP POSITIONING */
+.chatbot-window {
+    position: fixed !important;
+    top:80px;
+    bottom: 210px !important;
+    right: 105px !important;
+    width: 380px !important;
+    min-width: 380px !important;
+    max-width: 380px !important;
+    height: min(550px, 70vh) !important;  /* Dynamic height */
+    min-height: 400px !important;
+    max-height: 550px !important;
+    background: white !important;
+    border-radius: 25px !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
+    display: none !important;
+    flex-direction: column !important;
+    z-index: 999997 !important;
+    overflow: hidden !important;
+    animation: slideUp 0.3s ease !important;
+    border: 1px solid #e2e8f0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Force it to show when display:flex is applied */
+.chatbot-window[style*="display: flex"] {
+    display: flex !important;
+    width: 380px !important;
+    height: min(550px, 70vh) !important;
+    min-height: 400px !important;
+    max-height: 550px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+        /* Ensure the inner content also has dimensions */
+        .chatbot-messages {
+            flex: 1 1 auto !important;
+            min-height: 0 !important;
+            height: auto !important;
+            overflow-y: auto !important;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chatbot-header h3 i {
+            font-size: 20px;
+        }
+
+        .chatbot-header button {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .chatbot-header button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.5;
+            word-wrap: break-word;
+            animation: messageSlide 0.3s ease;
+        }
+
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bot-message {
+            background: #e2e8f0;
+            color: #1e293b;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            background: #2563eb;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .quick-reply-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #1e293b;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .quick-reply-btn:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .chatbot-input-area {
+            display: flex;
+            padding: 15px;
+            background: white;
+            gap: 10px;
+        }
+
+        .chatbot-input-area input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .chatbot-input-area input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+
+        .chatbot-input-area button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-input-area button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        .chatbot-input-area button i {
+            font-size: 18px;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+            padding: 12px 16px;
+            background: #e2e8f0;
+            border-radius: 18px;
+            width: fit-content;
+            border-bottom-left-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #64748b;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+
+       /* Mobile Responsive - FIXED */
+@media (max-width: 768px) {
+    /* Adjust window height to be smaller */
+    .chatbot-window,
+    .chatbot-window[style*="display: flex"] {
+        width: 300px !important;
+        min-width: 300px !important;
+        max-width: 300px !important;
+        height: 400px !important;  /* Reduced from 500px to 450px */
+        min-height: 400px !important;
+        max-height: 400px !important;
+        bottom: 170px !important;
+        right: 25px !important;
+        left: auto !important;
+        top: auto !important;
+    }
+    
+    /* Make messages area smaller to fit */
+    .chatbot-messages {
+        padding: 12px !important;
+        gap: 8px !important;
+        max-height: 280px !important;  /* Limit message area height */
+    }
+    
+    /* Make quick replies more compact */
+    .quick-replies {
+        padding: 8px !important;
+        gap: 5px !important;
+    }
+    
+    .quick-reply-btn {
+        padding: 5px 8px !important;
+        font-size: 11px !important;
+    }
+    
+    /* Ensure input area is always visible */
+   /* ===== INPUT AREA FINAL FIX ===== */
+.chatbot-input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chatbot-input-area input {
+    flex: 1;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    min-width: 0;   /* 🔥 IMPORTANT (fix overflow) */
+}
+
+.chatbot-input-area button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #2d6cdf;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;   /* 🔥 prevent hiding */
+}
+    .chatbot-input-area button i {
+        font-size: 16px !important;
+    }
+
+    .chatbot-window {
+    width: 95% !important;
+    right: 10px !important;
+}
+    
+    /* Button positions */
+    .whatsapp-button {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .chatbot-button {
+        bottom: 100px !important;
+        right: 20px !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .chatbot-button i {
+        font-size: 24px !important;
+    }
+    
+    .whatsapp-button i {
+        font-size: 28px !important;
+    }
+    
+    /* Make messages smaller */
+    .message {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- navbar exactly as requested -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="price.html"><i class="fas fa-tag"></i> Price</a>
+            <a href="Demo.html"><i class="fas fa-eye"></i> Demo</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+             <a href="FAQs.html"><i class="fa-solid fa-circle-question"></i> FAQs</a>
+              <a href="About.html" class="active"><i class="fa-solid fa-circle-info"></i> About</a>
+
+        </div>
+        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
+    </nav>
+
+    <!-- main FAQ content with all provided questions -->
+    <div class="faq-section">
+        <div class="faq-header">
+            <h1>frequently asked questions</h1>
+            <p>everything about CodeBite website development services</p>
+        </div>
+
+        <div class="faq-grid">
+            <!-- 1. Services offered -->
+            <details class="faq-item" open>
+                <summary class="faq-question">
+                    <span><span class="category-tag">services</span> What services does CodeBite offer?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>We provide a full range of web solutions:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color:#2563eb; width:1.2rem;"></i> <strong>Website Development</strong> — business, portfolio, startup sites</li>
+                        <li><i class="fas fa-check-circle" style="color:#2563eb;"></i> <strong>E‑commerce Website Development</strong> — online stores with cart & payments</li>
+                        <li><i class="fas fa-check-circle" style="color:#2563eb;"></i> <strong>Custom Web Applications</strong> — tailor‑made tools & dashboards</li>
+                        <li><i class="fas fa-check-circle" style="color:#2563eb;"></i> <strong>Payment Gateway Integration</strong> — Razorpay, PhonePe, etc.</li>
+                        <li><i class="fas fa-check-circle" style="color:#2563eb;"></i> <strong>Website Maintenance & Support</strong> — updates, backups, security</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- 2. Pricing / How much does a website cost? -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">pricing</span> How much does a website cost?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>Our pricing depends on your requirements. We offer transparent packages:</p>
+                    <ul>
+                        <li><strong>Basic Website:</strong> ₹12,000 – ₹20,000</li>
+                        <li><strong>Premium Website:</strong> ₹20,000 – ₹30,000</li>
+                        <li><strong>Advanced/Business Website:</strong> ₹30,000 – ₹40,000</li>
+                    </ul>
+                    <p>Every website is custom‑built. Contact us for an exact quote!</p>
+                </div>
+            </details>
+
+            <!-- 3. How long does it take? -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">timeline</span> How long does it take to build a website?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>Delivery is quick without compromising quality:</p>
+                    <ul>
+                        <li><strong>Basic Website:</strong> 3–5 days</li>
+                        <li><strong>Premium Website:</strong> 5–10 days</li>
+                        <li><strong>Advanced Website:</strong> 10–15 days</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- 4. Mobile friendly? -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">responsive</span> Will my website be mobile-friendly?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>Yes ✅</strong> All websites are fully responsive and work smoothly on mobile, tablet, and desktop devices. We test on real devices before delivery.</p>
+                </div>
+            </details>
+
+            <!-- 5. Domain & hosting -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">setup</span> Do you provide domain and hosting?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>Yes, we can help you purchase and set up domain and hosting, or connect your existing domain. We recommend reliable, fast hosting and handle all configuration.</p>
+                </div>
+            </details>
+
+            <!-- 6. Can I update after build? -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">updates</span> Can I update my website after it's built?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>Absolutely! You have two options:</p>
+                    <ul>
+                        <li>Request updates from us (free for minor changes within support period)</li>
+                        <li>We can provide an easy‑to‑use admin panel (CMS) so you can edit content yourself.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- 7. Support after delivery -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">support</span> Do you offer support after website delivery?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>Yes, we provide free support for a limited time after delivery (typically 1 month). Paid maintenance plans are also available if you need ongoing updates, backups, and priority assistance.</p>
+                </div>
+            </details>
+
+            <!-- 8. Redesign existing site -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">redesign</span> Can you redesign my existing website?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>Yes, we can redesign and improve your current website to make it modern, faster, and conversion‑focused. We’ll keep your content or refresh it — whatever you need.</p>
+                </div>
+            </details>
+
+            <!-- 9. How can I contact? -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">contact</span> How can I contact CodeBite?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>You can reach us via:</p>
+                    <ul>
+                        <li><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> <a href="tel:+919027038209">+91 9027038209</a></li>
+                        <li><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:saurav343sharma@gmail.com">saurav343sharma@gmail.com</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/919027038209" target="_blank">DM now (button above)</a></li>
+                        <li><i class="fas fa-globe"></i> <strong>Contact form:</strong> <a href="contact.html">visit our contact page</a></li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- 10. Why choose CodeBite? -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">why us</span> Why should I choose CodeBite?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <ul>
+                        <li>💰 <strong>Affordable pricing</strong> – no hidden costs</li>
+                        <li>⚡ <strong>Fast delivery</strong> – we respect deadlines</li>
+                        <li>🎨 <strong>Modern design</strong> – clean, user‑friendly layouts</li>
+                        <li>📈 <strong>SEO‑friendly websites</strong> – built to rank</li>
+                        <li>🤝 <strong>Personal support</strong> – direct contact with developers</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- 11. Do you provide custom features? -->
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span><span class="category-tag">custom</span> Do you provide custom features?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <div class="faq-answer">
+                    <p>Yes, we build custom features based on your business needs, such as:</p>
+                    <ul>
+                        <li>🍔 Online ordering system (restaurants)</li>
+                        <li>📅 Booking / reservation system (salons, gyms)</li>
+                        <li>🤖 Chatbot integration</li>
+                        <li>💳 Payment systems (credit card, UPI, wallets)</li>
+                        <li>📊 Custom dashboards & reports</li>
+                    </ul>
+                    <p>Just tell us what you need!</p>
+                </div>
+            </details>
+        </div>
+
+        <!-- extra contact hint -->
+        <hr>
+        <div class="extra-links">
+            <p>👋 still have a question? <a href="https://wa.me/919027038209" target="_blank">chat on whatsapp</a> or <a href="contact.html">send us a message</a>.</p>
+        </div>
+    </div>
+
+    <!-- ===== CHATBOT AND WHATSAPP BUTTONS ===== -->
+    
+    <!-- WhatsApp Button - Direct link to chat (GREEN - TOP) -->
+    <a href="https://wa.me/919027038209?text=Hi%20CodeBite!%20I'm%20interested%20in%20your%20website%20development%20services.%20Can%20we%20chat%3F" 
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="button-tooltip">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Chatbot Button (BLUE - BOTTOM) -->
+    <div class="chatbot-button" onclick="toggleChatbot()">
+        <i class="fas fa-comment-dots"></i>
+        <span class="button-tooltip">Ask Assistant</span>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>
+                <i class="fas fa-robot"></i>
+                CodeBite Assistant
+            </h3>
+            <button onclick="toggleChatbot()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                👋 Hi! Welcome to CodeBite. How can I help you with your website project today?
+            </div>
+        </div>
+        
+        <div class="quick-replies" id="quickReplies">
+            <button class="quick-reply-btn" onclick="sendQuickReply('pricing')">
+                <i class="fas fa-tag"></i> Pricing
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('services')">
+                <i class="fas fa-code"></i> Services
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('demo')">
+                <i class="fas fa-eye"></i> Demos
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('contact')">
+                <i class="fas fa-envelope"></i> Contact
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('whatsapp')">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </button>
+        </div>
+        
+       <div class="chatbot-input-area">
+    <input type="text" placeholder="Type your message...">
+    <button><i class="fas fa-paper-plane"></i></button>
+</div>
+
+    </div>
+
+
+    <!-- footer -->
+    <footer class="footer-note">
+        <div style="max-width:1300px; margin:0 auto;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap: 20px;">
+                <div><i class="far fa-copyright"></i> 2025 CodeBite | Saurav Sharma</div>
+                <div class="footer-links">
+                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+                    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+                    <a href="Cookie policy.html"><i class="fas fa-cookie-bite"></i> Cookie policy</a>
+                </div>
+            </div>
+            <hr>
+            <div style="text-align:center; font-size:0.9rem;">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> 
+                <a href="https://wa.me/919027038209" target="_blank" style="color:#cddfeb; text-decoration:none;">+91 9027038209</a> | 
+                <a href="mailto:saurav343sharma@gmail.com" style="color:#cddfeb; text-decoration:none;">saurav343sharma@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    
+// ===== CHATBOT JAVASCRIPT WITH DEBUGGING =====
+console.log('🚀 Chatbot script loading...');
+
+// Get elements
+const chatbotWindow = document.getElementById('chatbotWindow');
+const chatbotMessages = document.getElementById('chatbotMessages');
+const chatbotInput = document.getElementById('chatbotInput');
+
+console.log('📦 Elements found:', {
+    window: chatbotWindow ? '✅' : '❌',
+    messages: chatbotMessages ? '✅' : '❌',
+    input: chatbotInput ? '✅' : '❌'
+});
+
+// State
+let isOpen = false;
+
+// Make toggle function globally available
+window.toggleChatbot = function() {
+    console.log('🔵 toggleChatbot() called - opening chatbot');
+    if (!chatbotWindow) {
+        console.error('❌ chatbotWindow not found!');
+        return;
+    }
+    isOpen = !isOpen;
+    chatbotWindow.style.display = isOpen ? 'flex' : 'none';
+    console.log('Chatbot window display set to:', chatbotWindow.style.display);
+};
+
+// Close button handler
+const closeBtn = document.querySelector('.chatbot-header button');
+if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('❌ Close button clicked');
+        isOpen = false;
+        chatbotWindow.style.display = 'none';
+    });
+} else {
+    console.warn('⚠️ Close button not found');
+}
+
+// Enter key handler
+if (chatbotInput) {
+    chatbotInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            console.log('⏎ Enter pressed');
+            sendMessage();
+        }
+    });
+}
+
+// Quick Reply Handler
+window.sendQuickReply = function(topic) {
+    console.log('⚡ Quick reply clicked:', topic);
+    const userMessage = getUserFriendlyTopic(topic);
+    addMessage(userMessage, 'user');
+    showTypingIndicator();
+    
+    setTimeout(() => {
+        removeTypingIndicator();
+        let botResponse = botResponses[topic] || botResponses['default'];
+        addMessage(botResponse, 'bot');
+    }, 1500);
+};
+
+// Send Message Handler
+window.sendMessage = function() {
+    const message = chatbotInput.value.trim();
+    if (!message) return;
+    
+    console.log('📤 Sending message:', message);
+    addMessage(message, 'user');
+    chatbotInput.value = '';
+    
+    showTypingIndicator();
+    
+    setTimeout(() => {
+        removeTypingIndicator();
+        const response = getBotResponse(message.toLowerCase());
+        addMessage(response, 'bot');
+    }, 1500);
+};
+
+// Helper Functions
+function getUserFriendlyTopic(topic) {
+    const topics = {
+        'pricing': 'Tell me about your pricing packages',
+        'services': 'What services do you offer?',
+        'demo': 'Show me your demo projects',
+        'contact': 'How can I contact you?',
+        'whatsapp': 'I want to chat on WhatsApp'
+    };
+    return topics[topic] || topic;
+}
+
+function addMessage(text, sender) {
+    if (!chatbotMessages) {
+        console.error('❌ chatbotMessages not found');
+        return;
+    }
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}-message`;
+    messageDiv.innerHTML = text.replace(/\n/g, '<br>');
+    chatbotMessages.appendChild(messageDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function showTypingIndicator() {
+    if (!chatbotMessages) return;
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'typing-indicator';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = '<span></span><span></span><span></span>';
+    chatbotMessages.appendChild(typingDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function removeTypingIndicator() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) typingIndicator.remove();
+}
+
+// Bot Responses Database - WITH CLICKABLE LINKS
+const botResponses = {
+    'hello': '👋 Hello! Welcome to CodeBite. I\'m here to help you with website development questions. What would you like to know?',
+    'hi': 'Hi there! 👋 How can I assist you with your website project today?',
+    'hey': 'Hey! 👋 Ready to discuss your website needs? Feel free to ask me anything!',
+    
+    // Pricing with clickable link
+    'pricing': '💰 **Our Website Packages:**\n\n• **Normal:** ₹12,000\n  - 5 Page Website\n  - Responsive Design\n  - Contact Form\n  - Basic Security\n\n• **Premium:** ₹25,000 (Most Popular)\n  - 10 Page Website\n  - Custom UI Design\n  - Advanced SEO\n  - Admin Panel\n  - WhatsApp Integration\n\n• **Gold:** ₹40,000\n  - Unlimited Pages\n  - Premium UI/UX\n  - Full SEO Optimization\n  - E-commerce Ready\n  - Payment Gateway\n  - Priority Support\n\nCheck full details: <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/price.html</a>',
+    
+    'price': 'Our packages start at just ₹12,000! Check out all options at <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/price.html</a>\n\nQuick overview:\n✨ Normal: ₹12,000\n🔥 Premium: ₹25,000\n👑 Gold: ₹40,000',
+    
+    'cost': '💵 **Pricing Summary:**\n• Basic websites start at ₹12,000\n• Premium features from ₹25,000\n• Custom e-commerce from ₹40,000\n\nVisit <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/price.html</a> for complete details!',
+    
+    // Services with clickable link
+    'services': '🛠️ **What We Build:**\n\n✅ **Business Websites** - Corporate & brand sites\n✅ **E-commerce Stores** - Online shopping with payments\n✅ **Restaurant Sites** - Menu display, online ordering\n✅ **Gym & Wellness** - Class schedules, memberships\n✅ **Salon Websites** - Service menu, online booking\n✅ **Custom Web Apps** - Tailored to your needs\n\nSee live examples: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>',
+    
+    'service': 'We specialize in creating modern, fast websites for businesses. What type of business do you have? I can show you relevant examples!',
+    
+    // Demos with clickable link
+    'demo': '👀 **Our Live Demo Projects:**\n\n🍰 **Spice Kitchen** - Restaurant with online ordering\n🎧 **Urban Beats** - E-commerce headphone store\n💪 **Peak Fitness** - Gym with class schedules\n✂️ **Glow Studio** - Salon with online booking\n💍 **Jewellery Store** - Product showcase\n\nView all: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>',
+    
+    'portfolio': '🎨 Check out our work: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>\n\nWe have examples for restaurants, e-commerce, gyms, salons, and more!',
+    
+    'examples': '📸 Here are our demo projects: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>\n\nLet me know which one you like and we can create something similar for your business!',
+    
+    // Contact with clickable WhatsApp and email
+    'contact': '📬 **Get in Touch:**\n\n📧 Email: <a href="mailto:saurav343sharma@gmail.com" style="color: #2563eb; text-decoration: underline;">saurav343sharma@gmail.com</a>\n📱 WhatsApp: <a href="https://wa.me/919027038209" target="_blank" style="color: #2563eb; text-decoration: underline;">+91 9027038209</a>\n📝 Contact Form: <a href="https://codebite.co.in/contact.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/contact.html</a>\n\n⏰ Response Time: Within 24 hours (usually faster on WhatsApp!)',
+    
+    // Phone with clickable WhatsApp link
+    'phone': '📞 You can reach us on WhatsApp: +91 9027038209\n\nClick to chat: <a href="https://wa.me/919027038209" target="_blank" style="color: #2563eb; text-decoration: underline;">https://wa.me/919027038209</a>',
+    
+    // Email with clickable email link
+    'email': '✉️ Email us at: <a href="mailto:saurav343sharma@gmail.com" style="color: #2563eb; text-decoration: underline;">saurav343sharma@gmail.com</a>\n\nWe typically respond within 24 hours!',
+    
+    // WhatsApp with clickable link - MAIN FIX
+    'whatsapp': '📱 **Chat with us on WhatsApp!**\n\nClick this link to start a conversation:\n<a href="https://wa.me/919027038209" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline; font-weight: bold;">https://wa.me/919027038209</a>\n\nWe reply quickly, usually within a few hours!',
+    
+    // Location
+    'mathura': '📍 We are based in **Mathura** and proudly serve clients across:\n• Mathura City\n• Vrindavan\n• Agra\n• All of Uttar Pradesh\n\nBeing local means we understand the local market and can meet in person if needed!',
+    
+    'location': '📍 CodeBite is a Mathura-based website development studio. We serve clients throughout Uttar Pradesh!',
+    
+    // Business Hours
+    'hours': '⏰ **Our Availability:**\n\n• WhatsApp & Email: 9 AM - 7 PM (Mon-Sat)\n• Response Time: Within 24 hours\n• Urgent queries: WhatsApp is fastest!\n\nWe try to reply even faster - often within a few hours!',
+    
+    'time': '⏱️ We typically respond within a few hours during business days. WhatsApp gets the fastest replies!',
+    
+    // About
+    'about': '🏢 **About CodeBite:**\n\nWe are a professional website development studio based in Mathura. Our mission is to create modern, fast, and conversion-focused websites that help businesses grow online.\n\n✅ 100% Responsive Design\n✅ SEO Friendly\n✅ Fast Loading\n✅ Dedicated Support\n✅ Affordable Packages\n\nFounded by Saurav Sharma, we take pride in delivering quality work to our clients across Uttar Pradesh.',
+    
+    // Features
+    'features': '✨ **Why Choose CodeBite?**\n\n⚡ Lightning Fast - Optimized for speed\n📱 100% Responsive - Works on all devices\n🔍 SEO Friendly - Rank better on Google\n💬 Dedicated Support - Quick WhatsApp replies\n🛡️ Secure - SSL certificates included\n🎨 Custom Design - Tailored to your brand',
+    
+    // Support
+    'support': '🛟 We\'re Here to Help!\n\nAfter your website is live, we provide:\n• 1 month free maintenance\n• Quick WhatsApp support\n• Training on how to update content\n• Technical assistance\n\nJust reach out anytime!',
+    
+    // Payment
+    'payment': '💳 **Payment Options:**\n\n• 50% advance to start\n• 50% before final delivery\n• Bank transfer accepted\n• UPI payments available\n• All prices in INR (₹)\n\nContact us for custom payment plans!',
+    
+    // Thank You
+    'thank you': '😊 You\'re very welcome! Feel free to reach out anytime if you have more questions. Have a great day!',
+    'thanks': '🙏 Happy to help! Let me know if you need anything else about our website services.',
+    'thank': '🎉 Glad I could assist! Don\'t hesitate to contact us when you\'re ready to start your project.',
+    
+    // Bye
+    'bye': '👋 Goodbye! Thanks for visiting CodeBite. If you have more questions later, just come back and chat with me. Have a wonderful day!',
+    'goodbye': '👋 Take care! Feel free to reach out anytime through WhatsApp or our contact form.',
+    
+    // Default
+    'default': '🤔 I can help you with:\n\n💰 Pricing & Packages\n🛠️ Services We Offer\n👀 Live Demos & Portfolio\n📞 Contact Information\n📱 WhatsApp Chat\n📍 Our Location\n⏰ Business Hours\n\nWhat would you like to know more about?',
+};
+
+function getBotResponse(userInput) {
+    if (userInput.includes('hello') || userInput.includes('hi') || userInput.includes('hey')) return botResponses['hello'];
+    else if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('pricing') || userInput.includes('package') || userInput.includes('rate')) return botResponses['pricing'];
+    else if (userInput.includes('service') || userInput.includes('do you') || userInput.includes('offer') || userInput.includes('build')) return botResponses['services'];
+    else if (userInput.includes('demo') || userInput.includes('portfolio') || userInput.includes('example') || userInput.includes('work') || userInput.includes('show')) return botResponses['demo'];
+    else if (userInput.includes('contact') || userInput.includes('reach') || userInput.includes('get in touch') || userInput.includes('call')) return botResponses['contact'];
+    else if (userInput.includes('whatsapp') || userInput.includes('wa') || userInput.includes('chat')) return botResponses['whatsapp'];
+    else if (userInput.includes('mathura') || userInput.includes('location') || userInput.includes('where') || userInput.includes('based')) return botResponses['mathura'];
+    else if (userInput.includes('hour') || userInput.includes('time') || userInput.includes('response') || userInput.includes('available')) return botResponses['hours'];
+    else if (userInput.includes('about') || userInput.includes('who') || userInput.includes('company')) return botResponses['about'];
+    else if (userInput.includes('feature') || userInput.includes('why') || userInput.includes('benefit')) return botResponses['features'];
+    else if (userInput.includes('support') || userInput.includes('help') || userInput.includes('maintenance')) return botResponses['support'];
+    else if (userInput.includes('payment') || userInput.includes('pay') || userInput.includes('advance')) return botResponses['payment'];
+    else if (userInput.includes('thank') || userInput.includes('thanks')) return botResponses['thanks'];
+    else if (userInput.includes('bye') || userInput.includes('goodbye') || userInput.includes('see you')) return botResponses['bye'];
+    else return botResponses['default'];
+}
+
+console.log('✅ Chatbot script loaded successfully');
+</script>
+
+</body>
+</html>

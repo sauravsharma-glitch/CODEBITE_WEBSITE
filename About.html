@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>About us | codebite.co.in</title>
+   <meta name="description" content="Frequently asked questions about CodeBite website development services, pricing, timelines, and support.">
+    <link rel="canonical" href="https://codebite.co.in/FAQs.html">
+    
+      <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+  <!-- Font Awesome 6 (free) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #f6f9fc 0%, #edf2f9 100%);
+      color: #1e293b;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* navigation - FULLY RESPONSIVE */
+    .navbar {
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,20,50,0.05);
+      padding: 0.8rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #f1f4f9;
+      width: 100%;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #0b2f4e, #203a5e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .logo i {
+      background: #2563eb;
+      -webkit-text-fill-color: white;
+      padding: 8px;
+      border-radius: 18px;
+      font-size: 1.4rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e293b;
+      transition: 0.2s;
+      font-size: 1.1rem;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .nav-links a:hover, .nav-links a.active {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+    
+    .nav-links a i {
+      margin-right: 6px;
+      font-size: 0.95rem;
+    }
+    
+    .wa-quick {
+      background: #25D366;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+      white-space: nowrap;
+    }
+    
+    .wa-quick:hover {
+      background: #20b359;
+    }
+
+    /* main wrapper - FULLY RESPONSIVE */
+    .about-wrapper {
+      max-width: 1200px;
+      width: 100%;
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 3.5rem 3.5rem 2.5rem 2.5rem;
+      box-shadow: 0 30px 60px -20px rgba(0,40,80,0.25),
+                  0 10px 25px -8px rgba(0,20,40,0.15),
+                  inset 0 1px 1px rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.7);
+      overflow: hidden;
+      padding: 2.5rem 2.8rem;
+    }
+
+    /* header / navigation minibar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.8rem;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      font-size: 2.3rem;
+      color: #0b5e7c;
+      filter: drop-shadow(0 4px 6px #b0d4e0);
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #164863, #2a6478);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-text span {
+      color: #277c9e;
+      background: none;
+      -webkit-text-fill-color: #277c9e;
+      font-weight: 300;
+    }
+
+    .page-tag {
+      background: #d4e9f2;
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #0a4055;
+      box-shadow: inset 0 0 0 1px #bee0ed;
+    }
+
+    .page-tag i {
+      margin-right: 8px;
+      color: #1a6b89;
+    }
+
+    /* title section */
+    .hero-about {
+      text-align: center;
+      margin: 1rem 0 2.2rem 0;
+    }
+
+    .hero-about h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #1a4b64, #115e78, #1a7a9c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .hero-about h1 i {
+      color: #287b9c;
+      font-size: 3rem;
+      margin: 0 8px;
+    }
+
+    .subhead {
+      font-size: 1.3rem;
+      color: #2f5b70;
+      max-width: 750px;
+      margin: 0.8rem auto 0;
+      background: rgba(255,255,255,0.6);
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      font-weight: 400;
+      border: 1px solid white;
+    }
+
+    /* core grid */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.2rem;
+      margin: 3.5rem 0 2.2rem;
+    }
+
+    .story-card, .mission-card {
+      background: white;
+      border-radius: 2.5rem;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 18px 35px -12px rgba(20, 60, 80, 0.2);
+      border: 1px solid rgba(255,255,255,0.9);
+      transition: transform 0.2s;
+    }
+
+    .story-card:hover, .mission-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card-label {
+      display: inline-block;
+      background: #e5f2f9;
+      border-radius: 40px;
+      padding: 0.3rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #1b607b;
+      margin-bottom: 1.5rem;
+      border: 1px solid #c3e2f0;
+    }
+
+    .story-card p, .mission-card p {
+      font-size: 1.12rem;
+      color: #1f4460;
+      margin-bottom: 1.4rem;
+    }
+
+    .mission-card ul {
+      list-style: none;
+    }
+
+    .mission-card li {
+      margin: 0.9rem 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 450;
+    }
+
+    .mission-card li i {
+      width: 30px;
+      color: #117a9c;
+      font-size: 1.4rem;
+    }
+
+    /* team / values inline */
+    .values-strip {
+      background: #daeef8;
+      border-radius: 4rem 4rem 2rem 2rem;
+      padding: 2.5rem 2rem;
+      margin: 2.5rem 0 2rem;
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: inset 0 2px 5px rgba(255,255,255,0.8), 0 12px 25px -15px #325f74;
+    }
+
+    .values-strip h2 {
+      font-size: 2.2rem;
+      font-weight: 650;
+      text-align: center;
+      color: #0a4052;
+      margin-bottom: 2.2rem;
+    }
+
+    .value-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.8rem 3.5rem;
+    }
+
+    .value-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 150px;
+      text-align: center;
+    }
+
+    .value-item i {
+      font-size: 2.8rem;
+      background: white;
+      padding: 1.1rem;
+      border-radius: 60px;
+      box-shadow: 0 8px 18px -6px #aac9db;
+      color: #1a6e8f;
+      width: 85px;
+      height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+      border: 2px solid white;
+    }
+
+    .value-item span {
+      font-weight: 600;
+      color: #10384b;
+      font-size: 1.1rem;
+    }
+
+    /* why codebite */
+    .feature-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      background: #ffffffd9;
+      border-radius: 3rem;
+      padding: 2rem 2.3rem;
+      margin: 2.8rem 0 2rem;
+      align-items: center;
+      gap: 2rem;
+      backdrop-filter: blur(4px);
+      border: 1px solid white;
+    }
+
+    .feature-text {
+      flex: 2 1 300px;
+    }
+
+    .feature-text h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0e4f69;
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-text p {
+      font-size: 1.15rem;
+      color: #244d63;
+    }
+
+    .feature-graph {
+      flex: 1 1 200px;
+      background: #c7e2ef;
+      border-radius: 2rem;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 10px 0 #7faec9;
+    }
+
+    .feature-graph .big-number {
+      font-size: 4.3rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #09455c;
+    }
+
+    .feature-graph p {
+      font-weight: 500;
+      color: #1a4d61;
+    }
+
+    /* codebite.in original */
+    .domain-note {
+      background: #08334429;
+      border-radius: 3rem;
+      padding: 1.5rem 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2.2rem 0 2rem;
+      border: 1px dashed #2d7f9c;
+    }
+
+    .domain-note i {
+      font-size: 2.2rem;
+      color: #1b6c8f;
+      margin-right: 1rem;
+    }
+
+    .domain-note p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #003349;
+    }
+
+    .domain-note .badge {
+      background: #1f6f8f;
+      color: white;
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+
+    /* footer / contact */
+    .footer-about {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-top: 2px solid #c1ddec;
+      padding-top: 2rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 45px;
+      width: 45px;
+      background: white;
+      border-radius: 60px;
+      color: #1b5f7a;
+      font-size: 1.5rem;
+      margin-right: 0.8rem;
+      box-shadow: 0 5px 12px #c4dbe8;
+      transition: all 0.2s;
+      border: 1px solid white;
+    }
+
+    .social-links a:hover {
+      background: #1b6a8a;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .copyright {
+      color: #2f637b;
+      font-weight: 500;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #b3d8ea, transparent);
+      margin: 1.2rem 0;
+    }
+    
+    /* ===== CHATBOT BUTTONS - FULLY RESPONSIVE ===== */
+    .chatbot-button {
+      position: fixed !important;
+      bottom: 120px !important;
+      right: 30px !important;
+      width: 70px !important;
+      height: 70px !important;
+      border-radius: 50% !important;
+      background: #2563eb !important;
+      color: white !important;
+      border: none !important;
+      cursor: pointer !important;
+      box-shadow: 0 10px 30px rgba(37,99,235,0.4) !important;
+      z-index: 999999 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.3s ease !important;
+      animation: pulse 2s infinite !important;
+      pointer-events: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    
+    .chatbot-button:hover {
+      transform: scale(1.1) !important;
+      background: #1d4ed8 !important;
+      box-shadow: 0 15px 40px rgba(37,99,235,0.6) !important;
+    }
+
+    .chatbot-button i {
+      font-size: 30px !important;
+      pointer-events: none !important;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(37,99,235,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+    }
+
+    /* WhatsApp Button Styles */
+    .whatsapp-button {
+      position: fixed !important;
+      bottom: 30px !important;
+      right: 30px !important;
+      width: 70px !important;
+      height: 70px !important;
+      border-radius: 50% !important;
+      background: #25D366 !important;
+      color: white !important;
+      border: none !important;
+      cursor: pointer !important;
+      box-shadow: 0 10px 30px rgba(37,211,102,0.4) !important;
+      z-index: 999998 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.3s ease !important;
+      animation: wa-pulse 2s infinite !important;
+      pointer-events: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      text-decoration: none !important;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1) !important;
+      background: #20b359 !important;
+      box-shadow: 0 15px 40px rgba(37,211,102,0.6) !important;
+    }
+
+    .whatsapp-button i {
+      font-size: 35px !important;
+      pointer-events: none !important;
+    }
+
+    @keyframes wa-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    /* Tooltip for buttons */
+    .button-tooltip {
+      position: absolute;
+      background: #333;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      white-space: nowrap;
+      right: 80px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1000000 !important;
+    }
+
+    .chatbot-button:hover .button-tooltip,
+    .whatsapp-button:hover .button-tooltip {
+      opacity: 1;
+    }
+
+    /* CHATBOT WINDOW - RESPONSIVE */
+    .chatbot-window {
+      position: fixed !important;
+      top: 80px;
+      bottom: 210px !important;
+      right: 105px !important;
+      width: 380px !important;
+      min-width: 380px !important;
+      max-width: 380px !important;
+      height: min(550px, 70vh) !important;
+      min-height: 400px !important;
+      max-height: 550px !important;
+      background: white !important;
+      border-radius: 25px !important;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
+      display: none !important;
+      flex-direction: column !important;
+      z-index: 999997 !important;
+      overflow: hidden !important;
+      animation: slideUp 0.3s ease !important;
+      border: 1px solid #e2e8f0 !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .chatbot-window[style*="display: flex"] {
+      display: flex !important;
+      width: 380px !important;
+      height: min(550px, 70vh) !important;
+      min-height: 400px !important;
+      max-height: 550px !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .chatbot-messages {
+      flex: 1 1 auto !important;
+      min-height: 0 !important;
+      height: auto !important;
+      overflow-y: auto !important;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chatbot-header {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-header h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chatbot-header h3 i {
+      font-size: 20px;
+    }
+
+    .chatbot-header button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .chatbot-header button:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .chatbot-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 14px;
+      line-height: 1.5;
+      word-wrap: break-word;
+      animation: messageSlide 0.3s ease;
+    }
+
+    @keyframes messageSlide {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .bot-message {
+      background: #e2e8f0;
+      color: #1e293b;
+      align-self: flex-start;
+      border-bottom-left-radius: 5px;
+    }
+
+    .user-message {
+      background: #2563eb;
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 5px;
+    }
+
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 15px;
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .quick-reply-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      padding: 8px 15px;
+      border-radius: 25px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .quick-reply-btn:hover {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+      transform: scale(1.05);
+    }
+
+    .chatbot-input-area {
+      display: flex;
+      padding: 15px;
+      background: white;
+      gap: 10px;
+    }
+
+    .chatbot-input-area input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 30px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .chatbot-input-area input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+
+    .chatbot-input-area button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chatbot-input-area button:hover {
+      background: #1d4ed8;
+      transform: scale(1.05);
+    }
+
+    .chatbot-input-area button i {
+      font-size: 18px;
+    }
+
+    .typing-indicator {
+      display: flex;
+      gap: 5px;
+      padding: 12px 16px;
+      background: #e2e8f0;
+      border-radius: 18px;
+      width: fit-content;
+      border-bottom-left-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      background: #64748b;
+      border-radius: 50%;
+      animation: typing 1.4s infinite;
+    }
+
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-10px); }
+    }
+
+    /* ===== COMPREHENSIVE RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+      .about-wrapper {
+        margin: 1.5rem;
+        padding: 2rem;
+      }
+      
+      .hero-about h1 {
+        font-size: 2.8rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      
+      .nav-links {
+        gap: 0.8rem;
+        justify-content: center;
+      }
+      
+      .nav-links a {
+        font-size: 0.95rem;
+      }
+      
+      .wa-quick {
+        padding: 6px 14px;
+        font-size: 0.9rem;
+      }
+      
+      .about-wrapper {
+        margin: 1rem;
+        padding: 1.5rem 1.2rem;
+        border-radius: 2.5rem 2.5rem 1.5rem 1.5rem;
+      }
+      
+      .hero-about h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-about h1 i {
+        font-size: 1.8rem;
+      }
+      
+      .subhead {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+      }
+      
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .story-card, .mission-card {
+        padding: 1.5rem;
+      }
+      
+      .value-items {
+        gap: 1.5rem;
+      }
+      
+      .value-item i {
+        width: 70px;
+        height: 70px;
+        font-size: 2.2rem;
+      }
+      
+      .feature-highlight {
+        padding: 1.5rem;
+      }
+      
+      .feature-text h3 {
+        font-size: 1.5rem;
+      }
+      
+      .domain-note {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      
+      .footer-about {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .social-links {
+        display: flex;
+        justify-content: center;
+      }
+      
+      /* Chatbot responsive fixes */
+      .chatbot-window,
+      .chatbot-window[style*="display: flex"] {
+        width: 300px !important;
+        min-width: 280px !important;
+        max-width: 320px !important;
+        height: 450px !important;
+        min-height: 400px !important;
+        max-height: 500px !important;
+        bottom: 170px !important;
+        right: 20px !important;
+        left: auto !important;
+        top: auto !important;
+      }
+      
+      .chatbot-messages {
+        padding: 12px !important;
+        gap: 8px !important;
+      }
+      
+      .quick-replies {
+        padding: 10px !important;
+        gap: 5px !important;
+      }
+      
+      .quick-reply-btn {
+        padding: 5px 10px !important;
+        font-size: 11px !important;
+      }
+      
+      .chatbot-input-area {
+        padding: 10px !important;
+      }
+      
+      .chatbot-input-area input {
+        height: 40px !important;
+        font-size: 13px !important;
+      }
+      
+      .chatbot-input-area button {
+        width: 40px !important;
+        height: 40px !important;
+      }
+      
+      .whatsapp-button {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 60px !important;
+        height: 60px !important;
+      }
+      
+      .chatbot-button {
+        bottom: 100px !important;
+        right: 20px !important;
+        width: 60px !important;
+        height: 60px !important;
+      }
+      
+      .whatsapp-button i {
+        font-size: 28px !important;
+      }
+      
+      .chatbot-button i {
+        font-size: 24px !important;
+      }
+      
+      .message {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 0.5rem;
+      }
+      
+      .logo {
+        font-size: 1.4rem;
+      }
+      
+      .logo i {
+        font-size: 1rem;
+        padding: 6px;
+      }
+      
+      .nav-links {
+        gap: 0.5rem;
+      }
+      
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+      
+      .nav-links a i {
+        font-size: 0.75rem;
+        margin-right: 3px;
+      }
+      
+      .wa-quick {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+        gap: 5px;
+      }
+      
+      .about-wrapper {
+        padding: 1rem;
+        margin: 0.5rem;
+      }
+      
+      .hero-about h1 {
+        font-size: 1.5rem;
+      }
+      
+      .hero-about h1 i {
+        font-size: 1.2rem;
+        margin: 0 3px;
+      }
+      
+      .subhead {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+      }
+      
+      .card-label {
+        font-size: 0.8rem;
+      }
+      
+      .story-card p, .mission-card p {
+        font-size: 0.95rem;
+      }
+      
+      .values-strip h2 {
+        font-size: 1.5rem;
+      }
+      
+      .value-item span {
+        font-size: 0.9rem;
+      }
+      
+      .feature-text h3 {
+        font-size: 1.2rem;
+      }
+      
+      .feature-text p {
+        font-size: 0.95rem;
+      }
+      
+      .feature-graph .big-number {
+        font-size: 3rem;
+      }
+      
+      .domain-note p {
+        font-size: 0.95rem;
+      }
+      
+      .domain-note .badge {
+        font-size: 0.9rem;
+        padding: 0.3rem 1rem;
+      }
+      
+      .copyright {
+        font-size: 0.8rem;
+      }
+      
+      /* Smallest screen chatbot */
+      .chatbot-window,
+      .chatbot-window[style*="display: flex"] {
+        width: 260px !important;
+        min-width: 240px !important;
+        right: 10px !important;
+        height: 400px !important;
+      }
+      
+      .quick-reply-btn {
+        padding: 4px 6px !important;
+        font-size: 10px !important;
+      }
+      
+      .whatsapp-button,
+      .chatbot-button {
+        width: 50px !important;
+        height: 50px !important;
+      }
+      
+      .whatsapp-button i {
+        font-size: 24px !important;
+      }
+      
+      .chatbot-button i {
+        font-size: 22px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
+    <div class="nav-links">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="price.html"><i class="fas fa-tag"></i> Price</a>
+      <a href="Demo.html"><i class="fas fa-eye"></i> Demo</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="FAQs.html"><i class="fa-solid fa-circle-question"></i> FAQs</a>
+      <a href="About.html" class="active"><i class="fa-solid fa-circle-info"></i> About</a>
+    </div>
+    <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
+  </nav>
+  
+  <!-- MAIN CONTENT -->
+  <div class="about-wrapper">
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="logo-area">
+        <i class="fas fa-code logo-icon"></i>
+        <div class="logo-text">codebite<span>.co.in</span></div>
+      </div>
+      <div class="page-tag">
+        <i class="fas fa-users"></i> about us
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-about">
+      <h1>
+        <i class="fas fa-quote-left"></i> 
+        more than code, a mindset 
+        <i class="fas fa-quote-right"></i>
+      </h1>
+      <div class="subhead">
+        we are codebite.co.in — your friendly tech partner from India
+      </div>
+    </div>
+
+    <!-- Story & Mission -->
+    <div class="grid-2col">
+      <div class="story-card">
+        <div class="card-label"><i class="fas fa-feather-alt"></i> our story</div>
+        <p>Codebite was born in 2022 out of a small but passionate conversation between two developers who believed that learning and building should <strong>feel like a bite-sized joy</strong>. What started as a tiny blog to share code snippets quickly turned into a growing community of curious coders, freelancers, and tech enthusiasts across India.</p>
+        <p>Today, <strong>codebite.co.in</strong> is where ideas meet execution. We don't just write code — we craft solutions, share insights, and help businesses take their first (or next) digital leap. Our journey is rooted in curiosity, clean code, and human connection.</p>
+        <p><i class="fas fa-map-pin" style="color:#1a7c9c;"></i> headquartered in Pune, with a remote heart.</p>
+      </div>
+
+      <div class="mission-card">
+        <div class="card-label"><i class="fas fa-bullseye"></i> mission & mantra</div>
+        <p><strong>Make tech less intimidating and more impactful.</strong> We believe that every line of code should solve a real problem.</p>
+        <ul>
+          <li><i class="fas fa-rocket"></i> <span>Ship fast, ship stable — we love the web.</span></li>
+          <li><i class="fas fa-hand-holding-heart"></i> <span>Client success = our success. Always.</span></li>
+          <li><i class="fas fa-brain"></i> <span>Continuous learning, because tech never sleeps.</span></li>
+          <li><i class="fas fa-globe"></i> <span>Proudly made in India, for the world.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <div class="values-strip">
+      <h2><i class="fas fa-gem"></i> what drives us <i class="fas fa-gem"></i></h2>
+      <div class="value-items">
+        <div class="value-item"><i class="fas fa-heart"></i><span>integrity</span></div>
+        <div class="value-item"><i class="fas fa-lightbulb"></i><span>simplicity</span></div>
+        <div class="value-item"><i class="fas fa-handshake"></i><span>partnership</span></div>
+        <div class="value-item"><i class="fas fa-mug-hot"></i><span>craftsmanship</span></div>
+        <div class="value-item"><i class="fas fa-seedling"></i><span>growth</span></div>
+      </div>
+    </div>
+
+    <!-- Highlight -->
+    <div class="feature-highlight">
+      <div class="feature-text">
+        <h3><i class="fas fa-bolt" style="color:#19799c;"></i> built by developers, for developers & businesses</h3>
+        <p>Whether you need a lightning-fast landing page, a custom web tool, or just some technical advice — codebite.co.in delivers with clarity. We've worked with 20+ startups and local shops to bring their vision online.</p>
+      </div>
+      <div class="feature-graph">
+        <div class="big-number">50+</div>
+        <p>projects delivered</p>
+        <p style="font-size:0.9rem; margin-top: 10px;">and countless cups of chai ☕</p>
+      </div>
+    </div>
+
+    <!-- Domain note -->
+    <div class="domain-note">
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-map-pin"></i>
+        <p><strong>code<b>bite</b>.co.in</strong> — we chose the Indian domain because we're rooted here. Our team spans 4 cities, and we take pride in contributing to the local dev ecosystem.</p>
+      </div>
+      <span class="badge"><i class="fas-regular fa-flag"></i> .co.in since day one</span>
+    </div>
+
+    <hr>
+   
+    <p style="text-align: center; color: #236b87; font-style: italic; max-width: 700px; margin: 1rem auto;">— we're a small, friendly team, and we'd love to build something great with you. —</p>
+
+    <!-- Footer -->
+    <div class="footer-about">
+      <div class="social-links">
+        <a href="https://github.com/sauravsharma-glitch"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/saurav-sharma-b94bbb3a1"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="copyright">
+        <i class="far fa-copyright"></i> 2025 codebite.co.in — all details baked with ♥
+      </div>
+    </div>
+
+    <div style="text-align: right; margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; color: #2f6479;">
+      <i class="fas-regular fa-message"></i> saurav343sharma@gmail.com | +91 9027038209
+    </div>
+  </div>
+
+  <!-- ===== CHATBOT AND WHATSAPP BUTTONS ===== -->
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/919027038209?text=Hi%20CodeBite!%20I'm%20interested%20in%20your%20website%20development%20services.%20Can%20we%20chat%3F" 
+     class="whatsapp-button" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span class="button-tooltip">Chat on WhatsApp</span>
+  </a>
+
+  <!-- Chatbot Button -->
+  <div class="chatbot-button" onclick="toggleChatbot()">
+    <i class="fas fa-comment-dots"></i>
+    <span class="button-tooltip">Ask Assistant</span>
+  </div>
+
+  <!-- Chatbot Window -->
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <h3><i class="fas fa-robot"></i> CodeBite Assistant</h3>
+      <button onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <div class="chatbot-messages" id="chatbotMessages">
+      <div class="message bot-message">
+        👋 Hi! Welcome to CodeBite. How can I help you with your website project today?
+      </div>
+    </div>
+    
+    <div class="quick-replies" id="quickReplies">
+      <button class="quick-reply-btn" onclick="sendQuickReply('pricing')"><i class="fas fa-tag"></i> Pricing</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('services')"><i class="fas fa-code"></i> Services</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('demo')"><i class="fas fa-eye"></i> Demos</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('contact')"><i class="fas fa-envelope"></i> Contact</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+    </div>
+    
+    <div class="chatbot-input-area">
+      <input type="text" id="chatbotInput" placeholder="Type your message...">
+      <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== CHATBOT JAVASCRIPT =====
+    console.log('🚀 Chatbot script loading...');
+
+    // Get elements
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const chatbotInput = document.getElementById('chatbotInput');
+
+    // State
+    let isOpen = false;
+
+    // Toggle function
+    window.toggleChatbot = function() {
+      if (!chatbotWindow) return;
+      isOpen = !isOpen;
+      chatbotWindow.style.display = isOpen ? 'flex' : 'none';
+    };
+
+    // Close button
+    const closeBtn = document.querySelector('.chatbot-header button');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        isOpen = false;
+        chatbotWindow.style.display = 'none';
+      });
+    }
+
+    // Enter key
+    if (chatbotInput) {
+      chatbotInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+    }
+
+    // Quick Reply Handler
+    window.sendQuickReply = function(topic) {
+      const userMessage = getUserFriendlyTopic(topic);
+      addMessage(userMessage, 'user');
+      showTypingIndicator();
+      
+      setTimeout(() => {
+        removeTypingIndicator();
+        let botResponse = botResponses[topic] || botResponses['default'];
+        addMessage(botResponse, 'bot');
+      }, 1500);
+    };
+
+    // Send Message Handler
+    window.sendMessage = function() {
+      const message = chatbotInput.value.trim();
+      if (!message) return;
+      
+      addMessage(message, 'user');
+      chatbotInput.value = '';
+      
+      showTypingIndicator();
+      
+      setTimeout(() => {
+        removeTypingIndicator();
+        const response = getBotResponse(message.toLowerCase());
+        addMessage(response, 'bot');
+      }, 1500);
+    };
+
+    // Helper Functions
+    function getUserFriendlyTopic(topic) {
+      const topics = {
+        'pricing': 'Tell me about your pricing packages',
+        'services': 'What services do you offer?',
+        'demo': 'Show me your demo projects',
+        'contact': 'How can I contact you?',
+        'whatsapp': 'I want to chat on WhatsApp'
+      };
+      return topics[topic] || topic;
+    }
+
+    function addMessage(text, sender) {
+      if (!chatbotMessages) return;
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${sender}-message`;
+      messageDiv.innerHTML = text.replace(/\n/g, '<br>');
+      chatbotMessages.appendChild(messageDiv);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+      if (!chatbotMessages) return;
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'typing-indicator';
+      typingDiv.id = 'typingIndicator';
+      typingDiv.innerHTML = '<span></span><span></span><span></span>';
+      chatbotMessages.appendChild(typingDiv);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+      const typingIndicator = document.getElementById('typingIndicator');
+      if (typingIndicator) typingIndicator.remove();
+    }
+
+    // Bot Responses Database
+    const botResponses = {
+      'hello': '👋 Hello! Welcome to CodeBite. I\'m here to help you with website development questions. What would you like to know?',
+      'hi': 'Hi there! 👋 How can I assist you with your website project today?',
+      'hey': 'Hey! 👋 Ready to discuss your website needs? Feel free to ask me anything!',
+      
+      'pricing': '💰 **Our Website Packages:**\n\n• **Normal:** ₹12,000\n  - 5 Page Website\n  - Responsive Design\n  - Contact Form\n  - Basic Security\n\n• **Premium:** ₹25,000 (Most Popular)\n  - 10 Page Website\n  - Custom UI Design\n  - Advanced SEO\n  - Admin Panel\n  - WhatsApp Integration\n\n• **Gold:** ₹40,000\n  - Unlimited Pages\n  - Premium UI/UX\n  - Full SEO Optimization\n  - E-commerce Ready\n  - Payment Gateway\n  - Priority Support\n\nCheck full details: <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">price page</a>',
+      
+      'price': 'Our packages start at just ₹12,000! Check out all options at <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">price page</a>\n\nQuick overview:\n✨ Normal: ₹12,000\n🔥 Premium: ₹25,000\n👑 Gold: ₹40,000',
+      
+      'cost': '💵 **Pricing Summary:**\n• Basic websites start at ₹12,000\n• Premium features from ₹25,000\n• Custom e-commerce from ₹40,000\n\nVisit <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">price page</a> for complete details!',
+      
+      'services': '🛠️ **What We Build:**\n\n✅ **Business Websites** - Corporate & brand sites\n✅ **E-commerce Stores** - Online shopping with payments\n✅ **Restaurant Sites** - Menu display, online ordering\n✅ **Gym & Wellness** - Class schedules, memberships\n✅ **Salon Websites** - Service menu, online booking\n✅ **Custom Web Apps** - Tailored to your needs\n\nSee live examples: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">demo page</a>',
+      
+      'service': 'We specialize in creating modern, fast websites for businesses. What type of business do you have? I can show you relevant examples!',
+      
+      'demo': '👀 **Our Live Demo Projects:**\n\n🍰 **Spice Kitchen** - Restaurant with online ordering\n🎧 **Urban Beats** - E-commerce headphone store\n💪 **Peak Fitness** - Gym with class schedules\n✂️ **Glow Studio** - Salon with online booking\n💍 **Jewellery Store** - Product showcase\n\nView all: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">demo page</a>',
+      
+      'portfolio': '🎨 Check out our work: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">demo page</a>\n\nWe have examples for restaurants, e-commerce, gyms, salons, and more!',
+      
+      'examples': '📸 Here are our demo projects: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">demo page</a>\n\nLet me know which one you like and we can create something similar for your business!',
+      
+      'contact': '📬 **Get in Touch:**\n\n📧 Email: <a href="mailto:saurav343sharma@gmail.com" style="color: #2563eb; text-decoration: underline;">saurav343sharma@gmail.com</a>\n📱 WhatsApp: <a href="https://wa.me/919027038209" target="_blank" style="color: #2563eb; text-decoration: underline;">+91 9027038209</a>\n📝 Contact Form: <a href="https://codebite.co.in/contact.html" target="_blank" style="color: #2563eb; text-decoration: underline;">contact page</a>\n\n⏰ Response Time: Within 24 hours (usually faster on WhatsApp!)',
+      
+      'phone': '📞 You can reach us on WhatsApp: +91 9027038209\n\nClick to chat: <a href="https://wa.me/919027038209" target="_blank" style="color: #2563eb; text-decoration: underline;">WhatsApp link</a>',
+      
+      'email': '✉️ Email us at: <a href="mailto:saurav343sharma@gmail.com" style="color: #2563eb; text-decoration: underline;">saurav343sharma@gmail.com</a>\n\nWe typically respond within 24 hours!',
+      
+      'whatsapp': '📱 **Chat with us on WhatsApp!**\n\nClick this link to start a conversation:\n<a href="https://wa.me/919027038209" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline; font-weight: bold;">+91 9027038209</a>\n\nWe reply quickly, usually within a few hours!',
+      
+      'mathura': '📍 We are based in **Mathura** and proudly serve clients across:\n• Mathura City\n• Vrindavan\n• Agra\n• All of Uttar Pradesh\n\nBeing local means we understand the local market and can meet in person if needed!',
+      
+      'location': '📍 CodeBite is a Mathura-based website development studio. We serve clients throughout Uttar Pradesh!',
+      
+      'hours': '⏰ **Our Availability:**\n\n• WhatsApp & Email: 9 AM - 7 PM (Mon-Sat)\n• Response Time: Within 24 hours\n• Urgent queries: WhatsApp is fastest!\n\nWe try to reply even faster - often within a few hours!',
+      
+      'time': '⏱️ We typically respond within a few hours during business days. WhatsApp gets the fastest replies!',
+      
+      'about': '🏢 **About CodeBite:**\n\nWe are a professional website development studio based in Mathura. Our mission is to create modern, fast, and conversion-focused websites that help businesses grow online.\n\n✅ 100% Responsive Design\n✅ SEO Friendly\n✅ Fast Loading\n✅ Dedicated Support\n✅ Affordable Packages\n\nFounded by Saurav Sharma, we take pride in delivering quality work to our clients across Uttar Pradesh.',
+      
+      'features': '✨ **Why Choose CodeBite?**\n\n⚡ Lightning Fast - Optimized for speed\n📱 100% Responsive - Works on all devices\n🔍 SEO Friendly - Rank better on Google\n💬 Dedicated Support - Quick WhatsApp replies\n🛡️ Secure - SSL certificates included\n🎨 Custom Design - Tailored to your brand',
+      
+      'support': '🛟 We\'re Here to Help!\n\nAfter your website is live, we provide:\n• 1 month free maintenance\n• Quick WhatsApp support\n• Training on how to update content\n• Technical assistance\n\nJust reach out anytime!',
+      
+      'payment': '💳 **Payment Options:**\n\n• 50% advance to start\n• 50% before final delivery\n• Bank transfer accepted\n• UPI payments available\n• All prices in INR (₹)\n\nContact us for custom payment plans!',
+      
+      'thank you': '😊 You\'re very welcome! Feel free to reach out anytime if you have more questions. Have a great day!',
+      'thanks': '🙏 Happy to help! Let me know if you need anything else about our website services.',
+      'thank': '🎉 Glad I could assist! Don\'t hesitate to contact us when you\'re ready to start your project.',
+      
+      'bye': '👋 Goodbye! Thanks for visiting CodeBite. If you have more questions later, just come back and chat with me. Have a wonderful day!',
+      'goodbye': '👋 Take care! Feel free to reach out anytime through WhatsApp or our contact form.',
+      
+      'default': '🤔 I can help you with:\n\n💰 Pricing & Packages\n🛠️ Services We Offer\n👀 Live Demos & Portfolio\n📞 Contact Information\n📱 WhatsApp Chat\n📍 Our Location\n⏰ Business Hours\n\nWhat would you like to know more about?',
+    };
+
+    function getBotResponse(userInput) {
+      if (userInput.includes('hello') || userInput.includes('hi') || userInput.includes('hey')) return botResponses['hello'];
+      else if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('pricing') || userInput.includes('package') || userInput.includes('rate')) return botResponses['pricing'];
+      else if (userInput.includes('service') || userInput.includes('do you') || userInput.includes('offer') || userInput.includes('build')) return botResponses['services'];
+      else if (userInput.includes('demo') || userInput.includes('portfolio') || userInput.includes('example') || userInput.includes('work') || userInput.includes('show')) return botResponses['demo'];
+      else if (userInput.includes('contact') || userInput.includes('reach') || userInput.includes('get in touch') || userInput.includes('call')) return botResponses['contact'];
+      else if (userInput.includes('whatsapp') || userInput.includes('wa') || userInput.includes('chat')) return botResponses['whatsapp'];
+      else if (userInput.includes('mathura') || userInput.includes('location') || userInput.includes('where') || userInput.includes('based')) return botResponses['mathura'];
+      else if (userInput.includes('hour') || userInput.includes('time') || userInput.includes('response') || userInput.includes('available')) return botResponses['hours'];
+      else if (userInput.includes('about') || userInput.includes('who') || userInput.includes('company')) return botResponses['about'];
+      else if (userInput.includes('feature') || userInput.includes('why') || userInput.includes('benefit')) return botResponses['features'];
+      else if (userInput.includes('support') || userInput.includes('help') || userInput.includes('maintenance')) return botResponses['support'];
+      else if (userInput.includes('payment') || userInput.includes('pay') || userInput.includes('advance')) return botResponses['payment'];
+      else if (userInput.includes('thank') || userInput.includes('thanks')) return botResponses['thanks'];
+      else if (userInput.includes('bye') || userInput.includes('goodbye') || userInput.includes('see you')) return botResponses['bye'];
+      else return botResponses['default'];
+    }
+
+    console.log('✅ Chatbot script loaded successfully');
+  </script>
+</body>
+</html>
