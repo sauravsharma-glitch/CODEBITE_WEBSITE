@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="description" content="Explore CodeBite's live website demos including restaurant sites, ecommerce stores, gym websites, salons, and jewellery showcases. See our work in action.">
-      <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
+    <link rel="icon" type="image/png" sizes="20x20" href="Images/logo.png">
     <link rel="canonical" href="https://codebite.co.in/Demo.html">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="saurav logo.png">
     <title>CodeBite | Project Showcase</title>
     <style>
         * {
@@ -25,8 +24,11 @@
             background: #f8fafd;
             color: #1e293b;
             line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
         }
-        /* navigation - fully responsive */
+        
+        /* Navigation - FULLY RESPONSIVE */
         .navbar {
             background: white;
             box-shadow: 0 8px 20px rgba(0,20,50,0.05);
@@ -35,284 +37,501 @@
             top: 0;
             z-index: 100;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             border-bottom: 2px solid #f1f4f9;
-            gap: 1rem;
+            width: 100%;
         }
+        
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             font-weight: 700;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             background: linear-gradient(135deg, #0b2f4e, #203a5e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            flex-shrink: 0;
         }
+        
         .logo i {
             background: #2563eb;
             -webkit-text-fill-color: white;
-            padding: 8px;
-            border-radius: 18px;
-            font-size: 1.4rem;
+            padding: 6px;
+            border-radius: 14px;
+            font-size: 1.2rem;
         }
+        
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
             flex-wrap: wrap;
             justify-content: center;
         }
+        
         .nav-links a {
             text-decoration: none;
             font-weight: 500;
             color: #1e293b;
             transition: 0.2s;
-            font-size: 1.1rem;
-            padding: 6px 0;
+            font-size: 1rem;
+            padding: 4px 0;
             border-bottom: 2px solid transparent;
+            white-space: nowrap;
         }
+        
         .nav-links a:hover, .nav-links a.active {
             color: #2563eb;
             border-bottom-color: #2563eb;
         }
+        
         .nav-links a i {
-            margin-right: 6px;
-            font-size: 0.95rem;
+            margin-right: 4px;
+            font-size: 0.9rem;
         }
+        
         .wa-quick {
             background: #25D366;
             color: white;
-            padding: 8px 18px;
+            padding: 6px 16px;
             border-radius: 40px;
             font-weight: 600;
             display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
-            white-space: nowrap;
-        }
-        .wa-quick:hover {
-            background: #20b359;
-        }
-        /* container */
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 2rem 2rem 1rem;
-        }
-
-        /* intro section */
-        .section-intro {
-            margin: 2rem 0 1.5rem;
-        }
-        .section-intro h2 {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            font-weight: 600;
-            color: #0f172a;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .section-intro h2 i {
-            color: #2563eb;
-            background: #e2e8f0;
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 1.3rem;
-        }
-        .section-intro p {
-            color: #475569;
-            max-width: 700px;
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-        }
-
-        /* project grid - fully responsive */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem 1.8rem;
-            margin: 2.5rem 0 3rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 28px;
-            padding: 1.7rem 1.5rem 1.8rem;
-            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.1);
-            transition: all 0.25s ease;
-            border: 1px solid rgba(0, 0, 0, 0.02);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 45px -18px rgba(37, 99, 235, 0.25);
-            border-color: #b1c9ff;
-        }
-
-        .project-icon {
-            background: #eef2ff;
-            width: 55px;
-            height: 55px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-            font-size: 2rem;
-            color: #1e3a8a;
-        }
-
-        .project-card h3 {
-            font-size: clamp(1.4rem, 4vw, 1.7rem);
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-            letter-spacing: -0.02em;
-            line-height: 1.3;
-        }
-
-        .project-type {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 1rem;
-            border-radius: 30px;
-            margin: 0.5rem 0 1rem;
-            width: fit-content;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .project-desc {
-            color: #334155;
-            margin-bottom: 1.5rem;
-            font-size: 0.98rem;
-            line-height: 1.5;
-            flex: 1;
-        }
-
-        .demo-links {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: auto;
-            border-top: 1px dashed #d1d5db;
-            padding-top: 1.2rem;
-        }
-
-        .demo-btn {
-            background: #0f172a;
-            color: white;
-            padding: 0.6rem 1.4rem;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
             align-items: center;
             gap: 8px;
             text-decoration: none;
-            transition: 0.15s;
-            border: 1px solid #0f172a;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+            white-space: nowrap;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        
+        .wa-quick:hover {
+            background: #20b359;
         }
 
-        .demo-btn i {
+        /* Hero Section - FULLY RESPONSIVE */
+        .demo-hero {
+            background: linear-gradient(135deg, #0b2f4e 0%, #1e4a6f 100%);
+            padding: 3rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .demo-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="2"/><path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="white" stroke-width="2"/></svg>') repeat;
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+        
+        .hero-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            flex: 1 1 400px;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(1.8rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-highlight {
+            background: linear-gradient(135deg, #FFD966, #FF9F1C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .hero-content p {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            margin-bottom: 1.5rem;
+            color: #e0f2fe;
+            max-width: 600px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0 2rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-number {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: #FF9F1C;
+            line-height: 1.2;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #b8d6f0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .hero-btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .hero-btn-primary {
+            background: #FF9F1C;
+            color: #0b2f4e;
+            box-shadow: 0 10px 25px rgba(255, 159, 28, 0.4);
+        }
+        
+        .hero-btn-primary:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 159, 28, 0.5);
+        }
+        
+        .hero-btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .hero-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        .hero-image {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        
+        .hero-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 1rem;
+            width: 100%;
+        }
+
+        /* Demo Showcase */
+        .demo-showcase {
+            margin: 2rem 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .demo-showcase h2 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: #0b2f4e;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .demo-showcase h2 i {
+            color: #2563eb;
+            background: #eef2ff;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+        }
+
+        /* Demo Slider - FULLY RESPONSIVE */
+        .demo-slider {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+            padding: 0 10px;
+            width: 100%;
+        }
+        
+        .demo-slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.3);
+        }
+        
+        .demo-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .demo-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .demo-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .demo-slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+        }
+        
+        .demo-slide-content h3 {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        
+        .demo-slide-content p {
             font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            opacity: 0.9;
         }
-
-        .demo-btn:hover {
-            background: #1e293b;
-            border-color: #2563eb;
+        
+        .demo-slide-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
-
-        .demo-btn.outline {
+        
+        .demo-slide-tag {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .demo-slide-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .demo-slide-btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+        
+        .demo-slide-btn-primary {
+            background: #FF9F1C;
+            color: #0b2f4e;
+        }
+        
+        .demo-slide-btn-primary:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+        
+        .demo-slide-btn-secondary {
             background: transparent;
-            color: #0f172a;
-            border: 1px solid #94a3b8;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .demo-slide-btn-secondary:hover {
+            background: white;
+            color: #0b2f4e;
         }
 
-        .demo-btn.outline:hover {
-            background: #f1f5f9;
-            border-color: #2563eb;
+        /* Slider Navigation - FULLY RESPONSIVE */
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 1.2rem;
+            flex-wrap: wrap;
+        }
+        
+        .slider-prev,
+        .slider-next {
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #2563eb;
+            transition: all 0.2s;
+        }
+        
+        .slider-prev:hover,
+        .slider-next:hover {
+            background: #2563eb;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .slider-dots {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .slider-dot.active {
+            background: #2563eb;
+            transform: scale(1.3);
         }
 
-        /* contact panel */
+        /* Contact Panel - FULLY RESPONSIVE */
         .contact-panel {
             background: white;
-            border-radius: 40px;
-            padding: 2rem 2.5rem;
-            margin-top: 3rem;
+            border-radius: 30px;
+            padding: 1.5rem;
+            margin-top: 2rem;
             box-shadow: 0 15px 40px -20px #1e293b;
             border: 1px solid #e2e8f0;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 2rem;
+            gap: 1.5rem;
+            width: 100%;
         }
-
+        
         .contact-text h3 {
-            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             font-weight: 650;
             color: #0b1d31;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
+        
         .contact-text p {
             color: #334155;
             max-width: 500px;
-            margin-top: 6px;
+            margin-top: 4px;
             display: flex;
             align-items: center;
             gap: 6px;
             flex-wrap: wrap;
+            font-size: 0.95rem;
         }
-
+        
         .whatsapp-big {
             background: #25D366;
             color: white;
             border: none;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 60px;
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             box-shadow: 0 12px 18px -8px rgba(37, 211, 102, 0.4);
             transition: all 0.15s;
             text-decoration: none;
             white-space: nowrap;
         }
+        
         .whatsapp-big i {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
+        
         .whatsapp-big:hover {
             background: #20b359;
             transform: scale(1.02);
             box-shadow: 0 20px 25px -10px #1e7e4a;
         }
 
-        /* footer */
+        /* Footer - FULLY RESPONSIVE */
         .site-footer {
-            margin-top: 4rem;
+            margin-top: 3rem;
             background: #0f263b;
             color: #cddfeb;
-            border-radius: 40px 40px 0 0;
-            padding: 2.5rem 2rem 1.8rem;
+            border-radius: 30px 30px 0 0;
+            padding: 2rem 1.5rem 1.5rem;
+            width: 100%;
         }
+        
         .footer-content {
             max-width: 1300px;
             margin: 0 auto;
@@ -320,13 +539,15 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            gap: 1rem;
         }
+        
         .footer-links {
             display: flex;
-            gap: 30px;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
+        
         .footer-links a {
             color: #f0f6fc;
             text-decoration: none;
@@ -334,349 +555,483 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: 0.2s;
             border-bottom: 1px solid transparent;
         }
+        
         .footer-links a:hover {
             color: #FF9F1C;
             border-bottom-color: #FF9F1C;
         }
+        
         hr {
             border: 1px solid #2d4b68;
-            margin: 1.5rem 0;
+            margin: 1.2rem 0;
         }
+        
         .wa-footnote {
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
         }
 
-        /* mobile fine-tuning */
-        @media (max-width: 700px) {
+        /* Fixed Buttons - FULLY RESPONSIVE */
+        .whatsapp-button {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            background: #25D366 !important;
+            color: white !important;
+            border: none !important;
+            cursor: pointer !important;
+            box-shadow: 0 10px 30px rgba(37,211,102,0.4) !important;
+            z-index: 999998 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+            animation: wa-pulse 2s infinite !important;
+            text-decoration: none !important;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1) !important;
+            background: #20b359 !important;
+        }
+
+        .whatsapp-button i {
+            font-size: 30px !important;
+        }
+
+        @keyframes wa-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+
+        .chatbot-button {
+            position: fixed !important;
+            bottom: 90px !important;
+            right: 20px !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            background: #2563eb !important;
+            color: white !important;
+            border: none !important;
+            cursor: pointer !important;
+            box-shadow: 0 10px 30px rgba(37,99,235,0.4) !important;
+            z-index: 999998 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+            animation: chatbot-pulse 2s infinite !important;
+            text-decoration: none !important;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1) !important;
+            background: #1d4ed8 !important;
+        }
+
+        .chatbot-button i {
+            font-size: 30px !important;
+        }
+
+        @keyframes chatbot-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37,99,235,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+        }
+
+        .button-tooltip {
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 11px;
+            white-space: nowrap;
+            right: 70px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1000000 !important;
+        }
+
+        .chatbot-button:hover .button-tooltip,
+        .whatsapp-button:hover .button-tooltip {
+            opacity: 1;
+        }
+
+        /* CHATBOT WINDOW - FULLY RESPONSIVE */
+        .chatbot-window {
+            position: fixed !important;
+            bottom: 160px !important;
+            right: 20px !important;
+            width: 340px !important;
+            max-width: calc(100vw - 40px) !important;
+            height: min(500px, 70vh) !important;
+            min-height: 400px !important;
+            background: white !important;
+            border-radius: 20px !important;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
+            display: none !important;
+            flex-direction: column !important;
+            z-index: 999997 !important;
+            overflow: hidden !important;
+            border: 1px solid #e2e8f0 !important;
+        }
+
+        .chatbot-window[style*="display: flex"] {
+            display: flex !important;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .chatbot-header button {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 16px;
+            font-size: 13px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .bot-message {
+            background: #e2e8f0;
+            color: #1e293b;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .user-message {
+            background: #2563eb;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 12px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .quick-reply-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #1e293b;
+            padding: 6px 12px;
+            border-radius: 25px;
+            font-size: 12px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .quick-reply-btn:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        .chatbot-input-area {
+            display: flex;
+            padding: 12px;
+            background: white;
+            gap: 8px;
+        }
+
+        .chatbot-input-area input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 2px solid #e2e8f0;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .chatbot-input-area input:focus {
+            border-color: #2563eb;
+        }
+
+        .chatbot-input-area button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-input-area button i {
+            font-size: 16px;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 10px 14px;
+            background: #e2e8f0;
+            border-radius: 16px;
+            width: fit-content;
+            border-bottom-left-radius: 4px;
+        }
+
+        .typing-indicator span {
+            width: 6px;
+            height: 6px;
+            background: #64748b;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-6px); }
+        }
+
+        /* Mobile Responsive Breakpoints */
+        @media (max-width: 992px) {
             .navbar {
-                flex-direction: column;
-                padding: 1rem;
+                padding: 0.8rem 1.5rem;
             }
+            
             .nav-links {
                 gap: 1rem;
             }
-            .container {
-                padding: 1.5rem 1rem;
+        }
+        
+        @media (max-width: 850px) {
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem;
             }
-            .contact-panel {
-                padding: 1.8rem;
-            }
-            .whatsapp-big {
+            
+            .nav-links {
+                order: 3;
                 width: 100%;
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .demo-slide-content {
+                padding: 1rem;
+            }
+            
+            .demo-slide-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .demo-slide-content p {
+                font-size: 0.85rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .demo-slide-buttons {
+                gap: 8px;
+            }
+            
+            .demo-slide-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
                 justify-content: center;
             }
         }
-
-        /* Chatbot Styles - For Live Website */
-.chatbot-button {
-    position: fixed !important;
-    bottom: 30px !important;
-    right: 30px !important;
-    width: 70px !important;
-    height: 70px !important;
-    border-radius: 50% !important;
-    background: #2563eb !important;
-    color: white !important;
-    border: none !important;
-    cursor: pointer !important;
-    box-shadow: 0 10px 30px rgba(37,99,235,0.4) !important;
-    z-index: 999999 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transition: all 0.3s ease !important;
-    animation: pulse 2s infinite !important;
-    pointer-events: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-.chatbot-button:hover {
-    transform: scale(1.1) !important;
-    background: #1d4ed8 !important;
-    box-shadow: 0 15px 40px rgba(37,99,235,0.6) !important;
-}
-
-.chatbot-button i {
-    font-size: 30px !important;
-    pointer-events: none !important;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(37,99,235,0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
-}
-
-.chatbot-window {
-    position: fixed !important;
-    bottom: 120px !important;
-    right: 30px !important;
-    width: 380px !important;
-    height: 550px !important;
-    background: white !important;
-    border-radius: 25px !important;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
-    display: none !important;
-    flex-direction: column !important;
-    z-index: 999998 !important;
-    overflow: hidden !important;
-    animation: slideUp 0.3s ease !important;
-    border: 1px solid #e2e8f0 !important;
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.chatbot-header {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chatbot-header h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.chatbot-header h3 i {
-    font-size: 20px;
-}
-
-.chatbot-header button {
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-}
-
-.chatbot-header button:hover {
-    background: rgba(255,255,255,0.3);
-}
-
-.chatbot-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background: #f8fafc;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.message {
-    max-width: 80%;
-    padding: 12px 16px;
-    border-radius: 18px;
-    font-size: 14px;
-    line-height: 1.5;
-    word-wrap: break-word;
-    animation: messageSlide 0.3s ease;
-}
-
-@keyframes messageSlide {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.bot-message {
-    background: #e2e8f0;
-    color: #1e293b;
-    align-self: flex-start;
-    border-bottom-left-radius: 5px;
-}
-
-.user-message {
-    background: #2563eb;
-    color: white;
-    align-self: flex-end;
-    border-bottom-right-radius: 5px;
-}
-
-.quick-replies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 15px;
-    background: white;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.quick-reply-btn {
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    color: #1e293b;
-    padding: 8px 15px;
-    border-radius: 25px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-    font-family: 'Poppins', sans-serif;
-}
-
-.quick-reply-btn:hover {
-    background: #2563eb;
-    color: white;
-    border-color: #2563eb;
-    transform: scale(1.05);
-}
-
-.chatbot-input-area {
-    display: flex;
-    padding: 15px;
-    background: white;
-    gap: 10px;
-}
-
-.chatbot-input-area input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 2px solid #e2e8f0;
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    outline: none;
-    transition: all 0.2s;
-}
-
-.chatbot-input-area input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-}
-
-.chatbot-input-area button {
-    background: #2563eb;
-    color: white;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.chatbot-input-area button:hover {
-    background: #1d4ed8;
-    transform: scale(1.05);
-}
-
-.chatbot-input-area button i {
-    font-size: 18px;
-}
-
-.typing-indicator {
-    display: flex;
-    gap: 5px;
-    padding: 12px 16px;
-    background: #e2e8f0;
-    border-radius: 18px;
-    width: fit-content;
-    border-bottom-left-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.typing-indicator span {
-    width: 8px;
-    height: 8px;
-    background: #64748b;
-    border-radius: 50%;
-    animation: typing 1.4s infinite;
-}
-
-.typing-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.typing-indicator span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-@keyframes typing {
-    0%, 60%, 100% { transform: translateY(0); }
-    30% { transform: translateY(-10px); }
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .chatbot-window {
-        width: 320px !important;
-        height: 500px !important;
-        bottom: 100px !important;
-        right: 15px !important;
-    }
-    
-    .chatbot-button {
-        bottom: 20px !important;
-        right: 20px !important;
-        width: 60px !important;
-        height: 60px !important;
-    }
-    
-    .chatbot-button i {
-        font-size: 24px !important;
-    }
-    
-    .quick-reply-btn {
-        padding: 6px 12px !important;
-        font-size: 12px !important;
-    }
-}
+        
         @media (max-width: 480px) {
-            .project-grid {
-                grid-template-columns: 1fr;
+            .navbar {
+                padding: 0.6rem 1rem;
             }
-            .demo-links {
-                flex-direction: column;
-                align-items: stretch;
+            
+            .logo {
+                font-size: 1.3rem;
             }
-            .demo-btn {
-                justify-content: center;
+            
+            .logo i {
+                padding: 4px;
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+            
+            .nav-links a i {
+                font-size: 0.75rem;
+                margin-right: 2px;
+            }
+            
+            .wa-quick {
+                padding: 4px 12px;
+                font-size: 0.8rem;
+                gap: 4px;
+            }
+            
+            .demo-hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero-stats {
+                gap: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .stat-label {
+                font-size: 0.7rem;
+            }
+            
+            .hero-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .demo-slide-content {
+                padding: 0.8rem;
+            }
+            
+            .demo-slide-tag {
+                padding: 3px 8px;
+                font-size: 0.7rem;
+            }
+            
+            .demo-slide-btn {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .contact-panel {
+                padding: 1.2rem;
+            }
+            
+            .whatsapp-big {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .whatsapp-big i {
+                font-size: 1.2rem;
+            }
+            
+            .chatbot-window {
+                width: 280px !important;
+                right: 10px !important;
+                bottom: 150px !important;
+            }
+            
+            .whatsapp-button,
+            .chatbot-button {
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            .whatsapp-button i,
+            .chatbot-button i {
+                font-size: 24px !important;
+            }
+            
+            .chatbot-button {
+                bottom: 80px !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- NAVBAR with 'demo' active -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
         <div class="nav-links">
@@ -684,157 +1039,226 @@
             <a href="price.html"><i class="fas fa-tag"></i> Price</a>
             <a href="Demo.html" class="active"><i class="fas fa-eye"></i> Demo</a>
             <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="FAQs.html"><i class="fa-solid fa-circle-question"></i> FAQs</a>
+            <a href="About.html"><i class="fa-solid fa-circle-info"></i> About</a>
         </div>
-        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> DM now</a>
+        <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
     </nav>
 
+    <!-- HERO SECTION -->
+    <section class="demo-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Explore Our <span class="hero-highlight">Live Project</span> Demos</h1>
+                <p>See exactly what you'll get — fully functional websites for restaurants, gyms, salons, e-commerce stores and more. Click any demo to experience it live.</p>
+                <div class="hero-stats">
+                    <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Projects Launched</span></div>
+                    <div class="stat-item"><span class="stat-number">6</span><span class="stat-label">Live Demos</span></div>
+                    <div class="stat-item"><span class="stat-number">24h</span><span class="stat-label">Response Time</span></div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#demo-showcase" class="hero-btn hero-btn-primary"><i class="fas fa-eye"></i> View Demos</a>
+                    <a href="https://wa.me/919027038209" class="hero-btn hero-btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Images/hero-image.jpg" alt="Demo Preview" class="hero-img">
+            </div>
+        </div>
+    </section>
+
     <div class="container">
-        <!-- intro -->
-        <div class="section-intro">
-            <h2><i class="fas fa-eye"></i> live project demos</h2>
-            <p>Every client can browse real website previews — click any demo to see it live (opens in new tab). Or send a direct message.</p>
+        <!-- DEMO SHOWCASE -->
+        <div class="demo-showcase" id="demo-showcase">
+            <h2><i class="fas fa-eye"></i> Live Project Demos</h2>
+            <div class="demo-slider">
+                <div class="demo-slider-container">
+                    <div class="demo-slides" id="demoSlides">
+                        <!-- Slide 1 - Restaurant -->
+                        <div class="demo-slide">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Restaurant Demo">
+                            <div class="demo-slide-content">
+                                <h3>🍰 Restaurant & Bakery</h3>
+                                <p>Artisan bakery website with online menu, fresh UI & order preview.</p>
+                                <div class="demo-slide-tags">
+                                    <span class="demo-slide-tag">React</span>
+                                    <span class="demo-slide-tag">Node.js</span>
+                                    <span class="demo-slide-tag">Responsive</span>
+                                </div>
+                                <div class="demo-slide-buttons">
+                                    <a href="https://bmac-by-kasey.vercel.app/" class="demo-slide-btn demo-slide-btn-primary" target="_blank"><i class="fas fa-desktop"></i> Live Demo</a>
+                                    <a href="https://bmac-by-kasey.vercel.app/" class="demo-slide-btn demo-slide-btn-secondary" target="_blank"><i class="far fa-eye"></i> Preview</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 - Burger Store -->
+                        <div class="demo-slide">
+                            <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80" alt="Burger Store Demo">
+                            <div class="demo-slide-content">
+                                <h3>🍔 Burger Store</h3>
+                                <p>Modern burger shop with menu display, combos and location. Clean, responsive layout.</p>
+                                <div class="demo-slide-tags">
+                                    <span class="demo-slide-tag">HTML5</span>
+                                    <span class="demo-slide-tag">CSS3</span>
+                                    <span class="demo-slide-tag">JavaScript</span>
+                                </div>
+                                <div class="demo-slide-buttons">
+                                    <a href="https://burger-buddy-website.vercel.app/" class="demo-slide-btn demo-slide-btn-primary" target="_blank"><i class="fas fa-desktop"></i> Live Demo</a>
+                                    <a href="https://burger-buddy-website.vercel.app/" class="demo-slide-btn demo-slide-btn-secondary" target="_blank"><i class="far fa-eye"></i> Preview</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 - Gym -->
+                        <div class="demo-slide">
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Gym Website Demo">
+                            <div class="demo-slide-content">
+                                <h3>💪 Gym & Fitness</h3>
+                                <p>Landing page for a fitness club. Class schedules, trainer profiles & membership CTA.</p>
+                                <div class="demo-slide-tags">
+                                    <span class="demo-slide-tag">Vue.js</span>
+                                    <span class="demo-slide-tag">Firebase</span>
+                                    <span class="demo-slide-tag">Responsive</span>
+                                </div>
+                                <div class="demo-slide-buttons">
+                                    <a href="https://gym-fitness-site-rho.vercel.app/" class="demo-slide-btn demo-slide-btn-primary" target="_blank"><i class="fas fa-desktop"></i> Live Demo</a>
+                                    <a href="https://gym-fitness-site-rho.vercel.app/" class="demo-slide-btn demo-slide-btn-secondary" target="_blank"><i class="far fa-eye"></i> Preview</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4 - Salon -->
+                        <div class="demo-slide">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Salon Website Demo">
+                            <div class="demo-slide-content">
+                                <h3>✂️ Salon & Spa</h3>
+                                <p>Elegant salon website with service menu, online booking and price list.</p>
+                                <div class="demo-slide-tags">
+                                    <span class="demo-slide-tag">React</span>
+                                    <span class="demo-slide-tag">Tailwind</span>
+                                    <span class="demo-slide-tag">Booking</span>
+                                </div>
+                                <div class="demo-slide-buttons">
+                                    <a href="https://salonwebsite-nu.vercel.app/" class="demo-slide-btn demo-slide-btn-primary" target="_blank"><i class="fas fa-desktop"></i> Live Demo</a>
+                                    <a href="https://salonwebsite-nu.vercel.app/" class="demo-slide-btn demo-slide-btn-secondary" target="_blank"><i class="far fa-eye"></i> Preview</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 5 - Jewellery -->
+                        <div class="demo-slide">
+                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Jewellery Website Demo">
+                            <div class="demo-slide-content">
+                                <h3>💍 Jewellery</h3>
+                                <p>Elegant jewellery showcase with product grid, collection highlights and brand story.</p>
+                                <div class="demo-slide-tags">
+                                    <span class="demo-slide-tag">Next.js</span>
+                                    <span class="demo-slide-tag">GSAP</span>
+                                    <span class="demo-slide-tag">E-commerce</span>
+                                </div>
+                                <div class="demo-slide-buttons">
+                                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-slide-btn demo-slide-btn-primary" target="_blank"><i class="fas fa-desktop"></i> Live Demo</a>
+                                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-slide-btn demo-slide-btn-secondary" target="_blank"><i class="far fa-eye"></i> Preview</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 6 - Real Estate -->
+                        <div class="demo-slide">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1073&q=80" alt="Real Estate Demo">
+                            <div class="demo-slide-content">
+                                <h3>🏢 Real Estate</h3>
+                                <p>Property listings with advanced filters, virtual tour & agent profiles.</p>
+                                <div class="demo-slide-tags">
+                                    <span class="demo-slide-tag">Angular</span>
+                                    <span class="demo-slide-tag">MongoDB</span>
+                                    <span class="demo-slide-tag">Maps API</span>
+                                </div>
+                                <div class="demo-slide-buttons">
+                                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-slide-btn demo-slide-btn-primary" target="_blank"><i class="fas fa-desktop"></i> Live Demo</a>
+                                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-slide-btn demo-slide-btn-secondary" target="_blank"><i class="far fa-eye"></i> Preview</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slider Navigation -->
+                <div class="slider-nav">
+                    <button class="slider-prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                    <button class="slider-next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
         </div>
 
-        <!-- PROJECT GRID : each card opens demo in new tab (target="_blank") -->
-        <div class="project-grid">
-            <!-- 1. Restaurant / Bakery -->
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-cake-candles"></i></div>
-                <h3>🍰 Restaurant</h3>
-                <span class="project-type">bakery / local</span>
-                <div class="project-desc">Artisan bakery website with online menu, fresh UI & order preview. Fully responsive demo.</div>
-                <div class="demo-links">
-                    <a href="https://bmac-by-kasey.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
-                    <a href="https://bmac-by-kasey.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
-                </div>
-            </div>
-            <!-- 2. BURGER STORE -->
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-burger"></i></div>
-                <h3>🍔 BURGER STORE</h3>
-                <span class="project-type">fast food</span>
-                <div class="project-desc">Modern burger shop with menu display, combos and location. Clean, responsive layout.</div>
-                <div class="demo-links">
-                    <a href="https://burger-buddy-website.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
-                    <a href="https://burger-buddy-website.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
-                </div>
-            </div>
-            <!-- 3. GYM Fitness -->
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-dumbbell"></i></div>
-                <h3>GYM (Fitness)</h3>
-                <span class="project-type">gym / wellness</span>
-                <div class="project-desc">Landing page for a fitness club. Class schedules, trainer profiles & membership CTA.</div>
-                <div class="demo-links">
-                    <a href="https://gym-fitness-site-rho.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
-                    <a href="https://gym-fitness-site-rho.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
-                </div>
-            </div>
-            <!-- 4. Salon -->
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-cut"></i></div>
-                <h3>Salon & Spa</h3>
-                <span class="project-type">beauty / booking</span>
-                <div class="project-desc">Elegant salon website with service menu, online booking and price list.</div>
-                <div class="demo-links">
-                    <a href="https://salonwebsite-nu.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
-                    <a href="https://salonwebsite-nu.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
-                </div>
-            </div>
-            <!-- 5. Jewellery -->
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-gem"></i></div>
-                <h3>Jewellery</h3>
-                <span class="project-type">gold / luxury</span>
-                <div class="project-desc">Elegant jewellery showcase with product grid, collection highlights and brand story.</div>
-                <div class="demo-links">
-                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
-                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
-                </div>
-            </div>
-            <!-- 6. Additional: Real Estate (to fill grid nicely) -->
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-building"></i></div>
-                <h3>Real Estate</h3>
-                <span class="project-type">property</span>
-                <div class="project-desc">Property listings with advanced filters, virtual tour & agent profiles.</div>
-                <div class="demo-links">
-                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-btn" target="_blank" rel="noopener"><i class="fas fa-desktop"></i> Live demo</a>
-                    <a href="https://jewellerywebsite-three.vercel.app/" class="demo-btn outline" target="_blank" rel="noopener"><i class="far fa-eye"></i> preview</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- note: demos open in new tab -->
-        <p style="text-align: right; margin-top: -1rem; font-style: italic; color: #6f7c93;">
-            <i class="fas fa-external-link-alt" style="color: #2563eb;"></i> each link opens in a new tab
-        </p>
-
-        <!-- WhatsApp / DM section -->
-        <div class="contact-panel" id="dm-whatsapp">
+        <!-- WhatsApp Panel -->
+        <div class="contact-panel">
             <div class="contact-text">
                 <h3><i class="fab fa-whatsapp" style="color: #25D366;"></i> tell us your idea</h3>
                 <p><i class="fas fa-comment-dots" style="color: #2563eb;"></i> send a DM or WhatsApp message — we reply within hours</p>
-                <p style="font-size: 0.95rem; margin-top: 10px; color: #3b4a5e;">
-                    <i class="fas fa-check-circle" style="color: #22c55e;"></i> you'll chat directly with <strong>CodeBite</strong>
-                </p>
             </div>
-            <a href="https://wa.me/919027038209?text=Hi%20CodeBite%20Studio!%20I%20just%20saw%20your%20project%20demos%20and%20I%20want%20to%20discuss%20a%20website.%20" 
-               class="whatsapp-big" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i> DM on WhatsApp
-            </a>
+            <a href="https://wa.me/919027038209?text=Hi%20CodeBite%20Studio!%20I%20just%20saw%20your%20project%20demos%20and%20I%20want%20to%20discuss%20a%20website.%20" class="whatsapp-big" target="_blank"><i class="fab fa-whatsapp"></i> DM on WhatsApp</a>
         </div>
     </div>
 
-    <!-- ===== CHATBOT HTML ===== -->
-<!-- Chatbot Button -->
-<div class="chatbot-button" onclick="toggleChatbot()">
-    <i class="fas fa-comment-dots"></i>
-</div>
+    <!-- WhatsApp Button - Fixed -->
+    <a href="https://wa.me/919027038209?text=Hi%20CodeBite!%20I'm%20interested%20in%20your%20website%20development%20services.%20Can%20we%20chat%3F" 
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="button-tooltip">Chat on WhatsApp</span>
+    </a>
 
-<!-- Chatbot Window -->
-<div class="chatbot-window" id="chatbotWindow">
-    <div class="chatbot-header">
-        <h3>
-            <i class="fas fa-robot"></i>
-            CodeBite Assistant
-        </h3>
-        <button onclick="toggleChatbot()">
-            <i class="fas fa-times"></i>
-        </button>
+    <!-- Chatbot Button - Fixed -->
+    <div class="chatbot-button" onclick="toggleChatbot()">
+        <i class="fas fa-comment-dots"></i>
+        <span class="button-tooltip">Ask Assistant</span>
     </div>
-    
-    <div class="chatbot-messages" id="chatbotMessages">
-        <div class="message bot-message">
-            👋 Hi! Welcome to CodeBite. How can I help you with your website project today?
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>
+                <i class="fas fa-robot"></i>
+                CodeBite Assistant
+            </h3>
+            <button onclick="toggleChatbot()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                👋 Hi! Welcome to CodeBite. How can I help you with your website project today?
+            </div>
+        </div>
+        
+        <div class="quick-replies" id="quickReplies">
+            <button class="quick-reply-btn" onclick="sendQuickReply('pricing')">
+                <i class="fas fa-tag"></i> Pricing
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('services')">
+                <i class="fas fa-code"></i> Services
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('demo')">
+                <i class="fas fa-eye"></i> Demos
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('contact')">
+                <i class="fas fa-envelope"></i> Contact
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('whatsapp')">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </button>
+        </div>
+        
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
-    
-    <div class="quick-replies" id="quickReplies">
-        <button class="quick-reply-btn" onclick="sendQuickReply('pricing')">
-            <i class="fas fa-tag"></i> Pricing
-        </button>
-        <button class="quick-reply-btn" onclick="sendQuickReply('services')">
-            <i class="fas fa-code"></i> Services
-        </button>
-        <button class="quick-reply-btn" onclick="sendQuickReply('demo')">
-            <i class="fas fa-eye"></i> Demos
-        </button>
-        <button class="quick-reply-btn" onclick="sendQuickReply('contact')">
-            <i class="fas fa-envelope"></i> Contact
-        </button>
-        <button class="quick-reply-btn" onclick="sendQuickReply('whatsapp')">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </button>
-    </div>
-    
-    <div class="chatbot-input-area">
-        <input type="text" id="chatbotInput" placeholder="Type your message...">
-        <button onclick="sendMessage()">
-            <i class="fas fa-paper-plane"></i>
-        </button>
-    </div>
-</div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -848,252 +1272,201 @@
                 </div>
             </div>
             <hr>
-            <div class="wa-footnote">
-                <i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 · saurav343sharma@gmail.com
-            </div>
+            <div class="wa-footnote"><i class="fab fa-whatsapp" style="color:#25D366;"></i> +91 9027038209 · saurav343sharma@gmail.com</div>
         </div>
     </footer>
 
-    <!-- optional nav active script -->
     <script>
-        (function() {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const current = window.location.pathname.split("/").pop() || "Demo.html";
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === current) link.classList.add('active');
-                else if (current === '' && href === 'index.html') link.classList.add('active');
-            });
-        })();
+        document.addEventListener("DOMContentLoaded", function () {
+            let slideIndex = 0;
+            const slidesContainer = document.getElementById('demoSlides');
+            const slides = document.querySelectorAll('.demo-slide');
+            const dotsContainer = document.getElementById('sliderDots');
 
-          // ===== CHATBOT JAVASCRIPT =====
-    
-    // Get elements
-    const chatbotButton = document.querySelector('.chatbot-button');
-    const chatbotWindow = document.getElementById('chatbotWindow');
-    const chatbotMessages = document.getElementById('chatbotMessages');
-    const chatbotInput = document.getElementById('chatbotInput');
-    
-    // State
-    let isOpen = false;
+            if (!slidesContainer || slides.length === 0) return;
 
-    // Toggle Chatbot
-    function toggleChatbot() {
-        isOpen = !isOpen;
-        chatbotWindow.style.display = isOpen ? 'flex' : 'none';
-    }
+            const totalSlides = slides.length;
 
-    // Add click event listener
-    if (chatbotButton) {
-        chatbotButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            toggleChatbot();
-        });
-    }
+            // Create dots
+            dotsContainer.innerHTML = "";
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement("span");
+                dot.className = "slider-dot";
+                if (i === 0) dot.classList.add("active");
 
-    // Close button handler
-    const closeBtn = document.querySelector('.chatbot-header button');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            isOpen = false;
-            chatbotWindow.style.display = 'none';
-        });
-    }
+                dot.onclick = (function(index) {
+                    return function() { showSlide(index); };
+                })(i);
 
-    // Enter key handler
-    if (chatbotInput) {
-        chatbotInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendMessage();
+                dotsContainer.appendChild(dot);
             }
+
+            const dots = document.querySelectorAll('.slider-dot');
+
+            function showSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                
+                slideIndex = index;
+                slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+                dots.forEach((dot, i) => {
+                    if (i === slideIndex) {
+                        dot.classList.add("active");
+                    } else {
+                        dot.classList.remove("active");
+                    }
+                });
+            }
+
+            window.nextSlide = function() { showSlide(slideIndex + 1); };
+            window.prevSlide = function() { showSlide(slideIndex - 1); };
+
+            let interval = setInterval(() => {
+                nextSlide();
+            }, 4000);
+
+            const slider = document.querySelector('.demo-slider');
+            if (slider) {
+                slider.addEventListener("mouseenter", () => clearInterval(interval));
+                slider.addEventListener("mouseleave", () => {
+                    interval = setInterval(() => nextSlide(), 4000);
+                });
+            }
+
+            // Initial call to set correct position
+            showSlide(0);
         });
-    }
 
-    // Quick Reply Handler
-    window.sendQuickReply = function(topic) {
-        const userMessage = getUserFriendlyTopic(topic);
-        addMessage(userMessage, 'user');
-        showTypingIndicator();
-        
-        setTimeout(() => {
-            removeTypingIndicator();
-            let botResponse = botResponses[topic] || botResponses['default'];
-            addMessage(botResponse, 'bot');
-        }, 1500);
-    };
+        // ===== CHATBOT JAVASCRIPT =====
+        console.log('🚀 Chatbot script loading...');
 
-    // Send Message Handler
-    window.sendMessage = function() {
-        const message = chatbotInput.value.trim();
-        if (!message) return;
-        
-        addMessage(message, 'user');
-        chatbotInput.value = '';
-        
-        showTypingIndicator();
-        
-        setTimeout(() => {
-            removeTypingIndicator();
-            const response = getBotResponse(message.toLowerCase());
-            addMessage(response, 'bot');
-        }, 1500);
-    };
+        // Get elements
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
 
-    // Helper Functions
-    function getUserFriendlyTopic(topic) {
-        const topics = {
-            'pricing': 'Tell me about your pricing packages',
-            'services': 'What services do you offer?',
-            'demo': 'Show me your demo projects',
-            'contact': 'How can I contact you?',
-            'whatsapp': 'I want to chat on WhatsApp'
+        // State
+        let isOpen = false;
+
+        // Make toggle function globally available
+        window.toggleChatbot = function() {
+            if (!chatbotWindow) return;
+            isOpen = !isOpen;
+            chatbotWindow.style.display = isOpen ? 'flex' : 'none';
         };
-        return topics[topic] || topic;
-    }
 
-    function addMessage(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}-message`;
-        messageDiv.innerHTML = text.replace(/\n/g, '<br>');
-        chatbotMessages.appendChild(messageDiv);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
+        // Close button handler
+        const closeBtn = document.querySelector('.chatbot-header button');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                isOpen = false;
+                chatbotWindow.style.display = 'none';
+            });
+        }
 
-    function showTypingIndicator() {
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'typing-indicator';
-        typingDiv.id = 'typingIndicator';
-        typingDiv.innerHTML = '<span></span><span></span><span></span>';
-        chatbotMessages.appendChild(typingDiv);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
+        // Enter key handler
+        if (chatbotInput) {
+            chatbotInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        }
 
-    function removeTypingIndicator() {
-        const typingIndicator = document.getElementById('typingIndicator');
-        if (typingIndicator) typingIndicator.remove();
-    }
+        // Quick Reply Handler
+        window.sendQuickReply = function(topic) {
+            const userMessage = getUserFriendlyTopic(topic);
+            addMessage(userMessage, 'user');
+            showTypingIndicator();
+            
+            setTimeout(() => {
+                removeTypingIndicator();
+                let botResponse = botResponses[topic] || botResponses['default'];
+                addMessage(botResponse, 'bot');
+            }, 1500);
+        };
 
-    // Bot Responses Database
-    const botResponses = {
-        // Greetings
-        'hello': '👋 Hello! Welcome to CodeBite. I\'m here to help you with website development questions. What would you like to know?',
-        'hi': 'Hi there! 👋 How can I assist you with your website project today?',
-        'hey': 'Hey! 👋 Ready to discuss your website needs? Feel free to ask me anything!',
-        
-        // Pricing
-        'pricing': '💰 **Our Website Packages:**\n\n• **Normal:** ₹12,000\n  - 5 Page Website\n  - Responsive Design\n  - Contact Form\n  - Basic Security\n\n• **Premium:** ₹25,000 (Most Popular)\n  - 10 Page Website\n  - Custom UI Design\n  - Advanced SEO\n  - Admin Panel\n  - WhatsApp Integration\n\n• **Gold:** ₹40,000\n  - Unlimited Pages\n  - Premium UI/UX\n  - Full SEO Optimization\n  - E-commerce Ready\n  - Payment Gateway\n  - Priority Support\n\nCheck full details: https://codebite.co.in/price.html',
-        
-        'price': 'Our packages start at just ₹12,000! Check out all options at https://codebite.co.in/price.html\n\nQuick overview:\n✨ Normal: ₹12,000\n🔥 Premium: ₹25,000\n👑 Gold: ₹40,000',
-        
-        'cost': '💵 **Pricing Summary:**\n• Basic websites start at ₹12,000\n• Premium features from ₹25,000\n• Custom e-commerce from ₹40,000\n\nVisit https://codebite.co.in/price.html for complete details!',
-        
-        // Services
-        'services': '🛠️ **What We Build:**\n\n✅ **Business Websites** - Corporate & brand sites\n✅ **E-commerce Stores** - Online shopping with payments\n✅ **Restaurant Sites** - Menu display, online ordering\n✅ **Gym & Wellness** - Class schedules, memberships\n✅ **Salon Websites** - Service menu, online booking\n✅ **Custom Web Apps** - Tailored to your needs\n\nSee live examples: https://codebite.co.in/Demo.html',
-        
-        'service': 'We specialize in creating modern, fast websites for businesses. What type of business do you have? I can show you relevant examples!',
-        
-        // Demos/Portfolio
-        'demo': '👀 **Our Live Demo Projects:**\n\n🍰 **Spice Kitchen** - Restaurant with online ordering\n🎧 **Urban Beats** - E-commerce headphone store\n💪 **Peak Fitness** - Gym with class schedules\n✂️ **Glow Studio** - Salon with online booking\n💍 **Jewellery Store** - Product showcase\n\nView all: https://codebite.co.in/Demo.html',
-        
-        'portfolio': '🎨 Check out our work: https://codebite.co.in/Demo.html\n\nWe have examples for restaurants, e-commerce, gyms, salons, and more!',
-        
-        'examples': '📸 Here are our demo projects: https://codebite.co.in/Demo.html\n\nLet me know which one you like and we can create something similar for your business!',
-        
-        // Contact
-        'contact': '📬 **Get in Touch:**\n\n📧 Email: saurav343sharma@gmail.com\n📱 WhatsApp: +91 9027038209\n📝 Contact Form: https://codebite.co.in/contact.html\n\n⏰ Response Time: Within 24 hours (usually faster on WhatsApp!)',
-        
-        'phone': '📞 You can reach us on WhatsApp: +91 9027038209\n\nClick to chat: https://wa.me/919027038209',
-        
-        'email': '✉️ Email us at: saurav343sharma@gmail.com\n\nWe typically respond within 24 hours!',
-        
-        // WhatsApp
-        'whatsapp': '📱 **Chat with us on WhatsApp!**\n\nClick this link to start a conversation:\nhttps://wa.me/919027038209\n\nWe reply quickly, usually within a few hours!',
-        
-        // Location
-        'mathura': '📍 We are based in **Mathura** and proudly serve clients across:\n• Mathura City\n• Vrindavan\n• Agra\n• All of Uttar Pradesh\n\nBeing local means we understand the local market and can meet in person if needed!',
-        
-        'location': '📍 CodeBite is a Mathura-based website development studio. We serve clients throughout Uttar Pradesh!',
-        
-        // Business Hours
-        'hours': '⏰ **Our Availability:**\n\n• WhatsApp & Email: 9 AM - 7 PM (Mon-Sat)\n• Response Time: Within 24 hours\n• Urgent queries: WhatsApp is fastest!\n\nWe try to reply even faster - often within a few hours!',
-        
-        'time': '⏱️ We typically respond within a few hours during business days. WhatsApp gets the fastest replies!',
-        
-        // About
-        'about': '🏢 **About CodeBite:**\n\nWe are a professional website development studio based in Mathura. Our mission is to create modern, fast, and conversion-focused websites that help businesses grow online.\n\n✅ 100% Responsive Design\n✅ SEO Friendly\n✅ Fast Loading\n✅ Dedicated Support\n✅ Affordable Packages\n\nFounded by Saurav Sharma, we take pride in delivering quality work to our clients across Uttar Pradesh.',
-        
-        // Features
-        'features': '✨ **Why Choose CodeBite?**\n\n⚡ Lightning Fast - Optimized for speed\n📱 100% Responsive - Works on all devices\n🔍 SEO Friendly - Rank better on Google\n💬 Dedicated Support - Quick WhatsApp replies\n🛡️ Secure - SSL certificates included\n🎨 Custom Design - Tailored to your brand',
-        
-        // Support
-        'support': '🛟 We\'re Here to Help!\n\nAfter your website is live, we provide:\n• 1 month free maintenance\n• Quick WhatsApp support\n• Training on how to update content\n• Technical assistance\n\nJust reach out anytime!',
-        
-        // Payment
-        'payment': '💳 **Payment Options:**\n\n• 50% advance to start\n• 50% before final delivery\n• Bank transfer accepted\n• UPI payments available\n• All prices in INR (₹)\n\nContact us for custom payment plans!',
-        
-        // Thank You
-        'thank you': '😊 You\'re very welcome! Feel free to reach out anytime if you have more questions. Have a great day!',
-        'thanks': '🙏 Happy to help! Let me know if you need anything else about our website services.',
-        'thank': '🎉 Glad I could assist! Don\'t hesitate to contact us when you\'re ready to start your project.',
-        
-        // Bye
-        'bye': '👋 Goodbye! Thanks for visiting CodeBite. If you have more questions later, just come back and chat with me. Have a wonderful day!',
-        'goodbye': '👋 Take care! Feel free to reach out anytime through WhatsApp or our contact form.',
-        
-        // Default
-        'default': '🤔 I can help you with:\n\n💰 Pricing & Packages\n🛠️ Services We Offer\n👀 Live Demos & Portfolio\n📞 Contact Information\n📱 WhatsApp Chat\n📍 Our Location\n⏰ Business Hours\n\nWhat would you like to know more about?',
-    };
+        // Send Message Handler
+        window.sendMessage = function() {
+            const message = chatbotInput.value.trim();
+            if (!message) return;
+            
+            addMessage(message, 'user');
+            chatbotInput.value = '';
+            
+            showTypingIndicator();
+            
+            setTimeout(() => {
+                removeTypingIndicator();
+                const response = getBotResponse(message.toLowerCase());
+                addMessage(response, 'bot');
+            }, 1500);
+        };
 
-    // Get Bot Response based on user input
-    function getBotResponse(userInput) {
-        if (userInput.includes('hello') || userInput.includes('hi') || userInput.includes('hey')) {
-            return botResponses['hello'];
+        // Helper Functions
+        function getUserFriendlyTopic(topic) {
+            const topics = {
+                'pricing': 'Tell me about your pricing packages',
+                'services': 'What services do you offer?',
+                'demo': 'Show me your demo projects',
+                'contact': 'How can I contact you?',
+                'whatsapp': 'I want to chat on WhatsApp'
+            };
+            return topics[topic] || topic;
         }
-        else if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('pricing') || userInput.includes('package') || userInput.includes('rate')) {
-            return botResponses['pricing'];
+
+        function addMessage(text, sender) {
+            if (!chatbotMessages) return;
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.innerHTML = text.replace(/\n/g, '<br>');
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
-        else if (userInput.includes('service') || userInput.includes('do you') || userInput.includes('offer') || userInput.includes('build')) {
-            return botResponses['services'];
+
+        function showTypingIndicator() {
+            if (!chatbotMessages) return;
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = '<span></span><span></span><span></span>';
+            chatbotMessages.appendChild(typingDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
-        else if (userInput.includes('demo') || userInput.includes('portfolio') || userInput.includes('example') || userInput.includes('work') || userInput.includes('show')) {
-            return botResponses['demo'];
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) typingIndicator.remove();
         }
-        else if (userInput.includes('contact') || userInput.includes('reach') || userInput.includes('get in touch') || userInput.includes('call')) {
-            return botResponses['contact'];
+
+        // Bot Responses Database
+        const botResponses = {
+            'pricing': '💰 **Our Website Packages:**\n\n• **Normal:** ₹12,000\n  - 5 Page Website\n  - Responsive Design\n  - Contact Form\n  - Basic Security\n\n• **Premium:** ₹25,000 (Most Popular)\n  - 10 Page Website\n  - Custom UI Design\n  - Advanced SEO\n  - Admin Panel\n  - WhatsApp Integration\n\n• **Gold:** ₹40,000\n  - Unlimited Pages\n  - Premium UI/UX\n  - Full SEO Optimization\n  - E-commerce Ready\n  - Payment Gateway\n  - Priority Support\n\nCheck full details: <a href="https://codebite.co.in/price.html" target="_blank" style="color: #2563eb; text-decoration: underline;">View Pricing Page</a>',
+            
+            'services': '🛠️ **What We Build:**\n\n✅ **Business Websites** - Corporate & brand sites\n✅ **E-commerce Stores** - Online shopping with payments\n✅ **Restaurant Sites** - Menu display, online ordering\n✅ **Gym & Wellness** - Class schedules, memberships\n✅ **Salon Websites** - Service menu, online booking\n✅ **Custom Web Apps** - Tailored to your needs\n\nSee live examples: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">View Demos</a>',
+            
+            'demo': '👀 **Our Live Demo Projects:**\n\n🍰 **Restaurant** - Online menu & ordering\n🍔 **Burger Store** - Modern food shop\n💪 **Gym Fitness** - Class schedules\n✂️ **Salon & Spa** - Online booking\n💍 **Jewellery Store** - Product showcase\n\nView all: <a href="https://codebite.co.in/Demo.html" target="_blank" style="color: #2563eb; text-decoration: underline;">https://codebite.co.in/Demo.html</a>',
+            
+            'contact': '📬 **Get in Touch:**\n\n📧 Email: <a href="mailto:saurav343sharma@gmail.com" style="color: #2563eb; text-decoration: underline;">saurav343sharma@gmail.com</a>\n📱 WhatsApp: <a href="https://wa.me/919027038209" target="_blank" style="color: #2563eb; text-decoration: underline;">+91 9027038209</a>\n\n⏰ Response Time: Within 24 hours',
+            
+            'whatsapp': '📱 **Chat with us on WhatsApp!**\n\nClick this link to start a conversation:\n<a href="https://wa.me/919027038209" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline; font-weight: bold;">https://wa.me/919027038209</a>\n\nWe reply quickly, usually within a few hours!',
+            
+            'default': '🤔 I can help you with:\n\n💰 Pricing & Packages\n🛠️ Services We Offer\n👀 Live Demos & Portfolio\n📞 Contact Information\n📱 WhatsApp Chat\n\nWhat would you like to know more about?',
+        };
+
+        function getBotResponse(userInput) {
+            if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('pricing') || userInput.includes('package')) return botResponses['pricing'];
+            else if (userInput.includes('service') || userInput.includes('offer') || userInput.includes('build')) return botResponses['services'];
+            else if (userInput.includes('demo') || userInput.includes('portfolio') || userInput.includes('example') || userInput.includes('work')) return botResponses['demo'];
+            else if (userInput.includes('contact') || userInput.includes('reach') || userInput.includes('email')) return botResponses['contact'];
+            else if (userInput.includes('whatsapp') || userInput.includes('chat')) return botResponses['whatsapp'];
+            else return botResponses['default'];
         }
-        else if (userInput.includes('whatsapp') || userInput.includes('wa') || userInput.includes('chat')) {
-            return botResponses['whatsapp'];
-        }
-        else if (userInput.includes('mathura') || userInput.includes('location') || userInput.includes('where') || userInput.includes('based')) {
-            return botResponses['mathura'];
-        }
-        else if (userInput.includes('hour') || userInput.includes('time') || userInput.includes('response') || userInput.includes('available')) {
-            return botResponses['hours'];
-        }
-        else if (userInput.includes('about') || userInput.includes('who') || userInput.includes('company')) {
-            return botResponses['about'];
-        }
-        else if (userInput.includes('feature') || userInput.includes('why') || userInput.includes('benefit')) {
-            return botResponses['features'];
-        }
-        else if (userInput.includes('support') || userInput.includes('help') || userInput.includes('maintenance')) {
-            return botResponses['support'];
-        }
-        else if (userInput.includes('payment') || userInput.includes('pay') || userInput.includes('advance')) {
-            return botResponses['payment'];
-        }
-        else if (userInput.includes('thank') || userInput.includes('thanks')) {
-            return botResponses['thanks'];
-        }
-        else if (userInput.includes('bye') || userInput.includes('goodbye') || userInput.includes('see you')) {
-            return botResponses['bye'];
-        }
-        else {
-            return botResponses['default'];
-        }
-    }
+
+        console.log('✅ Chatbot script loaded successfully');
     </script>
 </body>
 </html>
