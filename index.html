@@ -140,121 +140,250 @@
             background: #20b359;
         }
 
-        /* HERO SLIDER (fully responsive) */
-        .hero-slider {
-            width: 100%;
-            background-color: #0b1e2f;
-            position: relative;
-            overflow: hidden;
-        }
-        .slides-container {
-            position: relative;
-            width: 100%;
-            height: min(600px, 80vh);
-            min-height: 400px;
-        }
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0 5%;
-        }
-        .slide.active {
-            opacity: 1;
-            z-index: 2;
-        }
-        .slide::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(10,30,50,0.8) 0%, rgba(10,30,50,0.4) 80%);
-            z-index: 1;
-        }
-        .slide-content {
-            position: relative;
-            z-index: 3;
-            max-width: 700px;
-            color: white;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            animation: fadeUp 1s ease;
-        }
-        .slide-content h2 {
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        .slide-content p {
-            font-size: clamp(1rem, 3vw, 1.4rem);
-            margin-bottom: 1.8rem;
-            opacity: 0.9;
-        }
-        .slide-btn {
-            background: #FF9F1C;
-            color: #0b2f4e;
-            padding: 0.9rem 2.2rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-            transition: 0.2s;
-            font-size: 1rem;
-        }
-        .slide-btn:hover {
-            background: #ffffff;
-            color: #0d3a5c;
-        }
-        .slider-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: 0.2s;
-            border: 2px solid transparent;
-        }
-        .dot.active {
-            background: #FF9F1C;
-            transform: scale(1.3);
-            border-color: white;
-        }
 
-        @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
+        /* ----- SLIDER CONTAINER ----- */
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      background: #000;
+    }
 
-        /* container */
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 2rem 2rem 1rem;
-        }
+    /* Slides Wrapper (flex row for horizontal sliding) */
+    .slides-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
 
+    /* Individual Slide */
+    .slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      /* Dark overlay (pseudo-element) for better text contrast */
+    }
+
+    /* Overlay: dark gradient + solid tint for readability */
+    .slide::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.55) 100%);
+      z-index: 1;
+    }
+
+    /* Text content container - centered absolutely */
+    .slide-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 85%;
+      max-width: 900px;
+      text-align: center;
+      z-index: 2;
+      color: white;
+      padding: 1.5rem;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Heading style */
+    .slide-content h1 {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Subtext */
+    .slide-content p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 400;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #25D366;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(2px);
+    }
+
+    .whatsapp-btn i {
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    /* Hover effect on button */
+    .whatsapp-btn:hover {
+      background-color: #1da851;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-btn:hover i {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-btn:active {
+      transform: translateY(2px);
+    }
+
+    /* Navigation arrows */
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 15;
+      transition: all 0.2s ease;
+      color: white;
+      font-size: 1.4rem;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .nav-arrow:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .arrow-left {
+      left: 20px;
+    }
+
+    .arrow-right {
+      right: 20px;
+    }
+
+    /* Dots container */
+    .dots-container {
+      position: absolute;
+      bottom: 28px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      z-index: 15;
+      padding: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(2px);
+    }
+
+    .dot.active {
+      background-color: #25D366;
+      transform: scale(1.25);
+      box-shadow: 0 0 8px #25D366;
+      width: 28px;
+      border-radius: 12px;
+    }
+
+    /* Animation for slide content */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-slider {
+        min-height: 600px;
+        height: 100vh;
+      }
+      .whatsapp-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+      }
+      .nav-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      .arrow-left {
+        left: 12px;
+      }
+      .arrow-right {
+        right: 12px;
+      }
+      .dots-container {
+        bottom: 18px;
+        gap: 12px;
+      }
+      .slide-content {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .whatsapp-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+      }
+      .nav-arrow {
+        width: 36px;
+        height: 36px;
+      }
+      .dot.active {
+        width: 22px;
+      }
+    }
+          
         /* original hero section (now secondary) */
         .hero {
             display: flex;
@@ -509,32 +638,434 @@
         .featured-projects {
             margin: 4rem 0;
         }
-        .section-title {
-            font-size: clamp(1.8rem, 4vw, 2.2rem);
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .project-mini-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-            gap: 1.8rem;
-        }
-        .project-card {
-            background: white;
-            border-radius: 28px;
-            padding: 1.8rem;
-            box-shadow: 0 15px 25px -10px rgba(0,0,0,0.05);
-        }
-        .project-card h3 {
-            font-size: 1.5rem;
-        }
-        .project-type {
-            color: #2563eb;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+        
+/* ===== FEATURED PROJECTS SECTION - ATTRACTIVE MODERN DESIGN ===== */
+.featured-projects {
+    max-width: 1280px;
+    margin: 4rem auto;
+    padding: 2rem 2rem 3rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #1e293b 0%, #2d3a4e 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    letter-spacing: -0.02em;
+    position: relative;
+}
+
+.section-title i {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 4px;
+}
+
+/* Project Grid - Responsive Masonry Style */
+.project-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.8rem;
+    margin: 2rem 0 1rem;
+}
+
+/* Project Cards - Premium Glassmorphic Style */
+.project-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(0px);
+    border-radius: 1.5rem;
+    padding: 1.8rem 1.2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.03);
+}
+
+/* Animated Gradient Border Effect */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa, #3b82f6, #2563eb);
+    background-size: 200% 100%;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+    animation: shimmer 1.2s ease-in-out;
+}
+
+/* Hover Effects - Elevate & Scale */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 35px -12px rgba(37, 99, 235, 0.25);
+    border-color: rgba(37, 99, 235, 0.3);
+    background: white;
+}
+
+/* Project Type Badge */
+.project-type {
+    display: inline-block;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    color: #1e40af;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.project-card:hover .project-type {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: white;
+    border-color: transparent;
+    transform: scale(1.02);
+}
+
+/* Card Heading */
+.project-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0.8rem 0 0.6rem;
+    transition: color 0.3s ease;
+    letter-spacing: -0.3px;
+}
+
+.project-card:hover h3 {
+    color: #2563eb;
+}
+
+/* Card Description */
+.project-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.project-card:hover p {
+    color: #334155;
+}
+
+/* Add Decorative Icons Background (Subtle) */
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.project-card:hover::after {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+}
+
+/* See All Demos Link Styling */
+.featured-projects > p {
+    text-align: center;
+    margin-top: 2.5rem !important;
+    position: relative;
+}
+
+.featured-projects > p a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.featured-projects > p a i {
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.featured-projects > p a:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    transform: translateY(-2px);
+}
+
+.featured-projects > p a:hover i {
+    transform: translateX(6px);
+}
+
+/* Animation Keyframes */
+@keyframes shimmer {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+/* Add staggered entrance animation for cards */
+.project-card {
+    opacity: 0;
+    animation: fadeSlideUp 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.05s; }
+.project-card:nth-child(2) { animation-delay: 0.1s; }
+.project-card:nth-child(3) { animation-delay: 0.15s; }
+.project-card:nth-child(4) { animation-delay: 0.2s; }
+.project-card:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    .featured-projects {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+    
+    .project-mini-grid {
+        gap: 1.2rem;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    
+    .project-card {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-title i {
+        font-size: 1.6rem;
+    }
+    
+    .featured-projects > p a {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-projects {
+        margin: 1.5rem 0.8rem;
+        padding: 1rem;
+    }
+    
+    .project-mini-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .project-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        padding: 1rem 1.2rem;
+        gap: 1rem;
+    }
+    
+    .project-card .project-type {
+        margin-bottom: 0;
+        font-size: 0.7rem;
+        white-space: nowrap;
+    }
+    
+    .project-card h3 {
+        margin: 0;
+        font-size: 1rem;
+        flex: 1;
+    }
+    
+    .project-card p {
+        display: none;
+    }
+    
+    .project-card::after, .project-card::before {
+        display: none;
+    }
+}
+
+
+/* Section */
+.feature-section {
+    padding: 60px 20px;
+    background: #f8fafc;
+}
+
+/* Container */
+.feature-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Image */
+.feature-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Content */
+.feature-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.feature-content p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.feature-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.feature-content ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Button */
+.feature-btn {
+    display: inline-block;
+    background: #0d3a5c;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.feature-btn:hover {
+    background: #09283f;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .feature-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Optional: Add a subtle background pattern for extra visual appeal */
+.featured-projects {
+    position: relative;
+    isolation: isolate;
+}
+
+.featured-projects::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 40%, rgba(37, 99, 235, 0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+/* Hover effect for grid - scale siblings subtly */
+.project-mini-grid:hover .project-card:not(:hover) {
+    opacity: 0.7;
+    transform: scale(0.98);
+    transition: all 0.3s ease;
+}
+
+.project-mini-grid .project-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Glow effect on card hover */
+.project-card:hover {
+    box-shadow: 0 20px 35px -12px rgba(37, 99, 235, 0.35);
+}
+
+/* Add micro-interaction for icons inside cards if any */
+.project-card i {
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover i {
+    transform: scale(1.1);
+}
+
         .contact-teaser {
             background: white;
             border-radius: 50px;
@@ -1077,53 +1608,109 @@
     </nav>
 
     <!-- HERO SLIDER -->
-    <div class="hero-slider">
-        <div class="slides-container" id="heroSlides">
-            <!-- slide 1 -->
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f6?q=80&w=2070&auto=format&fit=crop');">
-                <div class="slide-content">
-                    <h2>Modern websites that work</h2>
-                    <p>Pixel perfect, fast & conversion focused</p>
-                    <a href="Demo.html" class="slide-btn"><i class="fas fa-eye"></i> View demos</a>
-                </div>
-            </div>
-            <!-- slide 2 -->
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop');">
-                <div class="slide-content">
-                    <h2>E‑commerce & stores</h2>
-                    <p>Sell online with powerful tools</p>
-                    <a href="price.html" class="slide-btn"><i class="fas fa-cart-shopping"></i> Packages</a>
-                </div>
-            </div>
-            <!-- slide 3 -->
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');">
-                <div class="slide-content">
-                    <h2>Startup & brand identity</h2>
-                    <p>We build your digital presence</p>
-                    <a href="contact.html" class="slide-btn"><i class="fas fa-headset"></i> Let's talk</a>
-                </div>
-            </div>
-        </div>
-        <!-- navigation dots -->
-        <div class="slider-dots" id="sliderDots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-        </div>
+   <div class="hero-slider">
+  <div class="slides-wrapper" id="slidesWrapper">
+    <!-- Slide 1 -->
+    <div class="slide" data-index="0" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+      <div class="slide-content">
+        <h1>Get Your Business Website in 3 Days 🚀</h1>
+        <p>We help local businesses get more customers online</p>
+        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> Get Free Demo on WhatsApp
+        </a>
+      </div>
     </div>
+    <!-- Slide 2 -->
+    <div class="slide" data-index="1" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80');">
+      <div class="slide-content">
+        <h1>Turn Your Business Into an Online Brand 🌐</h1>
+        <p>Professional websites that attract and convert customers</p>
+        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> Start Your Project Today
+        </a>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide" data-index="2" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+      <div class="slide-content">
+        <h1>Get More Leads & Sales with Your Website 📈</h1>
+        <p>We design websites that actually bring customers</p>
+        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> Get More Customers
+        </a>
+      </div>
+    </div>
+    <!-- Slide 4 -->
+    <div class="slide" data-index="3" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+      <div class="slide-content">
+        <h1>Affordable Website Design for Small Businesses 💻</h1>
+        <p>Start your online journey at just ₹4999</p>
+        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> View Pricing
+        </a>
+      </div>
+    </div>
+    <!-- Slide 5 -->
+    <div class="slide" data-index="4" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+      <div class="slide-content">
+        <h1>No Website? You're Losing Customers Daily ❌</h1>
+        <p>Let us build your online presence quickly & professionally</p>
+        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> Contact Now
+        </a>
+      </div>
+    </div>
+    <!-- Slide 6 -->
+    <div class="slide" data-index="5" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+      <div class="slide-content">
+        <h1>Your Success Starts with a Powerful Website 🔥</h1>
+        <p>We create modern, fast & mobile-friendly websites</p>
+        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> Get Started Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Arrows -->
+  <div class="nav-arrow arrow-left" id="prevBtn">
+    <i class="fas fa-chevron-left"></i>
+  </div>
+  <div class="nav-arrow arrow-right" id="nextBtn">
+    <i class="fas fa-chevron-right"></i>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots-container" id="dotsContainer"></div>
+</div>
+
 
     <main class="container">
-        <!-- original hero section -->
-        <div class="hero">
-            <div class="hero-text">
-                <h1>Websites with personality & performance</h1>
-                <p>We build modern, fast, and conversion-focused websites for startups, restaurants, salons, and businesses. Check our live demos or grab a limited-price package.</p>
-                <div class="cta-buttons">
-                    <a href="price.html" class="btn-primary"><i class="fas fa-crown"></i> View packages</a>
-                    <a href="Demo.html" class="btn-outline"><i class="fas fa-rocket"></i> Live demos</a>
-                </div>
-            </div>
+      <!-- original hero section -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Build a Website That Grows Your Business 🚀</h1>
+
+        <p>
+            We create modern, fast, and high-converting websites for startups, restaurants, salons, and local businesses. 
+            Trusted by clients for quality design, fast delivery, and reliable support.
+        </p>
+
+        <!-- 🔥 trust + value line -->
+        <p style="margin-top:8px; font-size:0.95rem; color:#555;">
+            ✔ Affordable pricing | ⚡ Fast delivery | 📱 100% mobile-friendly
+        </p>
+
+        <div class="cta-buttons">
+            <a href="price.html" class="btn-primary">
+                <i class="fas fa-crown"></i> View Packages
+            </a>
+            <a href="Demo.html" class="btn-outline">
+                <i class="fas fa-rocket"></i> Live Demos
+            </a>
         </div>
+    </div>
+</div>
 
         <!-- Our Work in Action section -->
         <section class="image-showcase">
@@ -1217,6 +1804,37 @@
             </div>
         </section>
 
+<section class="feature-section">
+    <div class="feature-container">
+
+        <!-- Image -->
+        <div class="feature-image">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d" alt="Website Design">
+        </div>
+
+        <!-- Content -->
+        <div class="feature-content">
+            <h2>We Build Websites That Convert Visitors into Customers 🚀</h2>
+            
+            <p>
+                Our websites are designed to look premium, load fast, and help your business grow online. 
+                Whether you're a startup or local business, we deliver results-driven solutions.
+            </p>
+
+            <ul>
+                <li>✔ Modern & attractive design</li>
+                <li>✔ Mobile-friendly on all devices</li>
+                <li>✔ Fast loading & SEO optimized</li>
+                <li>✔ Easy contact & WhatsApp integration</li>
+            </ul>
+
+            <a href="price.html" class="feature-btn">Get Your Website</a>
+        </div>
+
+    </div>
+</section>
+
+
         <!-- why choose us section -->
         <section class="why-us-section">
             <div class="section-header">
@@ -1247,84 +1865,235 @@
             </div>
         </section>
 
+
+<section class="feature-section">
+    <div class="feature-container">
+
+        <!-- Content (Left side this time) -->
+        <div class="feature-content">
+            <h2>Grow Your Business Online with a Powerful Website 🌐</h2>
+            
+            <p>
+                A professional website builds trust and helps you reach more customers. 
+                We create websites that not only look great but also bring real results for your business.
+            </p>
+
+            <ul>
+                <li>✔ Custom design for your brand</li>
+                <li>✔ SEO-friendly structure</li>
+                <li>✔ Fast & secure performance</li>
+                <li>✔ 24/7 support & updates</li>
+            </ul>
+
+            <a href="contact.html" class="feature-btn">Start Your Project</a>
+        </div>
+
+        <!-- Image (Right side) -->
+        <div class="feature-image">
+            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d" alt="Business Growth">
+        </div>
+
+    </div>
+</section>
+
+
         <!-- featured projects -->
         <div class="featured-projects">
             <h2 class="section-title"><i class="fas fa-bolt" style="color:#2563eb;"></i> Recent work</h2>
             <div class="project-mini-grid">
                 <div class="project-card">
-                    <span class="project-type">Restaurant</span>
-                    <h3>🍰 Bakery site</h3>
-                    <p>Online menu & ordering</p>
-                </div>
+    <span class="project-type">Restaurant</span>
+    <h3>🍰 Bakery Website</h3>
+    <p>Online menu & cake ordering system</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Fitness</span>
+    <h3>💪 Gym & Fitness Club</h3>
+    <p>Workout plans & membership details</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">E-commerce</span>
+    <h3>🛒 Online Store</h3>
+    <p>Products, cart & secure checkout</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Salon</span>
+    <h3>✂️ Beauty Salon</h3>
+    <p>Service booking & price list</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Jewellery</span>
+    <h3>💍 Jewellery Shop</h3>
+    <p>Elegant collections & online shopping</p>
+</div>
                 <div class="project-card">
-                    <span class="project-type">GYM</span>
-                    <h3>💪 Fitness club</h3>
-                    <p>Class schedule & branding</p>
-                </div>
-                <div class="project-card">
-                    <span class="project-type">E-commerce</span>
-                    <h3>🛒store</h3>
-                    <p>Product catalog</p>
-                </div>
-                <div class="project-card">
-                    <span class="project-type">E-commerce</span>
-                    <h3>✂️ Salon</h3>
-                    <p>Product catalog</p>
-                </div>
-                <div class="project-card">
-                    <span class="project-type">E-commerce</span>
-                    <h3>💍 Jewellery</h3>
-                    <p>Product catalog</p>
-                </div>
+    <span class="project-type">Portfolio</span>
+    <h3>🎨 Personal Portfolio</h3>
+    <p>Showcase skills & projects</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Business</span>
+    <h3>🏢 Corporate Website</h3>
+    <p>Company profile & services</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Blog</span>
+    <h3>📝 Blogging Platform</h3>
+    <p>Articles & content sharing</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Education</span>
+    <h3>📚 E-Learning</h3>
+    <p>Online courses & tutorials</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Landing Page</span>
+    <h3>🚀 Startup Landing</h3>
+    <p>Product promotion page</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Web App</span>
+    <h3>💻 Dashboard</h3>
+    <p>Analytics & user data</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Food</span>
+    <h3>🍔 Restaurant Website</h3>
+    <p>Menu & online ordering</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Travel</span>
+    <h3>✈️ Travel Agency</h3>
+    <p>Tour packages & booking</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Real Estate</span>
+    <h3>🏠 Property Listing</h3>
+    <p>Buy & sell properties</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Healthcare</span>
+    <h3>🏥 Medical Website</h3>
+    <p>Appointment & services</p>
+</div>
+
+<div class="project-card">
+    <span class="project-type">Social</span>
+    <h3>💬 Social Media App</h3>
+    <p>Connect & share posts</p>
+</div>
             </div>
             <p style="margin-top:2rem;"><a href="Demo.html" style="color:#2563eb; font-weight:600;">See all demos <i class="fas fa-arrow-right"></i></a></p>
         </div>
 
         <!-- testimonials -->
-        <section class="testimonials-section">
-            <div class="section-header">
-                <h2>What our clients say</h2>
-                <p>Trusted by startups and local businesses</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>“CodeBite built our restaurant website. The online menu and WhatsApp ordering increased our takeaway orders by 40%.”</p>
-                    <div class="client-info">
-                        <div class="client-avatar"><i class="fas fa-user"></i></div>
-                        <div class="client-name">
-                            <h5>Rohit Mehta</h5>
-                            <span>Owner, Spice Kitchen</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p>“Very professional and fast. They guided us from domain to final launch. The gym site looks stunning and loads instantly.”</p>
-                    <div class="client-info">
-                        <div class="client-avatar"><i class="fas fa-user"></i></div>
-                        <div class="client-name">
-                            <h5>Neha Sharma</h5>
-                            <span>Fitness trainer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p>“I got the Premium package – admin panel and SEO. My sales doubled in 2 months. Highly recommended!”</p>
-                    <div class="client-info">
-                        <div class="client-avatar"><i class="fas fa-user"></i></div>
-                        <div class="client-name">
-                            <h5>Arjun Singh</h5>
-                            <span>Jewellery store owner</span>
-                        </div>
-                    </div>
+       <section class="testimonials-section">
+    <div class="section-header">
+        <h2>What our clients say</h2>
+        <p>Trusted by startups and local businesses</p>
+    </div>
+
+    <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+            <p>“Amazing experience working with CodeBite. They created my restaurant website exactly how I wanted. Easy ordering system and great support!”</p>
+            <div class="client-info">
+                <div class="client-avatar"><i class="fas fa-user"></i></div>
+                <div class="client-name">
+                    <h5>Rohit Mehta</h5>
+                    <span>Restaurant Owner</span>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <div class="testimonial-card">
+            <p>“Very professional team. They delivered my gym website on time and it looks modern and fast. Highly recommended for any business.”</p>
+            <div class="client-info">
+                <div class="client-avatar"><i class="fas fa-user"></i></div>
+                <div class="client-name">
+                    <h5>Neha Sharma</h5>
+                    <span>Fitness Trainer</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <p>“Great service and support. My online store is running smoothly and I’ve started getting more customers after launching the website.”</p>
+            <div class="client-info">
+                <div class="client-avatar"><i class="fas fa-user"></i></div>
+                <div class="client-name">
+                    <h5>Arjun Singh</h5>
+                    <span>Business Owner</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <p>“Affordable pricing and excellent quality work. They helped me from domain setup to final launch without any confusion.”</p>
+            <div class="client-info">
+                <div class="client-avatar"><i class="fas fa-user"></i></div>
+                <div class="client-name">
+                    <h5>Pooja Verma</h5>
+                    <span>Startup Founder</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <p>“Very responsive and helpful team. Whenever I had changes, they updated quickly. Website performance is really good.”</p>
+            <div class="client-info">
+                <div class="client-avatar"><i class="fas fa-user"></i></div>
+                <div class="client-name">
+                    <h5>Rahul Gupta</h5>
+                    <span>Local Business Owner</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+    <p>“Excellent service by CodeBite! They understood my requirements perfectly and delivered a fast, modern website. Communication was smooth and support is always available.”</p>
+    <div class="client-info">
+        <div class="client-avatar"><i class="fas fa-user"></i></div>
+        <div class="client-name">
+            <h5>Vikas Agarwal</h5>
+            <span>Small Business Owner</span>
+        </div>
+    </div>
+</div>
+
+    </div>
+</section>
 
         <!-- contact teaser -->
-        <div class="contact-teaser">
-            <span><i class="fab fa-whatsapp" style="color:#25D366; font-size:2rem;"></i> <strong>DM on WhatsApp</strong> – reply within hours</span>
-            <a href="contact.html" style="background:#0d3a5c; color:white; padding:0.8rem 2rem; border-radius:40px; text-decoration:none; font-weight:600;">Contact page</a>
-        </div>
+       <div class="contact-teaser">
+    <span>
+        <i class="fab fa-whatsapp" style="color:#25D366; font-size:2rem;"></i> 
+        <strong>Chat with us on WhatsApp</strong> – quick response within hours, trusted by local businesses
+    </span>
+
+    <p style="margin:8px 0; font-size:0.9rem; color:#555;">
+        ✔ Free consultation & guidance <br>
+        ✔ Transparent pricing – no hidden charges <br>
+        ✔ Fast delivery with ongoing support
+    </p>
+
+    <a href="contact.html" style="background:#0d3a5c; color:white; padding:0.8rem 2rem; border-radius:40px; text-decoration:none; font-weight:600;">
+        Get in Touch
+    </a>
+</div>
     </main>
 
     <!-- ===== CHATBOT AND WHATSAPP BUTTONS ===== -->
@@ -1409,59 +2178,217 @@
 
     <!-- Slider JavaScript -->
     <script>
-        (function() {
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
-            let currentIndex = 0;
-            const intervalTime = 2000;
-            let slideInterval;
+         (function() {
+    // ---------- SLIDER CONFIGURATION ----------
+    const slidesWrapper = document.getElementById('slidesWrapper');
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentIndex = 0;               // 0-based index
+    let autoSlideInterval;
+    const autoDelay = 4000;              // 4 seconds (smooth modern rhythm)
+    let isTransitioning = false;         // prevent rapid clicks
 
-            function showSlide(index) {
-                if (index < 0) index = slides.length - 1;
-                if (index >= slides.length) index = 0;
+    // Create dots dynamically
+    const dotsContainer = document.getElementById('dotsContainer');
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === currentIndex) dot.classList.add('active');
+        dot.setAttribute('data-index', i);
+        dot.addEventListener('click', () => {
+          if (isTransitioning) return;
+          goToSlide(i);
+          resetAutoSlideTimer();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
 
-                slides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
+    // Update dots active class
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
 
-                slides[index].classList.add('active');
-                dots[index].classList.add('active');
-                currentIndex = index;
-            }
+    // Move to specific slide index (smooth transition)
+    function goToSlide(index) {
+      if (index === currentIndex) return;
+      if (isTransitioning) return;
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
 
-            function nextSlide() {
-                showSlide(currentIndex + 1);
-            }
+      isTransitioning = true;
+      currentIndex = index;
+      const offset = -currentIndex * 100;
+      slidesWrapper.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      slidesWrapper.style.transform = `translateX(${offset}%)`;
 
-            function startSlider() {
-                slideInterval = setInterval(nextSlide, intervalTime);
-            }
+      // Update dots
+      updateDots();
 
-            function resetInterval() {
-                clearInterval(slideInterval);
-                startSlider();
-            }
+      // Optional: Re-trigger fadeInUp animation on current slide content
+      const activeSlideContent = slides[currentIndex].querySelector('.slide-content');
+      if (activeSlideContent) {
+        activeSlideContent.style.animation = 'none';
+        activeSlideContent.offsetHeight; // force reflow
+        activeSlideContent.style.animation = 'fadeInUp 0.8s ease-out forwards';
+      }
 
-            dots.forEach((dot, idx) => {
-                dot.addEventListener('click', () => {
-                    if (currentIndex !== idx) {
-                        showSlide(idx);
-                        resetInterval();
-                    }
-                });
-            });
+      // After transition ends, allow new transitions
+      const onTransitionEnd = () => {
+        isTransitioning = false;
+        slidesWrapper.removeEventListener('transitionend', onTransitionEnd);
+      };
+      slidesWrapper.addEventListener('transitionend', onTransitionEnd, { once: true });
+      
+      // fallback timeout (just in case)
+      setTimeout(() => {
+        if (isTransitioning) isTransitioning = false;
+      }, 700);
+    }
 
-            startSlider();
+    // Next slide
+    function nextSlide() {
+      if (isTransitioning) return;
+      let newIndex = currentIndex + 1;
+      if (newIndex >= totalSlides) newIndex = 0;
+      goToSlide(newIndex);
+    }
 
-            const sliderContainer = document.querySelector('.hero-slider');
-            sliderContainer.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-            sliderContainer.addEventListener('mouseleave', () => {
-                startSlider();
-            });
+    // Previous slide
+    function prevSlide() {
+      if (isTransitioning) return;
+      let newIndex = currentIndex - 1;
+      if (newIndex < 0) newIndex = totalSlides - 1;
+      goToSlide(newIndex);
+    }
 
-            showSlide(0);
-        })();
+    // Auto-slide logic (loop)
+    function startAutoSlide() {
+      if (autoSlideInterval) clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => {
+        // only if not hovering or not transitioning? we always slide after delay
+        if (!isTransitioning) {
+          nextSlide();
+        }
+      }, autoDelay);
+    }
+
+    function resetAutoSlideTimer() {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+      }
+    }
+
+    // Pause auto-slide on hover (optional, improves UX)
+    const sliderContainer = document.querySelector('.hero-slider');
+    function pauseAutoSlide() {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+      }
+    }
+    function resumeAutoSlide() {
+      if (!autoSlideInterval) {
+        startAutoSlide();
+      }
+    }
+
+    // Event listeners for arrows
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    prevBtn.addEventListener('click', () => {
+      if (isTransitioning) return;
+      prevSlide();
+      resetAutoSlideTimer();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      if (isTransitioning) return;
+      nextSlide();
+      resetAutoSlideTimer();
+    });
+
+    // Hover events: pause on mouse enter, resume on mouse leave (optional, but improves)
+    sliderContainer.addEventListener('mouseenter', () => {
+      pauseAutoSlide();
+    });
+    sliderContainer.addEventListener('mouseleave', () => {
+      if (!autoSlideInterval) startAutoSlide();
+    });
+
+    // Touch support for mobile swipe (optional enhancement)
+    let touchStartX = 0;
+    let touchEndX = 0;
+    sliderContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    sliderContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          // swipe right -> prev
+          prevSlide();
+        } else {
+          // swipe left -> next
+          nextSlide();
+        }
+        resetAutoSlideTimer();
+      }
+    });
+
+    // Initialize: set first slide position and animations, also preload subtle effect
+    function initSlider() {
+      // set initial transform without transition to avoid flicker
+      slidesWrapper.style.transition = 'none';
+      slidesWrapper.style.transform = `translateX(0%)`;
+      // force reflow
+      void slidesWrapper.offsetHeight;
+      slidesWrapper.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      
+      createDots();
+      // ensure all slide contents have initial fadeInUp
+      slides.forEach(slide => {
+        const content = slide.querySelector('.slide-content');
+        if (content) {
+          content.style.animation = 'fadeInUp 0.8s ease-out forwards';
+        }
+      });
+      currentIndex = 0;
+      updateDots();
+      startAutoSlide();
+    }
+
+    // Fix resize: recalc no need but ensure full width consistency
+    window.addEventListener('resize', () => {
+      // re-align slides wrapper position just in case
+      if (!isTransitioning) {
+        const offset = -currentIndex * 100;
+        slidesWrapper.style.transition = 'none';
+        slidesWrapper.style.transform = `translateX(${offset}%)`;
+        void slidesWrapper.offsetHeight;
+        slidesWrapper.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      }
+    });
+
+    // Optional: change background image for better performance: images are preloaded by browser anyway
+    // Since we use inline background-image, it's fine.
+    // Ensure all WhatsApp buttons open correct link (already target _blank and proper wa.me)
+    // Also add smooth scroll behavior for anchor? no needed.
+    initSlider();
+  })();
+
 
 // ===== CHATBOT JAVASCRIPT WITH DEBUGGING =====
 console.log('🚀 Chatbot script loading...');
