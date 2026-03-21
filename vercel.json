@@ -3,7 +3,24 @@
     { "source": "/", "destination": "/index.html" },
     { "source": "/home", "destination": "/index.html" },
     { "source": "/price", "destination": "/price.html" },
+    { "source": "/demo", "destination": "/demo.html" },
     { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/about", "destination": "/about.html" }
+    { "source": "/about", "destination": "/about.html" },
+
+    { "source": "/FAQs", "destination": "/FAQs.html" },
+    { "source": "/faqs", "destination": "/FAQs.html" },
+
+    { "source": "/cookie%20policy", "destination": "/cookie policy.html" },
+
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    }
   ]
 }
