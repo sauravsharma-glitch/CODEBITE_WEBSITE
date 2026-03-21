@@ -140,8 +140,226 @@
             background: #20b359;
         }
 
+/* Section with background image */
+.cta-bg-section {
+  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover no-repeat;
+    min-height: 450px;
+    position: relative;
+}
 
-        /* ----- SLIDER CONTAINER ----- */
+/* Overlay */
+.cta-bg-overlay {
+    background: rgba(0, 0, 0, 0.65);
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* Content */
+.cta-bg-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Heading */
+.cta-bg-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+.cta-bg-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Features */
+.cta-bg-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.cta-bg-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Buttons style */
+.cta-bg-btn-primary,
+.cta-bg-btn-outline {
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Primary */
+.cta-bg-btn-primary {
+    background: #25D366;
+    color: white;
+}
+
+.cta-bg-btn-primary:hover {
+    background: #1ebe5d;
+}
+
+/* Outline */
+.cta-bg-btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.cta-bg-btn-outline:hover {
+    background: white;
+    color: #000;
+}
+
+/* 🔥 Tablet */
+@media (max-width: 900px) {
+    .cta-bg-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-bg-content p {
+        font-size: 1rem;
+    }
+}
+
+/* 🔥 Mobile */
+@media (max-width: 600px) {
+    .cta-bg-section {
+        min-height: auto;
+    }
+
+    .cta-bg-overlay {
+        padding: 50px 15px;
+    }
+
+    .cta-bg-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-bg-content p {
+        font-size: 0.95rem;
+    }
+
+    .cta-bg-features {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta-bg-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta-bg-btn-primary,
+    .cta-bg-btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}
+   
+    /* Section */
+.footer-cta {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover no-repeat;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+/* Container */
+.footer-cta-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Heading */
+.footer-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+.footer-cta p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+/* Features */
+.footer-cta-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.footer-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Primary Button */
+.footer-cta-btn-primary {
+    background: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Outline Button */
+.footer-cta-btn-outline {
+    border: 2px solid white;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Hover */
+.footer-cta-btn-outline:hover {
+    background: white;
+    color: #0d3a5c;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .footer-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-cta-buttons {
+        flex-direction: column;
+    }
+
+    .footer-cta-btn-primary,
+    .footer-cta-btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ----- SLIDER CONTAINER ----- */
     .hero-slider {
       position: relative;
       width: 100%;
@@ -1774,6 +1992,40 @@
             </div>
         </section>
 
+<section class="cta-bg-section">
+    <div class="cta-bg-overlay">
+        <div class="cta-bg-content">
+
+            <h2>Take Your Business Online Today 🚀</h2>
+
+            <p>
+                A professional website helps you attract more customers, build trust, 
+                and grow your business faster. Start now and stand out from your competitors.
+            </p>
+
+            <!-- trust points -->
+            <div class="cta-bg-features">
+                <span>✔ Fast Delivery</span>
+                <span>✔ Affordable Pricing</span>
+                <span>✔ Mobile Friendly</span>
+            </div>
+
+            <!-- buttons -->
+            <div class="cta-bg-buttons">
+                <a href="https://wa.me/919027038209?text=Hi%20I%20want%20a%20website" 
+                   class="cta-bg-btn-primary" target="_blank">
+                   <i class="fab fa-whatsapp"></i> Get Started
+                </a>
+
+                <a href="Demo.html" class="cta-bg-btn-outline">
+                    <i class="fas fa-eye"></i> View Demo
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
         <!-- services section -->
         <section class="services-section">
             <div class="section-header">
@@ -1999,6 +2251,39 @@
             <p style="margin-top:2rem;"><a href="Demo.html" style="color:#2563eb; font-weight:600;">See all demos <i class="fas fa-arrow-right"></i></a></p>
         </div>
 
+
+     <section class="footer-cta">
+    <div class="footer-cta-container">
+
+        <h2>Let’s Build Your Website Today 🚀</h2>
+
+        <p>
+            Join businesses that are growing online with a modern, fast, and professional website. 
+            Start your project today and take your brand to the next level.
+        </p>
+
+        <!-- trust badges -->
+        <div class="footer-cta-features">
+            <span>✔ 20+ Websites Delivered</span>
+            <span>✔ 5★ Client Satisfaction</span>
+            <span>✔ Fast Support</span>
+        </div>
+
+        <!-- buttons -->
+        <div class="footer-cta-buttons">
+            <a href="https://wa.me/919027038209?text=Hi%20I%20want%20a%20website" 
+               class="footer-cta-btn-primary" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat Now
+            </a>
+
+            <a href="price.html" class="footer-cta-btn-outline">
+                <i class="fas fa-tag"></i> View Pricing
+            </a>
+        </div>
+
+    </div>
+</section>   
+
         <!-- testimonials -->
        <section class="testimonials-section">
     <div class="section-header">
@@ -2185,7 +2470,7 @@
     const totalSlides = slides.length;
     let currentIndex = 0;               // 0-based index
     let autoSlideInterval;
-    const autoDelay = 2000;              // 4 seconds (smooth modern rhythm)
+    const autoDelay = 2000;              // 2 seconds (smooth modern rhythm)
     let isTransitioning = false;         // prevent rapid clicks
 
     // Create dots dynamically
