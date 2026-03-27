@@ -3731,6 +3731,27 @@
     </div>
 </footer>
 
+<!-- Announcement Popup with Call Button -->
+<div id="offerPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; border-radius: 20px; text-align: center; max-width: 500px; margin: 20px; color: white; position: relative;">
+    <button onclick="closePopup()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">&times;</button>
+    <div style="font-size: 48px; margin-bottom: 10px;">🚀</div>
+    <h2 style="margin: 0 0 10px 0;">Limited Offer – Only ₹5999!</h2>
+    <p style="font-size: 18px; margin-bottom: 20px;">Get your professional website at just ₹5999.</p>
+    <p style="font-size: 14px; margin-bottom: 25px;">⏳ Offer valid till end of this month only</p>
+    
+    <!-- Two Buttons: Call & DM -->
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <a href="tel:+919876543210" style="display: inline-block; background: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 16px;">
+        📞 Call Now
+      </a>
+      <a href="https://wa.me/919876543210?text=Hi%2C%20I'm%20interested%20in%20the%20%245999%20website%20offer" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 16px;">
+        💬 DM on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
     <!-- Slider JavaScript -->
     <script>
          (function() {
@@ -4359,6 +4380,21 @@ console.log('✅ Chatbot script loaded successfully');
     window.addEventListener('scroll', animateNumbers);
     window.addEventListener('load', animateNumbers);
 })();
+
+
+  window.onload = function() {
+    document.getElementById('offerPopup').style.display = 'flex';
+  };
+  
+  function closePopup() {
+    document.getElementById('offerPopup').style.display = 'none';
+  }
+  
+  document.getElementById('offerPopup').onclick = function(e) {
+    if (e.target === this) {
+      closePopup();
+    }
+  };
 
     </script>
 </body>
