@@ -74,6 +74,26 @@
       
     <style>
 
+.hero-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides-wrapper {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
         html, body {
   margin: 0;
   padding: 0;
@@ -3782,217 +3802,128 @@
 
     <!-- Slider JavaScript -->
     <script>
-         (function() {
-    // ---------- SLIDER CONFIGURATION ----------
-    const slidesWrapper = document.getElementById('slidesWrapper');
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-    let currentIndex = 0;               // 0-based index
-    let autoSlideInterval;
-    const autoDelay = 2000;              // 2 seconds (smooth modern rhythm)
-    let isTransitioning = false;         // prevent rapid clicks
+        
+        document.addEventListener("DOMContentLoaded", function () {
 
-    // Create dots dynamically
-    const dotsContainer = document.getElementById('dotsContainer');
-    function createDots() {
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === currentIndex) dot.classList.add('active');
-        dot.setAttribute('data-index', i);
-        dot.addEventListener('click', () => {
-          if (isTransitioning) return;
-          goToSlide(i);
-          resetAutoSlideTimer();
-        });
-        dotsContainer.appendChild(dot);
-      }
-    }
+  const slidesWrapper = document.getElementById('slidesWrapper');
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
 
-    // Update dots active class
-    function updateDots() {
-      const dots = document.querySelectorAll('.dot');
-      dots.forEach((dot, idx) => {
-        if (idx === currentIndex) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
-    }
+  let currentIndex = 0;
+  let autoSlideInterval;
+  const autoDelay = 3000; // little slower = smoother
+  let isTransitioning = false;
 
-    // Move to specific slide index (smooth transition)
-    function goToSlide(index) {
-      if (index === currentIndex) return;
-      if (isTransitioning) return;
-      if (index < 0) index = 0;
-      if (index >= totalSlides) index = totalSlides - 1;
+  const dotsContainer = document.getElementById('dotsContainer');
+  const sliderContainer = document.querySelector('.hero-slider');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-      isTransitioning = true;
-      currentIndex = index;
-      const offset = -currentIndex * 100;
-      slidesWrapper.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-      slidesWrapper.style.transform = `translateX(${offset}%)`;
+  // ✅ Create dots
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
 
-      // Update dots
-      updateDots();
-
-      // Optional: Re-trigger fadeInUp animation on current slide content
-      const activeSlideContent = slides[currentIndex].querySelector('.slide-content');
-      if (activeSlideContent) {
-        activeSlideContent.style.animation = 'none';
-        activeSlideContent.offsetHeight; // force reflow
-        activeSlideContent.style.animation = 'fadeInUp 0.8s ease-out forwards';
-      }
-
-      // After transition ends, allow new transitions
-      const onTransitionEnd = () => {
-        isTransitioning = false;
-        slidesWrapper.removeEventListener('transitionend', onTransitionEnd);
-      };
-      slidesWrapper.addEventListener('transitionend', onTransitionEnd, { once: true });
-      
-      // fallback timeout (just in case)
-      setTimeout(() => {
-        if (isTransitioning) isTransitioning = false;
-      }, 700);
-    }
-
-    // Next slide
-    function nextSlide() {
-      if (isTransitioning) return;
-      let newIndex = currentIndex + 1;
-      if (newIndex >= totalSlides) newIndex = 0;
-      goToSlide(newIndex);
-    }
-
-    // Previous slide
-    function prevSlide() {
-      if (isTransitioning) return;
-      let newIndex = currentIndex - 1;
-      if (newIndex < 0) newIndex = totalSlides - 1;
-      goToSlide(newIndex);
-    }
-
-    // Auto-slide logic (loop)
-    function startAutoSlide() {
-      if (autoSlideInterval) clearInterval(autoSlideInterval);
-      autoSlideInterval = setInterval(() => {
-        // only if not hovering or not transitioning? we always slide after delay
+      dot.addEventListener('click', () => {
         if (!isTransitioning) {
-          nextSlide();
-        }
-      }, autoDelay);
-    }
-
-    function resetAutoSlideTimer() {
-      if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-      }
-    }
-
-    // Pause auto-slide on hover (optional, improves UX)
-    const sliderContainer = document.querySelector('.hero-slider');
-    function pauseAutoSlide() {
-      if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = null;
-      }
-    }
-    function resumeAutoSlide() {
-      if (!autoSlideInterval) {
-        startAutoSlide();
-      }
-    }
-
-    // Event listeners for arrows
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    
-    prevBtn.addEventListener('click', () => {
-      if (isTransitioning) return;
-      prevSlide();
-      resetAutoSlideTimer();
-    });
-    
-    nextBtn.addEventListener('click', () => {
-      if (isTransitioning) return;
-      nextSlide();
-      resetAutoSlideTimer();
-    });
-
-    // Hover events: pause on mouse enter, resume on mouse leave (optional, but improves)
-    sliderContainer.addEventListener('mouseenter', () => {
-      pauseAutoSlide();
-    });
-    sliderContainer.addEventListener('mouseleave', () => {
-      if (!autoSlideInterval) startAutoSlide();
-    });
-
-    // Touch support for mobile swipe (optional enhancement)
-    let touchStartX = 0;
-    let touchEndX = 0;
-    sliderContainer.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    sliderContainer.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const diff = touchEndX - touchStartX;
-      if (Math.abs(diff) > 50) {
-        if (diff > 0) {
-          // swipe right -> prev
-          prevSlide();
-        } else {
-          // swipe left -> next
-          nextSlide();
-        }
-        resetAutoSlideTimer();
-      }
-    });
-
-    // Initialize: set first slide position and animations, also preload subtle effect
-    function initSlider() {
-      // set initial transform without transition to avoid flicker
-      slidesWrapper.style.transition = 'none';
-      slidesWrapper.style.transform = `translateX(0%)`;
-      // force reflow
-      void slidesWrapper.offsetHeight;
-      slidesWrapper.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-      
-      createDots();
-      // ensure all slide contents have initial fadeInUp
-      slides.forEach(slide => {
-        const content = slide.querySelector('.slide-content');
-        if (content) {
-          content.style.animation = 'fadeInUp 0.8s ease-out forwards';
+          goToSlide(i);
+          resetAutoSlide();
         }
       });
-      currentIndex = 0;
-      updateDots();
-      startAutoSlide();
+
+      dotsContainer.appendChild(dot);
     }
+  }
 
-    // Fix resize: recalc no need but ensure full width consistency
-    window.addEventListener('resize', () => {
-      // re-align slides wrapper position just in case
-      if (!isTransitioning) {
-        const offset = -currentIndex * 100;
-        slidesWrapper.style.transition = 'none';
-        slidesWrapper.style.transform = `translateX(${offset}%)`;
-        void slidesWrapper.offsetHeight;
-        slidesWrapper.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-      }
+  function updateDots() {
+    document.querySelectorAll('.dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
     });
+  }
 
-    // Optional: change background image for better performance: images are preloaded by browser anyway
-    // Since we use inline background-image, it's fine.
-    // Ensure all WhatsApp buttons open correct link (already target _blank and proper wa.me)
-    // Also add smooth scroll behavior for anchor? no needed.
-    initSlider();
-  })();
+  function goToSlide(index) {
+    if (isTransitioning) return;
 
+    isTransitioning = true;
+    currentIndex = index;
+
+    slidesWrapper.style.transform = `translateX(-${index * 100}%)`;
+    updateDots();
+
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 600);
+  }
+
+  function nextSlide() {
+    let next = currentIndex + 1;
+    if (next >= totalSlides) next = 0;
+    goToSlide(next);
+  }
+
+  function prevSlide() {
+    let prev = currentIndex - 1;
+    if (prev < 0) prev = totalSlides - 1;
+    goToSlide(prev);
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, autoDelay);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  // ✅ Buttons
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetAutoSlide();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetAutoSlide();
+  });
+
+  // ✅ Hover pause (desktop fix)
+  sliderContainer.addEventListener('mouseenter', () => {
+    clearInterval(autoSlideInterval);
+  });
+
+  sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+  // ✅ Touch swipe (mobile)
+  let startX = 0;
+
+  sliderContainer.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  sliderContainer.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (Math.abs(startX - endX) > 50) {
+      if (startX > endX) nextSlide();
+      else prevSlide();
+
+      resetAutoSlide();
+    }
+  });
+
+  // ✅ INIT
+  function init() {
+    slidesWrapper.style.transform = `translateX(0%)`;
+    createDots();
+    startAutoSlide();
+  }
+
+  init();
+});
 
 // ===== CHATBOT JAVASCRIPT WITH DEBUGGING =====
 console.log('🚀 Chatbot script loading...');
