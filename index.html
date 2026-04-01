@@ -3795,7 +3795,7 @@
     <!-- Slider JavaScript -->
     <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
   const slidesWrapper = document.getElementById('slidesWrapper');
   const slides = document.querySelectorAll('.slide');
@@ -3803,7 +3803,7 @@
 
   let currentIndex = 0;
   let autoSlideInterval;
-  const autoDelay = 3000; // little slower = smoother
+  const autoDelay = 2000;
   let isTransitioning = false;
 
   const dotsContainer = document.getElementById('dotsContainer');
@@ -3811,8 +3811,28 @@
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
 
+  // ✅ FIX: Set proper height to prevent flash/jump
+  function setSliderHeight() {
+    const windowHeight = window.innerHeight;
+    if (slidesWrapper) {
+      slidesWrapper.style.height = windowHeight + 'px';
+    }
+    slides.forEach(slide => {
+      slide.style.height = windowHeight + 'px';
+    });
+  }
+
+  // Call immediately to set height
+  setSliderHeight();
+
+  // Update height on window resize
+  window.addEventListener('resize', function() {
+    setSliderHeight();
+  });
+
   // ✅ Create dots
   function createDots() {
+    if (!dotsContainer) return;
     dotsContainer.innerHTML = '';
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('div');
@@ -3837,7 +3857,7 @@
   }
 
   function goToSlide(index) {
-    if (isTransitioning) return;
+    if (isTransitioning || !slidesWrapper) return;
 
     isTransitioning = true;
     currentIndex = index;
@@ -3863,6 +3883,7 @@
   }
 
   function startAutoSlide() {
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(nextSlide, autoDelay);
   }
 
@@ -3871,52 +3892,61 @@
     startAutoSlide();
   }
 
-  // ✅ Buttons
-  nextBtn.addEventListener('click', () => {
-    nextSlide();
-    resetAutoSlide();
-  });
+  // ✅ Buttons - Add null checks
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+  }
 
-  prevBtn.addEventListener('click', () => {
-    prevSlide();
-    resetAutoSlide();
-  });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+  }
 
   // ✅ Hover pause (desktop fix)
-  sliderContainer.addEventListener('mouseenter', () => {
-    clearInterval(autoSlideInterval);
-  });
+  if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', () => {
+      clearInterval(autoSlideInterval);
+    });
 
-  sliderContainer.addEventListener('mouseleave', startAutoSlide);
+    sliderContainer.addEventListener('mouseleave', startAutoSlide);
+  }
 
   // ✅ Touch swipe (mobile)
   let startX = 0;
 
-  sliderContainer.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
+  if (sliderContainer) {
+    sliderContainer.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
 
-  sliderContainer.addEventListener('touchend', e => {
-    let endX = e.changedTouches[0].clientX;
+    sliderContainer.addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].clientX;
 
-    if (Math.abs(startX - endX) > 50) {
-      if (startX > endX) nextSlide();
-      else prevSlide();
+      if (Math.abs(startX - endX) > 50) {
+        if (startX > endX) nextSlide();
+        else prevSlide();
 
-      resetAutoSlide();
-    }
-  });
+        resetAutoSlide();
+      }
+    });
+  }
 
   // ✅ INIT
   function init() {
-    slidesWrapper.style.transform = `translateX(0%)`;
+    if (slidesWrapper) {
+      slidesWrapper.style.transform = `translateX(0%)`;
+    }
     createDots();
     startAutoSlide();
   }
 
   init();
 });
-
 // ===== CHATBOT JAVASCRIPT WITH DEBUGGING =====
 console.log('🚀 Chatbot script loading...');
 
