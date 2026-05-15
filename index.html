@@ -2698,7 +2698,31 @@
         font-size: 12px;
     }
 }
+/* ===== CALL NOW BUTTON - SAME STYLE AS WHATSAPP BUTTON ===== */
+.call-quick {
+    background: #2563eb;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 6px 14px rgba(37,99,235,0.3);
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
 
+.call-quick:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+}
+
+.call-quick i {
+    font-size: 1rem;
+}
     </style>
 </head>
 <body>
@@ -2715,6 +2739,9 @@
 
         </div>
         <a href="https://wa.me/919027038209" class="wa-quick" target="_blank"><i class="fab fa-whatsapp"></i> DM now</a>
+        <!-- CALL NOW BUTTON (Desktop - shows text, Mobile - shows icon) -->
+       <a href="tel:+919027038209" class="call-quick"> <i class="fas fa-phone-alt"></i> Call now </a>
+       
     </nav>
 
     <!-- HERO SLIDER -->
