@@ -638,119 +638,134 @@
 }
 
 
-        /* original hero section (now secondary) */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            margin: 2rem 0 4rem;
-        }
-        .hero-text h1 {
-           
-            text-align: center;
-            font-weight: 700;
-            line-height: 1.2;
-            background: linear-gradient(145deg, #0b2f4e, #2b4b75);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero-text p {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            text-align: center;
-            color: #334155;
-            max-width: 600px;
-            margin: 1.5rem 0 2rem;
-        }
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            background: #0d3a5c;
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.2s;
-        }
-        .btn-primary:hover {
-            background: #FF9F1C;
-            color: #0B2A4A;
-        }
-        .btn-outline {
-            border: 2px solid #0d3a5c;
-            color: #0d3a5c;
-            padding: 1rem 2.5rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
+       /* Professional Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    margin: 0 auto 60px;
+    max-width: 1000px;
+}
 
-        /* ===== NEW SECTION WITH IMAGES: "Our Work in Action" ===== */
-        .image-showcase {
-            margin: 5rem 0;
-        }
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .showcase-card {
-            background: white;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 20px 30px -10px rgba(0,32,64,0.12);
-            transition: 0.3s ease;
-            border: 1px solid #edf2f7;
-        }
-        .showcase-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 40px -12px #2563eb70;
-        }
-        .card-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 4px solid #FF9F1C;
-        }
-        .card-content {
-            padding: 1.8rem 1.5rem 2rem;
-        }
-        .card-content h3 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #0b2f4e;
-            margin-bottom: 0.5rem;
-        }
-        .card-content p {
-            color: #3f556b;
-            margin-bottom: 1.2rem;
-        }
-        .card-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .tag {
-            background: #eef5ff;
-            color: #2563eb;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+.hero-text {
+    max-width: 850px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #0B2A4A 0%,
+        #1D4ED8 50%,
+        #3B82F6 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #475569;
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.btn-primary {
+    background: linear-gradient(
+        135deg,
+        #1D4ED8,
+        #2563EB
+    );
+
+    color: #fff;
+    padding: 16px 34px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow: 0 10px 30px rgba(37,99,235,0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(37,99,235,0.35);
+}
+
+.btn-outline {
+    border: 2px solid #1D4ED8;
+    color: #1D4ED8;
+    background: #fff;
+
+    padding: 16px 34px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #1D4ED8;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
 
         /* existing sections */
         .services-section, .why-us-section, .testimonials-section {
@@ -2723,6 +2738,420 @@
 .call-quick i {
     font-size: 1rem;
 }
+.homepage-wrapper {
+  max-width: 1280px;
+  width: 100%;
+}
+
+/* ---- Brand Header ---- */
+.brand-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 0.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #0b1e33;
+  letter-spacing: -0.02em;
+}
+.brand-logo i {
+  color: #2563eb;
+  font-size: 2rem;
+}
+.brand-logo span {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-logo .tag {
+  font-weight: 400;
+  font-size: 0.8rem;
+  -webkit-text-fill-color: #4a6990;
+  color: #4a6990;
+  background: none;
+  opacity: 0.6;
+}
+
+.brand-url {
+  font-size: 0.85rem;
+  color: #3a5f7a;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  padding: 0.4rem 1.2rem;
+  border-radius: 40px;
+  border: 1px solid rgba(37, 99, 235, 0.08);
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.04);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.brand-url i {
+  color: #2563eb;
+  margin-right: 0.4rem;
+}
+
+/* ---- Main Section: Compact ---- */
+.agency-section {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 2.5rem;
+  box-shadow: 0 30px 60px -15px rgba(0, 20, 40, 0.15), 0 8px 32px rgba(37, 99, 235, 0.06);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  max-height: 480px; /* ← CONTROLS OVERALL HEIGHT */
+}
+
+/* ---- Left Side: Image + floating elements ---- */
+.portrait-side {
+  background: linear-gradient(160deg, #eef6ff 0%, #ffffff 100%);
+  padding: 1.8rem 1.8rem 1.5rem 2rem; /* ← REDUCED PADDING */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 360px; /* ← REDUCED from 440px */
+}
+
+/* Floating tech elements - HIDDEN for compact */
+.float-icon {
+  display: none;
+}
+
+/* Floating stat cards - HIDDEN for compact */
+.float-stat {
+  display: none;
+}
+
+/* Portrait frame - SMALLER */
+.portrait-frame {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 260px; /* ← REDUCED from 340px */
+  aspect-ratio: 1 / 1.1; /* ← LESS TALL */
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 20px 40px -12px rgba(37, 99, 235, 0.15), 0 4px 12px rgba(0,0,0,0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  outline: 1px solid rgba(37, 99, 235, 0.06);
+  outline-offset: 4px;
+}
+.portrait-frame:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 30px 50px -14px rgba(37, 99, 235, 0.2);
+}
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #d9e6f2;
+}
+
+.photo-cred {
+  margin-top: 0.8rem; /* ← REDUCED */
+  font-size: 1rem; /* ← SMALLER */
+  color: #3a5f7a;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  z-index: 2;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
+  padding: 0.2rem 1rem;
+  border-radius: 40px;
+  border: 1px solid rgba(37, 99, 235, 0.06);
+}
+.photo-cred i { color: #2563eb; opacity: 0.6; }
+
+/* ---- Right Side: Company Content (COMPACT) ---- */
+.about-side {
+  padding: 1.8rem 2rem 1.8rem 1.8rem; /* ← REDUCED */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+
+.about-side::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #2563eb 0%, #60a5fa 60%, #93bbfc 100%);
+  opacity: 0.2;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Badge - COMPACT */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(37, 99, 235, 0.08);
+  backdrop-filter: blur(8px);
+  color: #1e4f8a;
+  font-weight: 600;
+  font-size: 0.6rem; /* ← SMALLER */
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem; /* ← REDUCED */
+  border-radius: 40px;
+  width: fit-content;
+  margin-bottom: 0.6rem; /* ← REDUCED */
+  border: 1px solid rgba(37, 99, 235, 0.08);
+}
+.badge i { font-size: 0.7rem; color: #2563eb; }
+
+/* Heading - COMPACT */
+.company-name {
+  font-size: 2.6rem; /* ← REDUCED */
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #0b1e33;
+  margin-bottom: 0.1rem; /* ← REDUCED */
+}
+.company-name .highlight {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subheading {
+  font-size: 0.85rem; /* ← REDUCED */
+  font-weight: 500;
+  color: #2563eb;
+  margin-bottom: 0.6rem; /* ← REDUCED */
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.subheading i { color: #3b82f6; font-size: 0.7rem; }
+.subheading .dot { color: #b0c8e0; font-weight: 300; }
+
+/* Description - COMPACT */
+.description {
+  font-size: 0.9rem; /* ← REDUCED */
+  font-weight: 400;
+  line-height: 1.6; /* ← REDUCED */
+  color: #1e2f47;
+  max-width: 98%;
+  margin-bottom: 1rem; /* ← REDUCED */
+  padding: 0.7rem 1rem; /* ← REDUCED */
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  border-left: 3px solid #2563eb;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.02);
+}
+.description i { color: #2563eb; margin-right: 0.2rem; opacity: 0.6; }
+
+/* Trust Grid - COMPACT */
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem 1rem; /* ← REDUCED */
+  margin-bottom: 1rem; /* ← REDUCED */
+  padding: 0.6rem 0; /* ← REDUCED */
+  border-top: 1px solid rgba(37, 99, 235, 0.06);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.06);
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem; /* ← REDUCED */
+  font-weight: 500;
+  color: #1e3a5f;
+  padding: 0.15rem 0; /* ← REDUCED */
+}
+.trust-item i {
+  color: #2563eb;
+  font-size: 0.8rem;
+  width: 1.2rem;
+  text-align: center;
+  opacity: 0.8;
+}
+.trust-item span { font-weight: 400; color: #3a5470; }
+
+/* CTA Buttons - COMPACT */
+.cta-group {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem; /* ← REDUCED */
+  padding: 0.6rem 1.6rem; /* ← REDUCED */
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
+}
+.btn-primary i { font-size: 0.8rem; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  color: #1e3a5f;
+  font-weight: 600;
+  font-size: 0.85rem; /* ← REDUCED */
+  padding: 0.6rem 1.6rem; /* ← REDUCED */
+  border-radius: 50px;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background: rgba(37, 99, 235, 0.06);
+  border-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.06);
+}
+.btn-secondary i { color: #2563eb; }
+
+/* Footer Highlights - COMPACT */
+.footer-highlights {
+  margin-top: 0.8rem; /* ← REDUCED */
+  display: flex;
+  gap: 1.2rem; /* ← REDUCED */
+  flex-wrap: wrap;
+  padding-top: 0.6rem; /* ← REDUCED */
+  border-top: 1px solid rgba(37, 99, 235, 0.05);
+}
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem; /* ← REDUCED */
+  font-weight: 500;
+  color: #3a5f7a;
+}
+.highlight-item i {
+  color: #2563eb;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Bottom footer */
+.homepage-footer {
+  margin-top: 1.5rem; /* ← REDUCED */
+  color: #3a5f7a;
+  font-size: 0.75rem; /* ← REDUCED */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  opacity: 0.5;
+}
+.homepage-footer i { color: #2563eb; margin-right: 0.4rem; }
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .agency-section { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .agency-section {
+    grid-template-columns: 1fr;
+    border-radius: 2rem;
+    max-height: none; /* Remove max-height on mobile */
+  }
+  .portrait-side {
+    padding: 1.5rem 1.5rem 0.8rem;
+    min-height: 260px; /* ← REDUCED */
+  }
+  .portrait-frame { max-width: 200px; aspect-ratio: 1 / 1.1; }
+  .about-side {
+    padding: 1.5rem 1.8rem 1.8rem;
+  }
+  .about-side::before {
+    height: 4px;
+    width: 80%;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    background: linear-gradient(90deg, #2563eb, #93bbfc);
+    border-radius: 0 0 4px 4px;
+  }
+  .company-name { font-size: 2.4rem; }
+  .description { max-width: 100%; font-size: 0.9rem; }
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+  .brand-header { flex-direction: column; align-items: flex-start; }
+  .photo-cred { margin-top: 0.5rem; font-size: 0.7rem; }
+}
+
+@media (max-width: 500px) {
+  .portrait-frame { max-width: 160px; }
+  .company-name { font-size: 2rem; }
+  .description { font-size: 0.85rem; padding: 0.6rem 0.8rem; }
+  .about-side { padding: 1.2rem; }
+  .trust-grid { grid-template-columns: 1fr; gap: 0.1rem; }
+  .cta-group { flex-direction: column; width: 100%; }
+  .btn-primary, .btn-secondary { justify-content: center; width: 100%; font-size: 0.8rem; padding: 0.5rem 1.2rem; }
+  .footer-highlights { gap: 0.6rem; }
+  .brand-url { font-size: 0.7rem; padding: 0.3rem 0.8rem; }
+}
+
+/* Animations */
+@keyframes softGlow {
+  0%, 100% { box-shadow: 0 30px 60px -15px rgba(0, 20, 40, 0.15); }
+  50% { box-shadow: 0 30px 70px -10px rgba(37, 99, 235, 0.12); }
+}
+.agency-section { animation: softGlow 6s ease-in-out infinite; }
+
+.homepage-wrapper {
+  margin-top: 0.5rem; /* ← REDUCED */
+}
     </style>
 </head>
 <body>
@@ -2821,18 +3250,111 @@
   <div class="dots-container" id="dotsContainer"></div>
 </div>
 
+ <div class="homepage-wrapper">
+    <!-- Main Section -->
+    <div class="agency-section">
+      <!-- LEFT: Image + floating elements -->
+      <div class="portrait-side">
+        <!-- Floating tech icons -->
+        <i class="fas fa-code float-icon float-icon-1"></i>
+        <i class="fas fa-database float-icon float-icon-2"></i>
+        <i class="fas fa-globe float-icon float-icon-3"></i>
+        <i class="fas fa-laptop-code float-icon float-icon-4"></i>
+
+        <!-- Floating stat cards -->
+        <div class="float-stat float-stat-1">
+          <i class="fas fa-rocket"></i> 20+ Projects
+        </div>
+        <div class="float-stat float-stat-2">
+          <i class="fas fa-star"></i> 100% Satisfaction
+        </div>
+
+        <!-- Portrait -->
+        <div class="portrait-frame">
+          <img 
+            class="portrait-img" 
+            src="Founder.jpeg" 
+            alt="CodeBite Founder"
+          />
+        </div>
+        <div class="photo-cred">
+          <i class="fas fa-user-tie"></i> 
+          <span>Saurav Sharma · Founder</span>
+          <i class="fas fa-circle" style="font-size: 0.5rem; opacity: 0.3;"></i>
+          <span style="font-weight: 300;">CodeBite</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Company Content -->
+      <div class="about-side">
+        <!-- Badge -->
+        <div class="badge">
+          <i class="fas fa-rocket"></i> Digital Growth Partner
+        </div>
+
+        <!-- Heading -->
+        <h1 class="company-name">
+          <span class="highlight">CodeBite</span>
+        </h1>
+        <div class="subheading">
+          <i class="fas fa-bolt"></i> 
+          <span>Website Design</span>
+          <span class="dot">•</span>
+          <span>Development</span>
+          <span class="dot">•</span>
+          <span>SEO Solutions</span>
+        </div>
+
+        <!-- Description -->
+        <div class="description">
+          <i class="fas fa-quote-left" style="opacity: 0.3; font-size: 0.9rem;"></i> 
+          We help businesses build a powerful online presence through modern websites, 
+          SEO optimization, and high-performance digital solutions. Our focus is creating 
+          fast, responsive, and conversion-driven websites that help businesses attract 
+          more customers and grow online.
+          <i class="fas fa-quote-right" style="opacity: 0.3; font-size: 0.9rem; margin-left: 0.2rem;"></i>
+        </div>
+
+        <!-- Trust Grid -->
+        <div class="trust-grid">
+          <div class="trust-item"><i class="fas fa-check-circle"></i> <span>20+ Projects Delivered</span></div>
+          <div class="trust-item"><i class="fas fa-mobile-alt"></i> <span>100% Mobile Responsive</span></div>
+          <div class="trust-item"><i class="fas fa-search"></i> <span>SEO Optimized Websites</span></div>
+          <div class="trust-item"><i class="fas fa-tachometer-alt"></i> <span>Fast Loading Performance</span></div>
+          <div class="trust-item"><i class="fas fa-shield-alt"></i> <span>Secure &amp; Scalable Solutions</span></div>
+          <div class="trust-item"><i class="fas fa-headset"></i> <span>Dedicated Client Support</span></div>
+        </div>
+
+        <!-- Footer Highlights -->
+        <div class="footer-highlights">
+          <span class="highlight-item"><i class="fas fa-rocket"></i> Fast Delivery</span>
+          <span class="highlight-item"><i class="fas fa-lock"></i> Secure Development</span>
+          <span class="highlight-item"><i class="fas fa-chart-line"></i> Growth Focused</span>
+          <span class="highlight-item"><i class="fas fa-headset"></i> 24/7 Support</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="homepage-footer">
+      <span><i class="fas fa-check-circle"></i> Quality First</span>
+      <span><i class="fas fa-code"></i> Modern Stack</span>
+      <span><i class="fas fa-award"></i> Trusted by Startups</span>
+    </div>
+  </div>
+
 
     <main class="container">
       <!-- original hero section -->
 <div class="hero">
     <div class="hero-text">
-        <h1>Build a Website That Grows Your Business 🚀</h1>
+       <h1>Transform Your Business with a Modern Professional Website</h1>
 
-        <p>
-            We create modern, fast, and high-converting websites for startups, restaurants, salons, and local businesses. 
-            Trusted by clients for quality design, fast delivery, and reliable support.
+       <p>
+             We create premium websites that help businesses attract customers,
+            build trust, and grow online. From startups to established companies,
+            CodeBite delivers fast, responsive, and conversion-focused digital solutions.
         </p>
-
         <!-- 🔥 trust + value line -->
         <p style="margin-top:8px; font-size:0.95rem; color:#555;">
             ✔ Affordable pricing | ⚡ Fast delivery | 📱 100% mobile-friendly
@@ -2849,67 +3371,6 @@
     </div>
 </div>
 
-        <!-- Our Work in Action section -->
-        <section class="image-showcase">
-            <div class="section-header">
-                <h2>Our Work in Action</h2>
-                <p>Real projects, real results — see the quality yourself</p>
-            </div>
-            <div class="showcase-grid">
-                <!-- card 1 -->
-                <div class="showcase-card">
-                    <img class="card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Restaurant website design">
-                    <div class="card-content">
-                        <h3>Spice Kitchen</h3>
-                        <p>Restaurant site with online ordering & table reservation.</p>
-                        <div class="card-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">WhatsApp API</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 2 -->
-                <div class="showcase-card">
-                    <img class="card-img" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=2070&auto=format&fit=crop" alt="Ecommerce store">
-                    <div class="card-content">
-                        <h3>Urban Beats</h3>
-                        <p>Headphone & audio gear store with secure checkout.</p>
-                        <div class="card-tags">
-                            <span class="tag">Shopify</span>
-                            <span class="tag">Liquid</span>
-                            <span class="tag">SEO</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 3 -->
-                <div class="showcase-card">
-                    <img class="card-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Gym website">
-                    <div class="card-content">
-                        <h3>Peak Fitness</h3>
-                        <p>Gym club with class schedule & trainer profiles.</p>
-                        <div class="card-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Responsive</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 4 -->
-                <div class="showcase-card">
-                    <img class="card-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" alt="Salon website">
-                    <div class="card-content">
-                        <h3>Glow Studio</h3>
-                        <p>Salon & spa with online booking and service menu.</p>
-                        <div class="card-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">Calendly</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 <!-- MODERN DEMO SLIDER -->
 <section class="demo-showcase">
@@ -3240,7 +3701,7 @@
         
         <!-- View All Button -->
         <div class="demo-footer">
-            <a href="demo.html" class="demo-all-btn">
+            <a href="Demo.html" class="demo-all-btn">
                 View All Projects →
             </a>
         </div>
