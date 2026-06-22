@@ -3152,6 +3152,318 @@
 .homepage-wrapper {
   margin-top: 0.5rem; /* ← REDUCED */
 }
+
+ /* New Style: Split Layout Banner */
+        .offer-banner {
+            max-width: 1250px;
+            width: 100%;
+            background: linear-gradient(145deg, #0d1117 0%, #0a0e13 50%, #0d1117 100%);
+            border-radius: 2.5rem;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(249, 115, 22, 0.08);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Animated border glow */
+        .offer-banner::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #f97316, #22c55e, #f97316, #22c55e);
+            border-radius: 2.6rem;
+            z-index: -1;
+            opacity: 0.5;
+            animation: borderGlow 4s linear infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Left Content Area */
+        .banner-left {
+            flex: 1 1 500px;
+            padding: 3rem 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .limited-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.4);
+            padding: 0.5rem 1.5rem;
+            border-radius: 3rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fb923c;
+            margin-bottom: 1.8rem;
+            animation: badgePulse 2s infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { box-shadow: 0 0 15px rgba(249, 115, 22, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(249, 115, 22, 0.6); }
+        }
+
+        .limited-badge i {
+            font-size: 1rem;
+        }
+
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 900;
+            padding: 0.5rem 1.8rem;
+            border-radius: 3rem;
+            margin: 1rem 0 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+            animation: priceFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes priceFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .countdown-inline {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #fbbf24;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.6rem 1.5rem;
+            border-radius: 2rem;
+            border: 1px dashed rgba(251, 191, 36, 0.4);
+            width: fit-content;
+        }
+
+        .countdown-inline i {
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Feature pills */
+        .feature-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.45rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .pill i {
+            color: #22c55e;
+            font-size: 0.7rem;
+        }
+
+        .pill:hover {
+            background: rgba(34, 197, 94, 0.15);
+            border-color: rgba(34, 197, 94, 0.5);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* WhatsApp CTA Button */
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        .whatsapp-cta:hover {
+            background: linear-gradient(135deg, #128C7E, #075E54);
+            box-shadow: 0 18px 40px rgba(37, 211, 102, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-cta i {
+            font-size: 1.4rem;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-cta:hover i {
+            transform: scale(1.2) rotate(-10deg);
+        }
+
+        .whatsapp-number {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 0.5rem;
+            color: #cbd5e1;
+        }
+
+        /* Right Side - Feature Cards Grid */
+        .banner-right {
+            flex: 1 1 450px;
+            padding: 2.5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(5px);
+        }
+
+        .feature-box {
+            background: rgba(20, 24, 30, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1.2rem;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-box:hover {
+            background: rgba(30, 35, 42, 0.85);
+            border-color: rgba(249, 115, 22, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(249, 115, 22, 0.15);
+        }
+
+        .feature-box i {
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s;
+        }
+
+        .feature-box:hover i {
+            background: linear-gradient(135deg, #22c55e, #4ade80);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(1.2);
+        }
+
+        .feature-box span {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #d1d5db;
+            line-height: 1.3;
+            transition: color 0.2s;
+        }
+
+        .feature-box:hover span {
+            color: #fff;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 850px) {
+            .offer-banner {
+                flex-direction: column;
+                border-radius: 2rem;
+            }
+            .banner-left {
+                padding: 2.5rem 1.5rem;
+                text-align: center;
+            }
+            .countdown-inline,
+            .feature-pills {
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .whatsapp-cta {
+                margin: 0 auto;
+            }
+            .banner-right {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 1.5rem;
+                gap: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner-right {
+                grid-template-columns: 1fr 1fr;
+            }
+            .feature-box {
+                padding: 1rem 0.8rem;
+            }
+            .headline {
+                font-size: 1.8rem;
+            }
+            .price-tag {
+                font-size: 1.5rem;
+            }
+            .whatsapp-cta {
+                width: 100%;
+                justify-content: center;
+                font-size: 1rem;
+                padding: 0.9rem 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3273,7 +3585,7 @@
         <div class="portrait-frame">
           <img 
             class="portrait-img" 
-            src="Images/Founder.jpeg" 
+            src="Founder.jpeg" 
             alt="CodeBite Founder"
           />
         </div>
@@ -3370,6 +3682,86 @@
         </div>
     </div>
 </div>
+
+<div class="offer-banner">
+        <!-- Left Side: Text Content -->
+        <div class="banner-left">
+            <div class="limited-badge">
+                <i class="fas fa-fire"></i> 🔥 LIMITED TIME OFFER
+            </div>
+
+            <h2 class="headline">
+                Professional Business Website
+            </h2>
+            
+            <div class="price-tag">
+                @ ₹9,999
+            </div>
+
+            <div class="countdown-inline">
+                <i class="fas fa-hourglass-half"></i> ⏳ Offer Ends This Month
+            </div>
+
+            <div class="feature-pills">
+                <div class="pill"><i class="fas fa-check-circle"></i> WhatsApp Chat</div>
+                <div class="pill"><i class="fas fa-check-circle"></i> Google Maps</div>
+                <div class="pill"><i class="fas fa-check-circle"></i> SEO Setup</div>
+                <div class="pill"><i class="fas fa-check-circle"></i> Mobile Responsive</div>
+            </div>
+
+            <!-- WhatsApp Direct Contact Button -->
+            <a href="https://wa.me/919027038209?text=Hi%20CodeBite!%20I'm%20interested%20in%20the%20Professional%20Business%20Website%20offer%20for%20₹7,999.%20Please%20share%20more%20details." 
+               class="whatsapp-cta" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Right Side: Feature Cards -->
+        <div class="banner-right">
+            <div class="feature-box">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp Chat Button</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Google Maps Integration</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-search"></i>
+                <span>Basic SEO Setup</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile Responsive</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-rocket"></i>
+                <span>Fast Delivery 48hrs</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-paint-brush"></i>
+                <span>Professional Design</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-shield-alt"></i>
+                <span>No Hidden Charges</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-sync-alt"></i>
+                <span>1 Year Free Support</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-tools"></i>
+                <span>1 Year Maintenance</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-lock"></i>
+                <span>Security Protection</span>
+            </div>
+        </div>
+    </div>
 
 
 <!-- MODERN DEMO SLIDER -->
@@ -4347,13 +4739,15 @@
     </div>
 </footer>
 
+
+
 <!-- Announcement Popup with Call Button -->
 <div id="offerPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center;">
   <div style="background: linear-gradient(135deg, #303135 0%, #764ba2 100%); padding: 40px; border-radius: 20px; text-align: center; max-width: 500px; margin: 20px; color: white; position: relative;">
     <button onclick="closePopup()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">&times;</button>
     <div style="font-size: 48px; margin-bottom: 10px;">🚀</div>
-    <h2 style="margin: 0 0 10px 0;">Limited Offer – Only ₹7999!</h2>
-    <p style="font-size: 18px; margin-bottom: 20px;">Get your professional website at just ₹7999.</p>
+    <h2 style="margin: 0 0 10px 0;">Limited Offer – Only ₹9,999!</h2>
+    <p style="font-size: 18px; margin-bottom: 20px;">Get your professional website at just ₹9,999.</p>
     <p style="font-size: 14px; margin-bottom: 25px;">⏳ Offer valid till end of this month only</p>
     
     <!-- Two Buttons: Call & DM -->
@@ -4361,7 +4755,7 @@
       <a href="tel:+919027038209" style="display: inline-block; background: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 16px;">
         📞 Call Now
       </a>
-      <a href="https://wa.me/919027038209?text=Hi%2C%20I'm%20interested%20in%20the%20₹7999%20website%20offer" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 16px;">
+      <a href="https://wa.me/919027038209?text=Hi%2C%20I'm%20interested%20in%20the%20₹9,999%20website%20offer" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 16px;">
         💬 DM on WhatsApp
       </a>
     </div>
@@ -4370,6 +4764,31 @@
 
     <!-- Slider JavaScript -->
     <script>
+// Animate feature boxes on load
+        window.addEventListener('load', () => {
+            const boxes = document.querySelectorAll('.feature-box');
+            boxes.forEach((box, index) => {
+                box.style.opacity = '0';
+                box.style.transform = 'translateY(20px)';
+                box.style.transition = 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2)';
+                setTimeout(() => {
+                    box.style.opacity = '1';
+                    box.style.transform = 'translateY(0)';
+                }, 100 + index * 60);
+            });
+
+            // Pulse animation for WhatsApp button
+            const whatsappBtn = document.querySelector('.whatsapp-cta');
+            if (whatsappBtn) {
+                setInterval(() => {
+                    whatsappBtn.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        whatsappBtn.style.transform = 'scale(1)';
+                    }, 300);
+                }, 3000);
+            }
+        });
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
