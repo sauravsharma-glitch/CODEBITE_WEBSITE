@@ -101,7 +101,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-evenly;
             border-bottom: 2px solid #f1f4f9;
         }
         .logo {
@@ -383,261 +383,15 @@
     }
 }
 
-/* ----- SLIDER CONTAINER ----- */
-   /* ----- HERO SLIDER - SIMPLE FIXED VERSION ----- */
-.hero-slider {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: #000;
+.hero-image-section{
+    width:100%;
 }
 
-.slides-wrapper {
-  display: flex;
-  width: 100%;
-  transition: transform 0.6s ease;
+.hero-image-section img{
+    width:100%;
+    height:auto;
+    display:block;
 }
-
-.slide {
-  min-width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  flex-shrink: 0;
-  background-color: #1a2a3a; /* FALLBACK COLOR */
-  position: relative;
-}
-
-/* Overlay */
-.slide::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.55) 100%);
-  z-index: 1;
-}
-
-/* Text content */
-.slide-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 85%;
-  max-width: 900px;
-  text-align: center;
-  z-index: 2;
-  color: white;
-  padding: 1.5rem;
-}
-
-/* Navigation arrows */
-.nav-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 15;
-  color: white;
-  font-size: 1.4rem;
-}
-
-.arrow-left { left: 20px; }
-.arrow-right { right: 20px; }
-
-/* FIX HERO SLIDER WHATSAPP BUTTON - MAKE IT CONSISTENT */
-.slide-content .whatsapp-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #25D366;
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 14px 32px;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.slide-content .whatsapp-btn i {
-  font-size: 1.2rem;
-}
-
-.slide-content .whatsapp-btn:hover {
-  background-color: #1da851;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3);
-}
-
-/* Make sure button is visible on all slides */
-.slide-content {
-  z-index: 2;
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .slide-content .whatsapp-btn {
-    padding: 12px 24px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .slide-content .whatsapp-btn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-  }
-}
-
-/* Dots */
-.dots-container {
-  position: absolute;
-  bottom: 28px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  z-index: 15;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #25D366;
-  width: 28px;
-  border-radius: 12px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-}
-    /* Animation for slide content */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -40%);
-      }
-      100% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .whatsapp-btn {
-        padding: 12px 24px;
-        font-size: 0.9rem;
-      }
-      .nav-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
-      .arrow-left {
-        left: 12px;
-      }
-      .arrow-right {
-        right: 12px;
-      }
-      .dots-container {
-        bottom: 18px;
-        gap: 12px;
-      }
-      .slide-content {
-        width: 90%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .whatsapp-btn {
-        padding: 10px 20px;
-        font-size: 0.85rem;
-      }
-      .nav-arrow {
-        width: 36px;
-        height: 36px;
-      }
-      .dot.active {
-        width: 22px;
-      }
-    }
-          
-    /* FIX HERO HEADING FONT SIZES */
-.slide-content h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .slide-content h1 {
-    font-size: 2.5rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .slide-content h1 {
-    font-size: 1.8rem;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .slide-content h1 {
-    font-size: 1.5rem;
-  }
-}
-
-/* Fix paragraph font size too */
-.slide-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .slide-content p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .slide-content p {
-    font-size: 0.9rem;
-  }
-}
-
-
        /* Professional Hero Section */
 .hero {
     display: flex;
@@ -765,7 +519,7 @@
         width: 100%;
         justify-content: center;
     }
-}
+}  */
 
         /* existing sections */
         .services-section, .why-us-section, .testimonials-section {
@@ -3464,9 +3218,12 @@
                 padding: 0.9rem 1.5rem;
             }
         }
-    </style>
+
+
+</style>
 </head>
 <body>
+    
     <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="logo"><i class="fas fa-code"></i> CodeBite</div>
@@ -3485,82 +3242,9 @@
        
     </nav>
 
-    <!-- HERO SLIDER -->
-   <div class="hero-slider">
-  <div class="slides-wrapper" id="slidesWrapper">
-    <!-- Slide 1 -->
-    <div class="slide" data-index="0" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
-      <div class="slide-content">
-        <h1>Get Your Business Website in 3 Days 🚀</h1>
-        <p>We help local businesses get more customers online</p>
-        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> Get Free Demo on WhatsApp
-        </a>
-      </div>
-    </div>
-    <!-- Slide 2 -->
-    <div class="slide" data-index="1" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80');">
-      <div class="slide-content">
-        <h1>Turn Your Business Into an Online Brand 🌐</h1>
-        <p>Professional websites that attract and convert customers</p>
-        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> Start Your Project Today
-        </a>
-      </div>
-    </div>
-    <!-- Slide 3 -->
-    <div class="slide" data-index="2" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
-      <div class="slide-content">
-        <h1>Get More Leads & Sales with Your Website 📈</h1>
-        <p>We design websites that actually bring customers</p>
-        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> Get More Customers
-        </a>
-      </div>
-    </div>
-    <!-- Slide 4 -->
-    <div class="slide" data-index="3" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
-      <div class="slide-content">
-        <h1>Affordable Website Design for Small Businesses 💻</h1>
-        <p>Start your online journey at just ₹4999</p>
-        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> View Pricing
-        </a>
-      </div>
-    </div>
-    <!-- Slide 5 -->
-    <div class="slide" data-index="4" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
-      <div class="slide-content">
-        <h1>No Website? You're Losing Customers Daily ❌</h1>
-        <p>Let us build your online presence quickly & professionally</p>
-        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> Contact Now
-        </a>
-      </div>
-    </div>
-    <!-- Slide 6 -->
-    <div class="slide" data-index="5" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
-      <div class="slide-content">
-        <h1>Your Success Starts with a Powerful Website 🔥</h1>
-        <p>We create modern, fast & mobile-friendly websites</p>
-        <a href="https://wa.me/919027038209" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> Get Started Now
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation Arrows -->
-  <div class="nav-arrow arrow-left" id="prevBtn">
-    <i class="fas fa-chevron-left"></i>
-  </div>
-  <div class="nav-arrow arrow-right" id="nextBtn">
-    <i class="fas fa-chevron-right"></i>
-  </div>
-
-  <!-- Dots -->
-  <div class="dots-container" id="dotsContainer"></div>
-</div>
+  <section class="hero-image-section">
+    <img src="Images/codebite_Image.jpeg" alt="Hero Image">
+</section>
 
  <div class="homepage-wrapper">
     <!-- Main Section -->
@@ -3585,7 +3269,7 @@
         <div class="portrait-frame">
           <img 
             class="portrait-img" 
-            src="Images/Founder.jpeg" 
+            src="Founder.jpeg" 
             alt="CodeBite Founder"
           />
         </div>
@@ -4764,6 +4448,7 @@
 
     <!-- Slider JavaScript -->
     <script>
+
 // Animate feature boxes on load
         window.addEventListener('load', () => {
             const boxes = document.querySelectorAll('.feature-box');
